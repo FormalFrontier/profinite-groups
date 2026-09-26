@@ -1,0 +1,15 @@
+name = "profinite-groups"
+version = "0.1.0"
+defaultTargets = ["ProfiniteGroups", "ProfiniteGroupsTests"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "e37d88a26f3791ed5a93daa1f949af1021b8d103"
+
+[[lean_lib]]
+name = "ProfiniteGroups"
+
+[[lean_lib]]
+name = "ProfiniteGroupsTests"
+globs = ["ProfiniteGroupsTests", "Tests.+"]

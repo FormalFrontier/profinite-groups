@@ -1,0 +1,4203 @@
+{
+  "analyzed_source_revision": "2417a6348d6abede2cf08f46fbb852a9f3d12d42",
+  "analyzed_source_tree": "0a8a4087cac28d9728c397504051cb53e4c20154",
+  "api_sha256": "a4b7efd1a5a9f2d26a54f7e4f97cc94adc8813af6d69790089eeff6c4dff7287",
+  "docgen_revision": "97d4ecdfc8e09e7f511724c25e303d448de6a3db",
+  "docgen_tree": "ebf77f3e174c145c9ca2db0df1c18a78ae87c93b",
+  "format": 3,
+  "generator": "scripts/generate_api.py",
+  "inputs": {
+    "ProfiniteGroups.lean": "315a12f920f4c153d8a8689caf4a51f158daac5c3d7dada9bf150eb45cacfb47",
+    "ProfiniteGroups/ClosedIdealPi.lean": "fe3f5b2fb3ea47fb55e55630c9724029ac0153b3b4a66caa5d567edc533106bb",
+    "ProfiniteGroups/ContinuousSection.lean": "484daa2ff4043061fc038f3b2e039b7fc50e64f53bfe98c9cce691cdbc6dc85e",
+    "ProfiniteGroups/EpiMono.lean": "38e6a4c6e039bdb934bce864027ed892e4f1c42f1de6b8cbbc817c0a25fc6b1b",
+    "ProfiniteGroups/FinitePresentation.lean": "d10097494ed2b44f18d01dc1aea05d13148075e5110f86a5650f902f70557aa4",
+    "ProfiniteGroups/FiniteQuotientHom.lean": "c357a175f1183d824e74674ecbce9efcbf363c55b999dadc2286b377f03470e5",
+    "ProfiniteGroups/FreeProduct.lean": "a0fc38078bfb74b86521411e9927295c59b65016ec64324ffed45e5bb3be96af",
+    "ProfiniteGroups/PiIdealQuotient.lean": "b49ca0e411ab891c0a392e4b5556750531bcd17f4629314ed55e67b8809c7b40",
+    "ProfiniteGroups/PrimewisePadic.lean": "979c915c1fb81145536412f51e6ea43a99e7ceecf6f4c860390e51b0e544cbe6",
+    "ProfiniteGroups/PrimewisePadicIdealTransport.lean": "a44c6b2cad8d624099c83c0dc9583804ef6ce0682938ab8bde57471ee7136d96",
+    "ProfiniteGroups/PrimewisePadicIdeals.lean": "96045517e693a622bf14ae47efe9c1a15ebfc4d016cc380df1b8b2976c63bbe1",
+    "ProfiniteGroups/PrimewisePadicKernel.lean": "c5d3670bf59b38a3386244c81955d5d25fb51334bd4f0c38572b1cc379025134",
+    "ProfiniteGroups/PrimewisePadicKernelTransport.lean": "decd27f193b52ef0e022419e60ccf62b70018ffb79725527c109e7ce28f62978",
+    "ProfiniteGroups/PrimewisePadicQuotients.lean": "76e5c991d9930f214df6d95aa9cf37e0ed1db38f6ffb307d47d932b82785f7d3",
+    "ProfiniteGroups/PrimewisePadicSubgroups.lean": "ac5b99e3df2c85a70b678ffb201e687a1fff30ffed4286af87c5c2f186f04752",
+    "ProfiniteGroups/ProP.lean": "4d55c1f637817a413aa1e1fe44db5981277f43f32f952497829c776ac00869fa",
+    "ProfiniteGroups/Procyclic.lean": "77428ad1fb0656ab008c7ec52be215aa262548d71fe55aaac8ac5dc3b30967c8",
+    "ProfiniteGroups/ProcyclicBaseMap.lean": "7ba9b44c17e97b0c3cb2f8f95943a69bd9901c0f29a0c0f3d81a86f2191c635f",
+    "ProfiniteGroups/ProcyclicGeneratorIndependence.lean": "28c516c2dc8113d017df815f9b48d4cfe98b854b90866449c73f96e9c0390146",
+    "ProfiniteGroups/ProcyclicHom.lean": "a42a4352f86c6e9ba19bbefb928083b1e2b0277ca2470e7a84d4383353b9e1ca",
+    "ProfiniteGroups/ProcyclicInvariant.lean": "c249fa66f7a13baacf88b7464a5866a2e6e2ad2b0db6319b80546058393e19d7",
+    "ProfiniteGroups/ProcyclicPower.lean": "bc527608f7fe56ab2976d6af3963cffe43fbdf3ae7df7b8e1ace17475fa01aeb",
+    "ProfiniteGroups/ProcyclicQuotient.lean": "57695201b165f9ba5386ac000f60085f10356c5baa6e389c4974fd8ffcfd0d06",
+    "ProfiniteGroups/ProcyclicRealization.lean": "a9542a7796554b7a278f7a66af4d351c805ec5c385646754653255225299418a",
+    "ProfiniteGroups/ProcyclicTorsionFree.lean": "238402ce46d55e41acbb7c2156ddfe5ec23e6124ae01ce5d8c4f7fe4e409f2c6",
+    "ProfiniteGroupsTests.lean": "eb14f4b3aeeb60aa0f7ee1a45197af89bdd8b525badae44a28bcb5e1e34cdd1d",
+    "Tests/DirectImports.lean": "f39d2016872eefffd03a8ce16f9a069cf7fe895d8403c19b9c41b183725a8258",
+    "Tests/PrimewisePadicIdealTransport.lean": "b4b0bf96fa843fec23e34d89ff21bfaee9ed953d6a6b99df037cbac77439a73a",
+    "Tests/PrimewisePadicKernelTransport.lean": "2e98d27b4a7408ce4182dbf13c4675ab74a8daf1f902d1723d8618df98a27790",
+    "Tests/PrimewisePadicQuotients.lean": "1f586d364eb164b972808260a9cca3f69f37d7ca87786461258f29221e400958",
+    "Tests/ProcyclicBaseMap.lean": "524946bb54f1cc2c59a62092d4873b92084ec2b89fdcb97ddf891b7157e1d336",
+    "Tests/ProcyclicGeneratorIndependence.lean": "2e8022d1c6bc3c281d4a65b0e5a674f4b9d598d906acae43aac7b6514fb6383b",
+    "Tests/ProcyclicHom.lean": "25e5e04d82b63c9a7e98f88094cd39399cfdedf1a6365c11d101559a4944f7bd",
+    "Tests/ProcyclicInvariant.lean": "c8d25f84071e41b2cb9eeb7773eff45e7902f8ab1fca19c45e786808e5927673",
+    "Tests/ProcyclicPower.lean": "a4729468fccd186c3233b761dc5557aa63965a687edb5670083814b3f55963bb",
+    "Tests/ProcyclicQuotient.lean": "0cba5f2bd8bb8e36d8126a7c8a03fba6719aa41f9279f9268a1dae851f27b935",
+    "Tests/ProcyclicRealization.lean": "3933502cb3f2d589568b90b40695f0ecb7f17c3a25c884950516b0e8a0d7f3b8",
+    "Tests/ProcyclicTorsionFree.lean": "eabd5eff6e2e769e0e7c9f704233c3f1b7bbcd54d95e8ca5222ee4f177f59fca",
+    "Tests/PublicRoot.lean": "550e30490a840e3a1d0f879b9175603ffcf8b145bfc50e05fc9df46ad45e365c",
+    "lake-manifest.json": "8942e073f3e58402683a22f96a61b8e3e1e79c641eb1d12ac627e1d0c45a4bcd",
+    "lakefile.toml": "93f9ea8f1005737c6a2cce6d758d3bd1aa267bdff727f52ce4286ac7c2d5eb52",
+    "lean-toolchain": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+  },
+  "instance_table": [
+    {
+      "className": "TotallyDisconnectedSpace",
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "QuotientGroup.instTotallyDisconnectedSpace",
+      "typeNames": [
+        "HasQuotient.Quotient"
+      ]
+    },
+    {
+      "className": "IsDirected",
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveIndex_isCodirected",
+      "typeNames": [
+        "Profinite.FinitePresentation.SurjectiveIndex"
+      ]
+    },
+    {
+      "className": "Nonempty",
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveIndex_nonempty",
+      "typeNames": [
+        "Profinite.FinitePresentation.SurjectiveIndex"
+      ]
+    },
+    {
+      "className": "DiscreteTopology",
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.diagramObjDiscreteTopology",
+      "typeNames": [
+        "TopCat.carrier"
+      ]
+    },
+    {
+      "className": "DirectedSystem",
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.homStageDirectedSystem",
+      "typeNames": [
+        "ProfiniteGrp.FiniteQuotientHom.HomStage"
+      ]
+    },
+    {
+      "className": "DFunLike",
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.instFunLikeHomStageHomHomStage",
+      "typeNames": [
+        "ProfiniteGrp.FiniteQuotientHom.HomStageHom",
+        "ProfiniteGrp.FiniteQuotientHom.HomStage",
+        "ProfiniteGrp.FiniteQuotientHom.HomStage"
+      ]
+    },
+    {
+      "className": "Nonempty",
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.instNonempty",
+      "typeNames": [
+        "ProfiniteGrp.FreeProduct.AdmissibleQuotient"
+      ]
+    },
+    {
+      "className": "PartialOrder",
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.instPartialOrder",
+      "typeNames": [
+        "ProfiniteGrp.FreeProduct.AdmissibleQuotient"
+      ]
+    },
+    {
+      "className": "SemilatticeInf",
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.instSemilatticeInf",
+      "typeNames": [
+        "ProfiniteGrp.FreeProduct.AdmissibleQuotient"
+      ]
+    },
+    {
+      "className": "ProfiniteGrp.IsProP",
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.product_isProP",
+      "typeNames": [
+        "ProfiniteGrp.FreeProPProduct.product"
+      ]
+    },
+    {
+      "className": "Nonempty",
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instNonempty",
+      "typeNames": [
+        "ProfiniteGrp.MaximalProPQuotient.Quotient"
+      ]
+    },
+    {
+      "className": "OrderTop",
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instOrderTop",
+      "typeNames": [
+        "ProfiniteGrp.MaximalProPQuotient.Quotient"
+      ]
+    },
+    {
+      "className": "PartialOrder",
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instPartialOrder",
+      "typeNames": [
+        "ProfiniteGrp.MaximalProPQuotient.Quotient"
+      ]
+    },
+    {
+      "className": "SemilatticeInf",
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instSemilatticeInf",
+      "typeNames": [
+        "ProfiniteGrp.MaximalProPQuotient.Quotient"
+      ]
+    },
+    {
+      "className": "ProfiniteGrp.IsProP",
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.product_isProP",
+      "typeNames": [
+        "ProfiniteGrp.MaximalProPQuotient.product"
+      ]
+    },
+    {
+      "className": "Subgroup.Normal",
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_normal",
+      "typeNames": [
+        "ClosedSubgroup.toSubgroup"
+      ]
+    }
+  ],
+  "modules": [
+    "ProfiniteGroups",
+    "ProfiniteGroups.ClosedIdealPi",
+    "ProfiniteGroups.ContinuousSection",
+    "ProfiniteGroups.EpiMono",
+    "ProfiniteGroups.FinitePresentation",
+    "ProfiniteGroups.FiniteQuotientHom",
+    "ProfiniteGroups.FreeProduct",
+    "ProfiniteGroups.PiIdealQuotient",
+    "ProfiniteGroups.PrimewisePadic",
+    "ProfiniteGroups.PrimewisePadicIdealTransport",
+    "ProfiniteGroups.PrimewisePadicIdeals",
+    "ProfiniteGroups.PrimewisePadicKernel",
+    "ProfiniteGroups.PrimewisePadicKernelTransport",
+    "ProfiniteGroups.PrimewisePadicQuotients",
+    "ProfiniteGroups.PrimewisePadicSubgroups",
+    "ProfiniteGroups.ProP",
+    "ProfiniteGroups.Procyclic",
+    "ProfiniteGroups.ProcyclicBaseMap",
+    "ProfiniteGroups.ProcyclicGeneratorIndependence",
+    "ProfiniteGroups.ProcyclicHom",
+    "ProfiniteGroups.ProcyclicInvariant",
+    "ProfiniteGroups.ProcyclicPower",
+    "ProfiniteGroups.ProcyclicQuotient",
+    "ProfiniteGroups.ProcyclicRealization",
+    "ProfiniteGroups.ProcyclicTorsionFree",
+    "ProfiniteGroupsTests",
+    "Tests.DirectImports",
+    "Tests.PrimewisePadicIdealTransport",
+    "Tests.PrimewisePadicKernelTransport",
+    "Tests.PrimewisePadicQuotients",
+    "Tests.ProcyclicBaseMap",
+    "Tests.ProcyclicGeneratorIndependence",
+    "Tests.ProcyclicHom",
+    "Tests.ProcyclicInvariant",
+    "Tests.ProcyclicPower",
+    "Tests.ProcyclicQuotient",
+    "Tests.ProcyclicRealization",
+    "Tests.ProcyclicTorsionFree",
+    "Tests.PublicRoot"
+  ],
+  "native_record_sha256": {
+    "ProfiniteGroups": "9a470405d77c5a3ed6019219c73015091e76a5be36b0165f34b97eb5eef07cac",
+    "ProfiniteGroups.ClosedIdealPi": "f99ce7b6ec86167e8de34b2f849ff498a604ccfeba2a692906a3e2aea88660e6",
+    "ProfiniteGroups.ContinuousSection": "bee4470c4719fa87e273ec2ff35f2bbf3e2c5cf8c70931e7c368d54409ea64ee",
+    "ProfiniteGroups.EpiMono": "d4c137480e067a07316f5194bb8f8d968a779ed63cc69d91614b42e62fc061d4",
+    "ProfiniteGroups.FinitePresentation": "5bae02d9d145f135c676cf896afbf754cd0514a840bfa289a68e527976474a06",
+    "ProfiniteGroups.FiniteQuotientHom": "be54f8f0099d7d3f6819d72735908d3f5e9ff67ebe3223931d9efc31bc3b1997",
+    "ProfiniteGroups.FreeProduct": "b5720b9a0a37f6d097ea252c66995c1e9653f3e6371728beb33afedbab83e784",
+    "ProfiniteGroups.PiIdealQuotient": "d2eb097af288daed72a354a47528e2d286b6362234e01f826e73672eaae1b104",
+    "ProfiniteGroups.PrimewisePadic": "5f984f2479c1866d8a5cb0cd8a6fd331f2af7be5b6b4d5154530c3d56a735652",
+    "ProfiniteGroups.PrimewisePadicIdealTransport": "9ed76a73d37a7ab22e5a47d00ecd642e3c466bd9e64717e0f578a937a4e8becf",
+    "ProfiniteGroups.PrimewisePadicIdeals": "df75066654b3c1bac29c4dccd030775ba744526871567ff8850db3a79281c062",
+    "ProfiniteGroups.PrimewisePadicKernel": "8bedef8094d2c2195e29d0a4d86a8d7a8431c872ac555c996a9809215cd9f336",
+    "ProfiniteGroups.PrimewisePadicKernelTransport": "c4879c8611f5ce1b788cf1c6568c436c5b294c84510014e1c65b28b33dd4ff24",
+    "ProfiniteGroups.PrimewisePadicQuotients": "36ac81ef288c4aad29ad9306a8af57c39cb3b02345e867c80aa8d31d19d87c6e",
+    "ProfiniteGroups.PrimewisePadicSubgroups": "50752360ae5ed0368f341405e64efc862d6dda2e3b34826d2c4cac0101dcc14e",
+    "ProfiniteGroups.ProP": "f5ebaefed64d6eb1f0d0fccce59933318195f804661be0d7409c5a7b14884cbb",
+    "ProfiniteGroups.Procyclic": "49ce4a777d714cf466944ce3227c13264516bd1ca70a1bab59a4fd04501def59",
+    "ProfiniteGroups.ProcyclicBaseMap": "f8ec60e90bc2f33242f0c270cc0974a2630b0ba3480967526063752091723bfa",
+    "ProfiniteGroups.ProcyclicGeneratorIndependence": "8918b0a48ae99e00240e285b702bbe62e65d6f21350f8108cb58ce773e52a6f5",
+    "ProfiniteGroups.ProcyclicHom": "512cbf082d5a4e1c12cce3caffed1747f98f404152114d448abf61cbdd9f4f15",
+    "ProfiniteGroups.ProcyclicInvariant": "d9f0e06df36196aa3aad996e2517a4ee1346453a03d5333dfe1417ec815473c5",
+    "ProfiniteGroups.ProcyclicPower": "49a1291dca14c01a1b6aa2a057b320d0d288d028754b2530338942a60dd422f8",
+    "ProfiniteGroups.ProcyclicQuotient": "be947fded2baf36ac63af6683682e86e37550785a5acc3303bf3329ef4dfbb5e",
+    "ProfiniteGroups.ProcyclicRealization": "d9408747228169396b28d53fb7355e4a3fd1299f3e29cb5a0860c891e45c3803",
+    "ProfiniteGroups.ProcyclicTorsionFree": "fad96bf92ea86b017c01a6445ad77b86a6a0f38a726498d2b0d86b0ea43bed4b",
+    "ProfiniteGroupsTests": "50b5edfbffd0aeecb4a13cb777dc4d0917d17b993d450dd35c5170b47099b591",
+    "Tests.DirectImports": "c7e938f4312ecfab1c27b4c4a2f447625d2fdc88196a8521ac569e79a2adbd86",
+    "Tests.PrimewisePadicIdealTransport": "ce279544c63d5a732d18a9fcc8a876af16dedfe94796b745e4b1ac821b1a8482",
+    "Tests.PrimewisePadicKernelTransport": "4f92db07788a310d4d2fbdb0c62252d451e0304503c04eeda0b24dc21ae04364",
+    "Tests.PrimewisePadicQuotients": "b484925fdb0b226ccae1c89050bd5beeb8f16e910018ac10bc1c43833a0349b4",
+    "Tests.ProcyclicBaseMap": "1028305f3d8f5e01dbec95916233ed0d6f5ae311d0befae5cfc2800eedd3b0c6",
+    "Tests.ProcyclicGeneratorIndependence": "84dfdeb826d3482b811892dbeb827563d1ebbc51bd4a213eded8f7490bdc36aa",
+    "Tests.ProcyclicHom": "f3f3b0052ecee2ec999348c81d5e2e1bee67756bca57470cf4ff840734b56b05",
+    "Tests.ProcyclicInvariant": "8e0ff29ca0c7aa6abe2f9dd2ac65dd723f657799e08d6cb0802c5749b60d2ac8",
+    "Tests.ProcyclicPower": "566b45ee7fa20f5d6f196af22cf63146e929b3acde5cc346b94849209b4d9f13",
+    "Tests.ProcyclicQuotient": "0b30da1670e9d88ac5c1bee6f4d537385e84c9cf8afc8bfa6e7f957573ec029d",
+    "Tests.ProcyclicRealization": "33c5faf4260a2b295bc67dfbdfe2ed2165ffc270f04464780eca4c4f996abb7a",
+    "Tests.ProcyclicTorsionFree": "bbc80dba7db2c22d6cc3c1b890d65533aa7efc6b8f4e86feaed52b26b174cb1f",
+    "Tests.PublicRoot": "b5462be20cdaf74e9e0bc57acd0f58d41ea5ea61a5cb446a90e26e0aa8d7f332"
+  },
+  "normalized_record_sha256": {
+    "ProfiniteGroups": "9a470405d77c5a3ed6019219c73015091e76a5be36b0165f34b97eb5eef07cac",
+    "ProfiniteGroups.ClosedIdealPi": "f99ce7b6ec86167e8de34b2f849ff498a604ccfeba2a692906a3e2aea88660e6",
+    "ProfiniteGroups.ContinuousSection": "bee4470c4719fa87e273ec2ff35f2bbf3e2c5cf8c70931e7c368d54409ea64ee",
+    "ProfiniteGroups.EpiMono": "d4c137480e067a07316f5194bb8f8d968a779ed63cc69d91614b42e62fc061d4",
+    "ProfiniteGroups.FinitePresentation": "5bae02d9d145f135c676cf896afbf754cd0514a840bfa289a68e527976474a06",
+    "ProfiniteGroups.FiniteQuotientHom": "be54f8f0099d7d3f6819d72735908d3f5e9ff67ebe3223931d9efc31bc3b1997",
+    "ProfiniteGroups.FreeProduct": "b5720b9a0a37f6d097ea252c66995c1e9653f3e6371728beb33afedbab83e784",
+    "ProfiniteGroups.PiIdealQuotient": "d2eb097af288daed72a354a47528e2d286b6362234e01f826e73672eaae1b104",
+    "ProfiniteGroups.PrimewisePadic": "5f984f2479c1866d8a5cb0cd8a6fd331f2af7be5b6b4d5154530c3d56a735652",
+    "ProfiniteGroups.PrimewisePadicIdealTransport": "9ed76a73d37a7ab22e5a47d00ecd642e3c466bd9e64717e0f578a937a4e8becf",
+    "ProfiniteGroups.PrimewisePadicIdeals": "df75066654b3c1bac29c4dccd030775ba744526871567ff8850db3a79281c062",
+    "ProfiniteGroups.PrimewisePadicKernel": "8bedef8094d2c2195e29d0a4d86a8d7a8431c872ac555c996a9809215cd9f336",
+    "ProfiniteGroups.PrimewisePadicKernelTransport": "c4879c8611f5ce1b788cf1c6568c436c5b294c84510014e1c65b28b33dd4ff24",
+    "ProfiniteGroups.PrimewisePadicQuotients": "36ac81ef288c4aad29ad9306a8af57c39cb3b02345e867c80aa8d31d19d87c6e",
+    "ProfiniteGroups.PrimewisePadicSubgroups": "50752360ae5ed0368f341405e64efc862d6dda2e3b34826d2c4cac0101dcc14e",
+    "ProfiniteGroups.ProP": "f5ebaefed64d6eb1f0d0fccce59933318195f804661be0d7409c5a7b14884cbb",
+    "ProfiniteGroups.Procyclic": "49ce4a777d714cf466944ce3227c13264516bd1ca70a1bab59a4fd04501def59",
+    "ProfiniteGroups.ProcyclicBaseMap": "f8ec60e90bc2f33242f0c270cc0974a2630b0ba3480967526063752091723bfa",
+    "ProfiniteGroups.ProcyclicGeneratorIndependence": "8918b0a48ae99e00240e285b702bbe62e65d6f21350f8108cb58ce773e52a6f5",
+    "ProfiniteGroups.ProcyclicHom": "512cbf082d5a4e1c12cce3caffed1747f98f404152114d448abf61cbdd9f4f15",
+    "ProfiniteGroups.ProcyclicInvariant": "d9f0e06df36196aa3aad996e2517a4ee1346453a03d5333dfe1417ec815473c5",
+    "ProfiniteGroups.ProcyclicPower": "49a1291dca14c01a1b6aa2a057b320d0d288d028754b2530338942a60dd422f8",
+    "ProfiniteGroups.ProcyclicQuotient": "be947fded2baf36ac63af6683682e86e37550785a5acc3303bf3329ef4dfbb5e",
+    "ProfiniteGroups.ProcyclicRealization": "d9408747228169396b28d53fb7355e4a3fd1299f3e29cb5a0860c891e45c3803",
+    "ProfiniteGroups.ProcyclicTorsionFree": "fad96bf92ea86b017c01a6445ad77b86a6a0f38a726498d2b0d86b0ea43bed4b",
+    "ProfiniteGroupsTests": "50b5edfbffd0aeecb4a13cb777dc4d0917d17b993d450dd35c5170b47099b591",
+    "Tests.DirectImports": "c7e938f4312ecfab1c27b4c4a2f447625d2fdc88196a8521ac569e79a2adbd86",
+    "Tests.PrimewisePadicIdealTransport": "ce279544c63d5a732d18a9fcc8a876af16dedfe94796b745e4b1ac821b1a8482",
+    "Tests.PrimewisePadicKernelTransport": "4f92db07788a310d4d2fbdb0c62252d451e0304503c04eeda0b24dc21ae04364",
+    "Tests.PrimewisePadicQuotients": "b484925fdb0b226ccae1c89050bd5beeb8f16e910018ac10bc1c43833a0349b4",
+    "Tests.ProcyclicBaseMap": "1028305f3d8f5e01dbec95916233ed0d6f5ae311d0befae5cfc2800eedd3b0c6",
+    "Tests.ProcyclicGeneratorIndependence": "84dfdeb826d3482b811892dbeb827563d1ebbc51bd4a213eded8f7490bdc36aa",
+    "Tests.ProcyclicHom": "f3f3b0052ecee2ec999348c81d5e2e1bee67756bca57470cf4ff840734b56b05",
+    "Tests.ProcyclicInvariant": "8e0ff29ca0c7aa6abe2f9dd2ac65dd723f657799e08d6cb0802c5749b60d2ac8",
+    "Tests.ProcyclicPower": "566b45ee7fa20f5d6f196af22cf63146e929b3acde5cc346b94849209b4d9f13",
+    "Tests.ProcyclicQuotient": "0b30da1670e9d88ac5c1bee6f4d537385e84c9cf8afc8bfa6e7f957573ec029d",
+    "Tests.ProcyclicRealization": "33c5faf4260a2b295bc67dfbdfe2ed2165ffc270f04464780eca4c4f996abb7a",
+    "Tests.ProcyclicTorsionFree": "bbc80dba7db2c22d6cc3c1b890d65533aa7efc6b8f4e86feaed52b26b174cb1f",
+    "Tests.PublicRoot": "b5462be20cdaf74e9e0bc57acd0f58d41ea5ea61a5cb446a90e26e0aa8d7f332"
+  },
+  "production_declarations": [
+    {
+      "kind": "theorem",
+      "line": 27,
+      "module": "ProfiniteGroups.ClosedIdealPi",
+      "name": "Ideal.eq_pi_map_evalRingHom_of_isClosed"
+    },
+    {
+      "kind": "theorem",
+      "line": 43,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Topology.IsOpenQuotientMap.totallyDisconnectedSpace"
+    },
+    {
+      "kind": "instance",
+      "line": 64,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "QuotientGroup.instTotallyDisconnectedSpace"
+    },
+    {
+      "kind": "theorem",
+      "line": 75,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "IsLocalHomeomorph.exists_continuous_section_of_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 123,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Subgroup.quotientMapOfLE_isLocallyInjective_of_isOpen"
+    },
+    {
+      "kind": "theorem",
+      "line": 159,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Subgroup.quotientMapOfLE_isLocalHomeomorph_of_isOpen"
+    },
+    {
+      "kind": "theorem",
+      "line": 181,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Subgroup.quotientMapOfLE_exists_continuous_section_of_isOpen"
+    },
+    {
+      "kind": "theorem",
+      "line": 194,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Subgroup.quotientMapOfLE_exists_continuous_section"
+    },
+    {
+      "kind": "theorem",
+      "line": 204,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Subgroup.exists_intermediate_open_subgroupOf_of_lt"
+    },
+    {
+      "kind": "theorem",
+      "line": 236,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Subgroup.exists_strict_continuous_section_refinement"
+    },
+    {
+      "kind": "theorem",
+      "line": 396,
+      "module": "ProfiniteGroups.ContinuousSection",
+      "name": "Subgroup.quotientMapOfLE_exists_continuous_section_of_isClosed"
+    },
+    {
+      "kind": "theorem",
+      "line": 34,
+      "module": "ProfiniteGroups.EpiMono",
+      "name": "ProfiniteGrp.mono_iff_injective"
+    },
+    {
+      "kind": "theorem",
+      "line": 106,
+      "module": "ProfiniteGroups.EpiMono",
+      "name": "ProfiniteGrp.epi_iff_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 152,
+      "module": "ProfiniteGroups.EpiMono",
+      "name": "ProfiniteAddGrp.mono_iff_injective"
+    },
+    {
+      "kind": "def",
+      "line": 36,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveSourceStage"
+    },
+    {
+      "kind": "def",
+      "line": 40,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveStageMap"
+    },
+    {
+      "kind": "def",
+      "line": 44,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveIndex"
+    },
+    {
+      "kind": "theorem",
+      "line": 49,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveStageMap_injective"
+    },
+    {
+      "kind": "theorem",
+      "line": 58,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveIndex_initial"
+    },
+    {
+      "kind": "def",
+      "line": 95,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveFintypeMap"
+    },
+    {
+      "kind": "def",
+      "line": 105,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveSourceDiagram"
+    },
+    {
+      "kind": "def",
+      "line": 109,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveDiagramMap"
+    },
+    {
+      "kind": "def",
+      "line": 114,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveSourceCone"
+    },
+    {
+      "kind": "def",
+      "line": 118,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveSourceLimit"
+    },
+    {
+      "kind": "theorem",
+      "line": 124,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveFintypeMap_app_injective"
+    },
+    {
+      "kind": "def",
+      "line": 130,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.injectiveConeHom"
+    },
+    {
+      "kind": "def",
+      "line": 142,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.SurjectiveIndex"
+    },
+    {
+      "kind": "instance",
+      "line": 148,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveIndex_nonempty"
+    },
+    {
+      "kind": "instance",
+      "line": 154,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveIndex_isCodirected"
+    },
+    {
+      "kind": "def",
+      "line": 164,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveSourceIndex"
+    },
+    {
+      "kind": "def",
+      "line": 168,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveTargetIndex"
+    },
+    {
+      "kind": "theorem",
+      "line": 172,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveSourceIndex_initial"
+    },
+    {
+      "kind": "theorem",
+      "line": 182,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveTargetIndex_initial"
+    },
+    {
+      "kind": "def",
+      "line": 190,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveFintypeMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 201,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveFintypeMap_app_surjective"
+    },
+    {
+      "kind": "def",
+      "line": 210,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveSourceDiagram"
+    },
+    {
+      "kind": "def",
+      "line": 214,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveTargetDiagram"
+    },
+    {
+      "kind": "def",
+      "line": 218,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveDiagramMap"
+    },
+    {
+      "kind": "def",
+      "line": 223,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveSourceCone"
+    },
+    {
+      "kind": "def",
+      "line": 227,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveTargetCone"
+    },
+    {
+      "kind": "def",
+      "line": 231,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveSourceLimit"
+    },
+    {
+      "kind": "def",
+      "line": 238,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveTargetLimit"
+    },
+    {
+      "kind": "def",
+      "line": 245,
+      "module": "ProfiniteGroups.FinitePresentation",
+      "name": "Profinite.FinitePresentation.surjectiveConeHom"
+    },
+    {
+      "kind": "def",
+      "line": 31,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.StageIndex"
+    },
+    {
+      "kind": "instance",
+      "line": 36,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.diagramObjDiscreteTopology"
+    },
+    {
+      "kind": "def",
+      "line": 43,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomStage"
+    },
+    {
+      "kind": "def",
+      "line": 48,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.quotientTransition"
+    },
+    {
+      "kind": "theorem",
+      "line": 55,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.quotientTransition_mk"
+    },
+    {
+      "kind": "structure",
+      "line": 62,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomStageHom"
+    },
+    {
+      "kind": "ctor",
+      "line": 62,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomStageHom.mk"
+    },
+    {
+      "kind": "def",
+      "line": 66,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomStageHom.toFun"
+    },
+    {
+      "kind": "instance",
+      "line": 68,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.instFunLikeHomStageHomHomStage"
+    },
+    {
+      "kind": "def",
+      "line": 79,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.homStageMap"
+    },
+    {
+      "kind": "instance",
+      "line": 85,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.homStageDirectedSystem"
+    },
+    {
+      "kind": "def",
+      "line": 98,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit"
+    },
+    {
+      "kind": "def",
+      "line": 103,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.stageToContinuousHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 114,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.stageToContinuousHom_compat"
+    },
+    {
+      "kind": "theorem",
+      "line": 124,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.stageToContinuousHom_injective"
+    },
+    {
+      "kind": "def",
+      "line": 137,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.toContinuousHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 145,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.toContinuousHom_mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 154,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.toContinuousHom_injective"
+    },
+    {
+      "kind": "def",
+      "line": 164,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.kernelOpenNormal"
+    },
+    {
+      "kind": "def",
+      "line": 176,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.kernelFiniteQuotientMap"
+    },
+    {
+      "kind": "def",
+      "line": 182,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.ofContinuousHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 189,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.toContinuousHom_ofContinuousHom"
+    },
+    {
+      "kind": "def",
+      "line": 201,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.continuousHomEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 215,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.continuousHomEquiv_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 225,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.continuousHomEquiv_symm_apply"
+    },
+    {
+      "kind": "def",
+      "line": 235,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.postcomp"
+    },
+    {
+      "kind": "theorem",
+      "line": 243,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomColimit.toContinuousHom_postcomp"
+    },
+    {
+      "kind": "def",
+      "line": 253,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit"
+    },
+    {
+      "kind": "def",
+      "line": 259,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit.cone"
+    },
+    {
+      "kind": "def",
+      "line": 277,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit.toHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 283,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit.toHom_fac"
+    },
+    {
+      "kind": "theorem",
+      "line": 285,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit.toHom_fac_assoc"
+    },
+    {
+      "kind": "def",
+      "line": 291,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit.ofHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 303,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit.toHom_ofHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 319,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.HomLimit.ofHom_toHom"
+    },
+    {
+      "kind": "def",
+      "line": 334,
+      "module": "ProfiniteGroups.FiniteQuotientHom",
+      "name": "ProfiniteGrp.FiniteQuotientHom.homEquivHomLimit"
+    },
+    {
+      "kind": "def",
+      "line": 46,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.Abstract"
+    },
+    {
+      "kind": "structure",
+      "line": 50,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient"
+    },
+    {
+      "kind": "ctor",
+      "line": 50,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 53,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.ext"
+    },
+    {
+      "kind": "theorem",
+      "line": 53,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.ext_iff"
+    },
+    {
+      "kind": "def",
+      "line": 54,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.toFiniteIndexNormalSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 55,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.isOpen_comap'"
+    },
+    {
+      "kind": "theorem",
+      "line": 62,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.toFiniteIndexNormalSubgroup_injective"
+    },
+    {
+      "kind": "instance",
+      "line": 71,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.instPartialOrder"
+    },
+    {
+      "kind": "def",
+      "line": 75,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.inf"
+    },
+    {
+      "kind": "instance",
+      "line": 90,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.instSemilatticeInf"
+    },
+    {
+      "kind": "def",
+      "line": 102,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.top"
+    },
+    {
+      "kind": "instance",
+      "line": 108,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.AdmissibleQuotient.instNonempty"
+    },
+    {
+      "kind": "def",
+      "line": 112,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.finiteGrpDiagram"
+    },
+    {
+      "kind": "def",
+      "line": 119,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.diagram"
+    },
+    {
+      "kind": "def",
+      "line": 123,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.product"
+    },
+    {
+      "kind": "def",
+      "line": 127,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.etaFn"
+    },
+    {
+      "kind": "def",
+      "line": 132,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.eta"
+    },
+    {
+      "kind": "theorem",
+      "line": 141,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.denseRange"
+    },
+    {
+      "kind": "def",
+      "line": 185,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.of"
+    },
+    {
+      "kind": "def",
+      "line": 219,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.abstractLift"
+    },
+    {
+      "kind": "theorem",
+      "line": 224,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.abstractLift_of"
+    },
+    {
+      "kind": "def",
+      "line": 230,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.preimage"
+    },
+    {
+      "kind": "theorem",
+      "line": 243,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.preimage_le"
+    },
+    {
+      "kind": "def",
+      "line": 249,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.quotientMap"
+    },
+    {
+      "kind": "def",
+      "line": 256,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.lift"
+    },
+    {
+      "kind": "theorem",
+      "line": 279,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.lift_eta"
+    },
+    {
+      "kind": "theorem",
+      "line": 281,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.lift_eta_assoc"
+    },
+    {
+      "kind": "theorem",
+      "line": 292,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.lift_unique"
+    },
+    {
+      "kind": "theorem",
+      "line": 304,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.lift_of"
+    },
+    {
+      "kind": "theorem",
+      "line": 354,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.of_injective"
+    },
+    {
+      "kind": "theorem",
+      "line": 364,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.factors_topologically_generate"
+    },
+    {
+      "kind": "theorem",
+      "line": 383,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.hom_ext"
+    },
+    {
+      "kind": "theorem",
+      "line": 385,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.hom_ext_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 397,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.lift_comp"
+    },
+    {
+      "kind": "theorem",
+      "line": 398,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.lift_comp_assoc"
+    },
+    {
+      "kind": "def",
+      "line": 407,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.homEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 418,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.homEquiv_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 424,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.homEquiv_symm_apply"
+    },
+    {
+      "kind": "def",
+      "line": 430,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.emptyIsInitial"
+    },
+    {
+      "kind": "def",
+      "line": 438,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.punitIso"
+    },
+    {
+      "kind": "def",
+      "line": 463,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.reindexIso"
+    },
+    {
+      "kind": "theorem",
+      "line": 504,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.reindexIso_hom_of"
+    },
+    {
+      "kind": "def",
+      "line": 514,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.map"
+    },
+    {
+      "kind": "theorem",
+      "line": 519,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.map_of"
+    },
+    {
+      "kind": "theorem",
+      "line": 526,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.map_id"
+    },
+    {
+      "kind": "theorem",
+      "line": 536,
+      "module": "ProfiniteGroups.FreeProduct",
+      "name": "ProfiniteGrp.FreeProduct.map_comp"
+    },
+    {
+      "kind": "def",
+      "line": 29,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 36,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientMap_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 44,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientMap_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 53,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.ker_piQuotientMap"
+    },
+    {
+      "kind": "def",
+      "line": 66,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientRingEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 75,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientRingEquiv_mk_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 85,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientRingEquiv_mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 96,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.isOpenQuotientMap_piQuotientMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 106,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.continuous_piQuotientRingEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 121,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.continuous_piQuotientRingEquiv_symm"
+    },
+    {
+      "kind": "def",
+      "line": 145,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientContinuousAddEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 157,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientContinuousAddEquiv_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 167,
+      "module": "ProfiniteGroups.PiIdealQuotient",
+      "name": "Ideal.piQuotientContinuousAddEquiv_mk_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 37,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups"
+    },
+    {
+      "kind": "def",
+      "line": 39,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.padicFactor"
+    },
+    {
+      "kind": "def",
+      "line": 48,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.primewisePadic"
+    },
+    {
+      "kind": "def",
+      "line": 53,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.primewisePadicDiagonal"
+    },
+    {
+      "kind": "theorem",
+      "line": 60,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.primewisePadicDiagonal_apply"
+    },
+    {
+      "kind": "def",
+      "line": 68,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.primewisePadicGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 72,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.primewisePadicGenerator_zpow"
+    },
+    {
+      "kind": "theorem",
+      "line": 83,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.denseRange_primewisePadicDiagonal"
+    },
+    {
+      "kind": "theorem",
+      "line": 145,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.primewisePadicGenerator_isTopologicalGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 157,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.primewisePadic_isProcyclic"
+    },
+    {
+      "kind": "def",
+      "line": 161,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionToPrimewisePadic"
+    },
+    {
+      "kind": "theorem",
+      "line": 167,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionToPrimewisePadic_eta_int"
+    },
+    {
+      "kind": "theorem",
+      "line": 179,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionToPrimewisePadic_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 486,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionToPrimewisePadic_injective"
+    },
+    {
+      "kind": "def",
+      "line": 495,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionEquivPrimewisePadic"
+    },
+    {
+      "kind": "theorem",
+      "line": 507,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionEquivPrimewisePadic_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 516,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionEquivPrimewisePadic_eta_int"
+    },
+    {
+      "kind": "theorem",
+      "line": 526,
+      "module": "ProfiniteGroups.PrimewisePadic",
+      "name": "ProfiniteGrp.integerCompletionEquivPrimewisePadic_symm_diagonal"
+    },
+    {
+      "kind": "theorem",
+      "line": 25,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups_3"
+    },
+    {
+      "kind": "def",
+      "line": 27,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicChangeUniverseRingEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 32,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicChangeUniverseRingEquiv_down"
+    },
+    {
+      "kind": "theorem",
+      "line": 39,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicChangeUniverseRingEquiv_self"
+    },
+    {
+      "kind": "theorem",
+      "line": 47,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicChangeUniverseRingEquiv_symm"
+    },
+    {
+      "kind": "theorem",
+      "line": 56,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicChangeUniverseRingEquiv_trans"
+    },
+    {
+      "kind": "def",
+      "line": 66,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicRingChangeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 71,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicRingChangeUniverse_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 79,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicRingChangeUniverse_down"
+    },
+    {
+      "kind": "theorem",
+      "line": 86,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicRingChangeUniverse_intCast"
+    },
+    {
+      "kind": "theorem",
+      "line": 92,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicRingChangeUniverse_self"
+    },
+    {
+      "kind": "theorem",
+      "line": 98,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicRingChangeUniverse_symm"
+    },
+    {
+      "kind": "theorem",
+      "line": 105,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicRingChangeUniverse_trans"
+    },
+    {
+      "kind": "theorem",
+      "line": 113,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicIdealExponent_comap_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 138,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicIdealExponent_map_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 149,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.liftedPadicIdealOfExponent_comap_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 170,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "Ideal.map_evalRingHom_comap_piCongrRight"
+    },
+    {
+      "kind": "theorem",
+      "line": 194,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicIdealExponents_comap_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 207,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicIdealExponents_map_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 218,
+      "module": "ProfiniteGroups.PrimewisePadicIdealTransport",
+      "name": "ProfiniteGrp.primewisePadicIdealOfExponents_comap_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 34,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups_2"
+    },
+    {
+      "kind": "def",
+      "line": 36,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealOrderIso"
+    },
+    {
+      "kind": "def",
+      "line": 43,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealExponent"
+    },
+    {
+      "kind": "def",
+      "line": 48,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealOfExponent"
+    },
+    {
+      "kind": "theorem",
+      "line": 53,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealExponent_idealOfExponent"
+    },
+    {
+      "kind": "theorem",
+      "line": 60,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealOfExponent_exponent"
+    },
+    {
+      "kind": "theorem",
+      "line": 67,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealOfExponent_natCast"
+    },
+    {
+      "kind": "theorem",
+      "line": 77,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealOfExponent_zero"
+    },
+    {
+      "kind": "theorem",
+      "line": 83,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.liftedPadicIdealOfExponent_top"
+    },
+    {
+      "kind": "theorem",
+      "line": 90,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.isClosed_liftedPadicIdeal"
+    },
+    {
+      "kind": "def",
+      "line": 103,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.primewisePadicIdealExponents"
+    },
+    {
+      "kind": "def",
+      "line": 110,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.primewisePadicIdealOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 115,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.mem_primewisePadicIdealOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 124,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.isClosed_primewisePadicIdealOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 138,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.eq_primewisePadicIdealOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 154,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.primewisePadicIdealExponents_idealOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 165,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.primewisePadicIdealOfExponents_injective"
+    },
+    {
+      "kind": "theorem",
+      "line": 174,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.primewisePadicIdealOfExponents_inj"
+    },
+    {
+      "kind": "theorem",
+      "line": 183,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.primewisePadicIdealOfExponents_zero"
+    },
+    {
+      "kind": "theorem",
+      "line": 190,
+      "module": "ProfiniteGroups.PrimewisePadicIdeals",
+      "name": "ProfiniteGrp.primewisePadicIdealOfExponents_top"
+    },
+    {
+      "kind": "theorem",
+      "line": 29,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups_1"
+    },
+    {
+      "kind": "def",
+      "line": 31,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "ProfiniteGrp.primewisePadicRing"
+    },
+    {
+      "kind": "def",
+      "line": 35,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "ProfiniteGrp.primewisePadicRingMultiplicativeEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 47,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "ProfiniteGrp.denseRange_intCast_primewisePadicRing"
+    },
+    {
+      "kind": "def",
+      "line": 67,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "AddSubgroup.toIdealOfIsClosedOfDenseIntCast"
+    },
+    {
+      "kind": "theorem",
+      "line": 93,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "AddSubgroup.mem_toIdealOfIsClosedOfDenseIntCast"
+    },
+    {
+      "kind": "def",
+      "line": 107,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal"
+    },
+    {
+      "kind": "theorem",
+      "line": 124,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "ProfiniteGrp.mem_primewisePadicKernelIdeal"
+    },
+    {
+      "kind": "theorem",
+      "line": 135,
+      "module": "ProfiniteGroups.PrimewisePadicKernel",
+      "name": "ProfiniteGrp.isClosed_primewisePadicKernelIdeal"
+    },
+    {
+      "kind": "theorem",
+      "line": 26,
+      "module": "ProfiniteGroups.PrimewisePadicKernelTransport",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse_ringMultiplicativeEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 39,
+      "module": "ProfiniteGroups.PrimewisePadicKernelTransport",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal_comp_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 54,
+      "module": "ProfiniteGroups.PrimewisePadicKernelTransport",
+      "name": "ProfiniteGrp.primewisePadicKernelExponents_comp_changeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 67,
+      "module": "ProfiniteGroups.PrimewisePadicKernelTransport",
+      "name": "ProfiniteGrp.primewisePadicKernelExponents_baseMapOfGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 30,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups_3"
+    },
+    {
+      "kind": "def",
+      "line": 32,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicToZModPow"
+    },
+    {
+      "kind": "theorem",
+      "line": 37,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicToZModPow_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 44,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicToZModPow_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 49,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.ker_liftedPadicToZModPow"
+    },
+    {
+      "kind": "def",
+      "line": 62,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientRingEquivZMod"
+    },
+    {
+      "kind": "theorem",
+      "line": 72,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientRingEquivZMod_mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 84,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.isOpen_liftedPadicIdealOfExponent_natCast"
+    },
+    {
+      "kind": "theorem",
+      "line": 95,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.discreteTopology_liftedPadicQuotient_natCast"
+    },
+    {
+      "kind": "def",
+      "line": 105,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivZMod"
+    },
+    {
+      "kind": "theorem",
+      "line": 115,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivZMod_apply"
+    },
+    {
+      "kind": "def",
+      "line": 125,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivZero"
+    },
+    {
+      "kind": "def",
+      "line": 135,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientRingEquivTop"
+    },
+    {
+      "kind": "theorem",
+      "line": 142,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientRingEquivTop_mk"
+    },
+    {
+      "kind": "def",
+      "line": 151,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivTop"
+    },
+    {
+      "kind": "theorem",
+      "line": 168,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivTop_apply"
+    },
+    {
+      "kind": "def",
+      "line": 178,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.padicQuotientFactorTop"
+    },
+    {
+      "kind": "def",
+      "line": 189,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.padicQuotientFactorNat"
+    },
+    {
+      "kind": "def",
+      "line": 201,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.padicQuotientFactor"
+    },
+    {
+      "kind": "theorem",
+      "line": 209,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.padicQuotientFactor_top"
+    },
+    {
+      "kind": "theorem",
+      "line": 215,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.padicQuotientFactor_natCast"
+    },
+    {
+      "kind": "def",
+      "line": 221,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.zmodContinuousAddEquivULift"
+    },
+    {
+      "kind": "def",
+      "line": 228,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivFactor"
+    },
+    {
+      "kind": "theorem",
+      "line": 244,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivFactor_top_mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 255,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.liftedPadicQuotientContinuousAddEquivFactor_natCast_mk"
+    },
+    {
+      "kind": "def",
+      "line": 272,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.primewisePadicQuotientModel"
+    },
+    {
+      "kind": "def",
+      "line": 277,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.continuousAddEquivPiCongrRight"
+    },
+    {
+      "kind": "theorem",
+      "line": 287,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.continuousAddEquivPiCongrRight_apply"
+    },
+    {
+      "kind": "def",
+      "line": 297,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.primewisePadicQuotientContinuousAddEquivModel"
+    },
+    {
+      "kind": "theorem",
+      "line": 309,
+      "module": "ProfiniteGroups.PrimewisePadicQuotients",
+      "name": "ProfiniteGrp.primewisePadicQuotientContinuousAddEquivModel_mk_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 29,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups_3"
+    },
+    {
+      "kind": "theorem",
+      "line": 31,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicIdealOfExponents_le_iff"
+    },
+    {
+      "kind": "def",
+      "line": 54,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupIdeal"
+    },
+    {
+      "kind": "def",
+      "line": 62,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupExponents"
+    },
+    {
+      "kind": "def",
+      "line": 68,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 74,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.mem_primewisePadicClosedAddSubgroupOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 83,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOfExponents_exponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 102,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupExponents_ofExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 118,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOfExponents_injective"
+    },
+    {
+      "kind": "theorem",
+      "line": 126,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOfExponents_inj"
+    },
+    {
+      "kind": "theorem",
+      "line": 135,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOfExponents_le_iff"
+    },
+    {
+      "kind": "def",
+      "line": 145,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOrderIso"
+    },
+    {
+      "kind": "theorem",
+      "line": 171,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOfExponents_zero_toAddSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 179,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupOfExponents_top_toAddSubgroup"
+    },
+    {
+      "kind": "def",
+      "line": 188,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupToClosedSubgroup"
+    },
+    {
+      "kind": "def",
+      "line": 201,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupToClosedAddSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 216,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupToClosedAddSubgroup_toClosedSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 233,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupToClosedSubgroup_toClosedAddSubgroup"
+    },
+    {
+      "kind": "def",
+      "line": 247,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedAddSubgroupClosedSubgroupOrderIso"
+    },
+    {
+      "kind": "def",
+      "line": 268,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupOfExponents"
+    },
+    {
+      "kind": "def",
+      "line": 275,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 282,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.mem_primewisePadicClosedSubgroupOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 306,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupOfExponents_exponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 318,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupExponents_ofExponents"
+    },
+    {
+      "kind": "def",
+      "line": 330,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupOrderIso"
+    },
+    {
+      "kind": "theorem",
+      "line": 337,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupOfExponents_le_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 356,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupOfExponents_inj"
+    },
+    {
+      "kind": "theorem",
+      "line": 368,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupOfExponents_zero_toSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 377,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicClosedSubgroupOfExponents_top_toSubgroup"
+    },
+    {
+      "kind": "def",
+      "line": 394,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicKernelExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 402,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal_eq_idealOfExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 410,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadic_map_eq_one_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 479,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadic_injective_iff_kernelExponents_eq_top"
+    },
+    {
+      "kind": "theorem",
+      "line": 500,
+      "module": "ProfiniteGroups.PrimewisePadicSubgroups",
+      "name": "ProfiniteGrp.primewisePadic_eq_one_iff_kernelExponents_eq_zero"
+    },
+    {
+      "kind": "theorem",
+      "line": 45,
+      "module": "ProfiniteGroups.ProP",
+      "name": "IsPGroup.prod"
+    },
+    {
+      "kind": "class",
+      "line": 62,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.IsProP"
+    },
+    {
+      "kind": "ctor",
+      "line": 62,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.IsProP.mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 65,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.IsProP.quotient_isPGroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 72,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.IsProP.quotient"
+    },
+    {
+      "kind": "theorem",
+      "line": 78,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.IsProP.of_isPGroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 82,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.IsProP.of_continuousMulEquiv"
+    },
+    {
+      "kind": "structure",
+      "line": 104,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient"
+    },
+    {
+      "kind": "ctor",
+      "line": 104,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 105,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.ext"
+    },
+    {
+      "kind": "theorem",
+      "line": 105,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.ext_iff"
+    },
+    {
+      "kind": "def",
+      "line": 106,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.toOpenNormalSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 107,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.isPGroup'"
+    },
+    {
+      "kind": "theorem",
+      "line": 112,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.toOpenNormalSubgroup_injective"
+    },
+    {
+      "kind": "instance",
+      "line": 120,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instPartialOrder"
+    },
+    {
+      "kind": "theorem",
+      "line": 125,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.quotient_inf_isPGroup"
+    },
+    {
+      "kind": "def",
+      "line": 148,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.inf"
+    },
+    {
+      "kind": "instance",
+      "line": 154,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instSemilatticeInf"
+    },
+    {
+      "kind": "def",
+      "line": 165,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.topOpenNormal"
+    },
+    {
+      "kind": "def",
+      "line": 170,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.top"
+    },
+    {
+      "kind": "instance",
+      "line": 179,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instNonempty"
+    },
+    {
+      "kind": "instance",
+      "line": 181,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.Quotient.instOrderTop"
+    },
+    {
+      "kind": "def",
+      "line": 191,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.finiteGrpDiagram"
+    },
+    {
+      "kind": "def",
+      "line": 199,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.diagram"
+    },
+    {
+      "kind": "def",
+      "line": 203,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.product"
+    },
+    {
+      "kind": "def",
+      "line": 207,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.etaFn"
+    },
+    {
+      "kind": "def",
+      "line": 211,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.eta"
+    },
+    {
+      "kind": "theorem",
+      "line": 237,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.denseRange"
+    },
+    {
+      "kind": "theorem",
+      "line": 258,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.eta_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 267,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.exists_quotient_le_comap"
+    },
+    {
+      "kind": "def",
+      "line": 299,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.openQuotientMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 310,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.quotientMap_surjective"
+    },
+    {
+      "kind": "instance",
+      "line": 322,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.product_isProP"
+    },
+    {
+      "kind": "def",
+      "line": 332,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.preimage"
+    },
+    {
+      "kind": "theorem",
+      "line": 353,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.preimage_le"
+    },
+    {
+      "kind": "def",
+      "line": 359,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.quotientMap"
+    },
+    {
+      "kind": "def",
+      "line": 366,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.lift"
+    },
+    {
+      "kind": "theorem",
+      "line": 388,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.lift_eta"
+    },
+    {
+      "kind": "theorem",
+      "line": 390,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.lift_eta_assoc"
+    },
+    {
+      "kind": "theorem",
+      "line": 401,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.lift_unique"
+    },
+    {
+      "kind": "theorem",
+      "line": 411,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.lift_comp"
+    },
+    {
+      "kind": "theorem",
+      "line": 412,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.lift_comp_assoc"
+    },
+    {
+      "kind": "def",
+      "line": 418,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.homEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 433,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.homEquiv_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 439,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.homEquiv_symm_apply"
+    },
+    {
+      "kind": "def",
+      "line": 447,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.isoOfIsProP"
+    },
+    {
+      "kind": "def",
+      "line": 459,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.map"
+    },
+    {
+      "kind": "theorem",
+      "line": 465,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.eta_map"
+    },
+    {
+      "kind": "theorem",
+      "line": 467,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.eta_map_assoc"
+    },
+    {
+      "kind": "theorem",
+      "line": 474,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.map_id"
+    },
+    {
+      "kind": "theorem",
+      "line": 482,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.map_comp"
+    },
+    {
+      "kind": "def",
+      "line": 490,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.MaximalProPQuotient.functor"
+    },
+    {
+      "kind": "def",
+      "line": 505,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.product"
+    },
+    {
+      "kind": "instance",
+      "line": 510,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.product_isProP"
+    },
+    {
+      "kind": "def",
+      "line": 514,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.of"
+    },
+    {
+      "kind": "def",
+      "line": 523,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.lift"
+    },
+    {
+      "kind": "theorem",
+      "line": 528,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.lift_of"
+    },
+    {
+      "kind": "theorem",
+      "line": 543,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.hom_ext"
+    },
+    {
+      "kind": "theorem",
+      "line": 545,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.hom_ext_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 557,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.lift_comp"
+    },
+    {
+      "kind": "theorem",
+      "line": 558,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.lift_comp_assoc"
+    },
+    {
+      "kind": "def",
+      "line": 567,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.homEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 579,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.homEquiv_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 585,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.homEquiv_symm_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 642,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.of_injective"
+    },
+    {
+      "kind": "def",
+      "line": 656,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.map"
+    },
+    {
+      "kind": "theorem",
+      "line": 662,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.map_of"
+    },
+    {
+      "kind": "theorem",
+      "line": 669,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.map_id"
+    },
+    {
+      "kind": "theorem",
+      "line": 679,
+      "module": "ProfiniteGroups.ProP",
+      "name": "ProfiniteGrp.FreeProPProduct.map_comp"
+    },
+    {
+      "kind": "def",
+      "line": 31,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsTopologicalGenerator"
+    },
+    {
+      "kind": "def",
+      "line": 36,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 44,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsTopologicalGenerator.iff_topologicalClosure_zpowers"
+    },
+    {
+      "kind": "theorem",
+      "line": 51,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsTopologicalGenerator.iff_closure_range"
+    },
+    {
+      "kind": "theorem",
+      "line": 56,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsTopologicalGenerator.denseRange_pow"
+    },
+    {
+      "kind": "theorem",
+      "line": 61,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsTopologicalGenerator.map"
+    },
+    {
+      "kind": "theorem",
+      "line": 73,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsTopologicalGenerator.map_equiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 78,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsTopologicalGenerator.equiv_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 88,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.isTopologicalGenerator_of_subsingleton"
+    },
+    {
+      "kind": "theorem",
+      "line": 95,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.isProcyclic_of_subsingleton"
+    },
+    {
+      "kind": "theorem",
+      "line": 100,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.punit_isProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 108,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.isProcyclic_iff_of_continuousMulEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 117,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.IsProcyclic.quotient"
+    },
+    {
+      "kind": "def",
+      "line": 123,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.integerCompletion"
+    },
+    {
+      "kind": "def",
+      "line": 128,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.integerPowerHom"
+    },
+    {
+      "kind": "def",
+      "line": 133,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.integerCompletionMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 139,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.integerCompletionMap_eta"
+    },
+    {
+      "kind": "theorem",
+      "line": 156,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.integerCompletionMap_eta_int"
+    },
+    {
+      "kind": "theorem",
+      "line": 165,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.closure_range_integerCompletionMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 196,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.range_integerCompletionMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 205,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.isTopologicalGenerator_iff_surjective_integerCompletionMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 214,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.isTopologicalGenerator_iff_epi_integerCompletionMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 221,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.isProcyclic_iff_exists_surjective_integerCompletionMap"
+    },
+    {
+      "kind": "def",
+      "line": 229,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.finiteCyclic"
+    },
+    {
+      "kind": "def",
+      "line": 233,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.finiteCyclicGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 237,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.finiteCyclicGenerator_isTopologicalGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 250,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteGrp.finiteCyclic_isProcyclic"
+    },
+    {
+      "kind": "def",
+      "line": 258,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsTopologicalGenerator"
+    },
+    {
+      "kind": "def",
+      "line": 263,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 272,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsTopologicalGenerator.iff_topologicalClosure_zmultiples"
+    },
+    {
+      "kind": "theorem",
+      "line": 281,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsTopologicalGenerator.iff_closure_range"
+    },
+    {
+      "kind": "theorem",
+      "line": 286,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsTopologicalGenerator.denseRange_nsmul"
+    },
+    {
+      "kind": "theorem",
+      "line": 291,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsTopologicalGenerator.map"
+    },
+    {
+      "kind": "theorem",
+      "line": 303,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsTopologicalGenerator.map_equiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 308,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsTopologicalGenerator.equiv_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 318,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.isTopologicalGenerator_of_subsingleton"
+    },
+    {
+      "kind": "theorem",
+      "line": 326,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.isProcyclic_of_subsingleton"
+    },
+    {
+      "kind": "theorem",
+      "line": 331,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.punit_isProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 339,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.isProcyclic_iff_of_continuousAddEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 349,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.IsProcyclic.quotient"
+    },
+    {
+      "kind": "def",
+      "line": 356,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.finiteCyclic"
+    },
+    {
+      "kind": "def",
+      "line": 360,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.finiteCyclicGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 364,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.finiteCyclicGenerator_isTopologicalGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 378,
+      "module": "ProfiniteGroups.Procyclic",
+      "name": "ProfiniteAddGrp.finiteCyclic_isProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 26,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primeFact"
+    },
+    {
+      "kind": "def",
+      "line": 29,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse"
+    },
+    {
+      "kind": "theorem",
+      "line": 43,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse_apply_down"
+    },
+    {
+      "kind": "theorem",
+      "line": 50,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse_diagonal"
+    },
+    {
+      "kind": "theorem",
+      "line": 62,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse_generator"
+    },
+    {
+      "kind": "theorem",
+      "line": 69,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse_self"
+    },
+    {
+      "kind": "theorem",
+      "line": 80,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse_symm"
+    },
+    {
+      "kind": "theorem",
+      "line": 94,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicChangeUniverse_trans"
+    },
+    {
+      "kind": "def",
+      "line": 106,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicBaseMapOfGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 113,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicBaseMapOfGenerator_diagonal"
+    },
+    {
+      "kind": "theorem",
+      "line": 120,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicBaseMapOfGenerator_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 127,
+      "module": "ProfiniteGroups.ProcyclicBaseMap",
+      "name": "ProfiniteGrp.primewisePadicBaseMapOfGenerator_naturality"
+    },
+    {
+      "kind": "theorem",
+      "line": 31,
+      "module": "ProfiniteGroups.ProcyclicGeneratorIndependence",
+      "name": "AddMonoidHom.ker_eq_of_surjective_dense_intCast"
+    },
+    {
+      "kind": "theorem",
+      "line": 75,
+      "module": "ProfiniteGroups.ProcyclicGeneratorIndependence",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal_eq_of_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 106,
+      "module": "ProfiniteGroups.ProcyclicGeneratorIndependence",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal_mapOfGenerator_eq"
+    },
+    {
+      "kind": "theorem",
+      "line": 118,
+      "module": "ProfiniteGroups.ProcyclicGeneratorIndependence",
+      "name": "ProfiniteGrp.primewisePadicExponentsOfGenerator_eq"
+    },
+    {
+      "kind": "theorem",
+      "line": 30,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.continuousHom_ext_of_generator"
+    },
+    {
+      "kind": "def",
+      "line": 48,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.continuousHomLiftOfSurjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 68,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.continuousHomLiftOfSurjective_comp"
+    },
+    {
+      "kind": "theorem",
+      "line": 84,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.baseMap_kernel_le_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 113,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.baseMap_kernel_le_iff_exponents"
+    },
+    {
+      "kind": "def",
+      "line": 124,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.factorOfGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 137,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.factorOfGenerator_comp_baseMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 149,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.factorOfGenerator_apply_generator"
+    },
+    {
+      "kind": "theorem",
+      "line": 165,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.existsUnique_continuousHom_apply_generator_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 192,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.factorOfGenerator_surjective_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 212,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.exists_surjective_continuousHom_iff_exponents_le"
+    },
+    {
+      "kind": "theorem",
+      "line": 237,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.factorOfGenerator_self"
+    },
+    {
+      "kind": "theorem",
+      "line": 245,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.one_admissible"
+    },
+    {
+      "kind": "theorem",
+      "line": 255,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.factorOfGenerator_one"
+    },
+    {
+      "kind": "theorem",
+      "line": 261,
+      "module": "ProfiniteGroups.ProcyclicHom",
+      "name": "ProfiniteGrp.factorOfGenerator_comp"
+    },
+    {
+      "kind": "theorem",
+      "line": 30,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal_comp_injective"
+    },
+    {
+      "kind": "def",
+      "line": 46,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.IsProcyclic.exponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 53,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.IsProcyclic.baseMap_exponents_eq_of_generators"
+    },
+    {
+      "kind": "theorem",
+      "line": 67,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.IsProcyclic.exponents_eq_baseMap_of_generator"
+    },
+    {
+      "kind": "theorem",
+      "line": 76,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.IsProcyclic.exponents_eq_of_generator"
+    },
+    {
+      "kind": "theorem",
+      "line": 85,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.IsProcyclic.exponents_eq"
+    },
+    {
+      "kind": "theorem",
+      "line": 92,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.IsProcyclic.exponents_equiv"
+    },
+    {
+      "kind": "def",
+      "line": 120,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.IsProcyclic.continuousMulEquivModel"
+    },
+    {
+      "kind": "theorem",
+      "line": 132,
+      "module": "ProfiniteGroups.ProcyclicInvariant",
+      "name": "ProfiniteGrp.isProcyclic_nonempty_continuousMulEquiv_iff_exponents_eq"
+    },
+    {
+      "kind": "theorem",
+      "line": 49,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.IsProcyclic.isMulCommutative"
+    },
+    {
+      "kind": "def",
+      "line": 69,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 79,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHom_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 84,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHom_zero"
+    },
+    {
+      "kind": "theorem",
+      "line": 88,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHom_one"
+    },
+    {
+      "kind": "theorem",
+      "line": 92,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHom_comp"
+    },
+    {
+      "kind": "def",
+      "line": 98,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage"
+    },
+    {
+      "kind": "theorem",
+      "line": 104,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.mem_powerImage_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 111,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_subgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 116,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_eq_topologicalClosure_zpowers"
+    },
+    {
+      "kind": "theorem",
+      "line": 145,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.topologicalClosure_zpowers_pow_eq"
+    },
+    {
+      "kind": "def",
+      "line": 154,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHomToImage"
+    },
+    {
+      "kind": "theorem",
+      "line": 168,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHomToImage_apply_coe"
+    },
+    {
+      "kind": "theorem",
+      "line": 174,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHomToImage_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 182,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerHomToImage_isTopologicalGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 190,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_isProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 199,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_zero"
+    },
+    {
+      "kind": "theorem",
+      "line": 206,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_one"
+    },
+    {
+      "kind": "instance",
+      "line": 213,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_normal"
+    },
+    {
+      "kind": "theorem",
+      "line": 238,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_quotient_zpowers_eq_top"
+    },
+    {
+      "kind": "theorem",
+      "line": 252,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_quotient_isCyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 260,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_index_dvd"
+    },
+    {
+      "kind": "theorem",
+      "line": 280,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_finiteIndex"
+    },
+    {
+      "kind": "theorem",
+      "line": 290,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_quotient_finite"
+    },
+    {
+      "kind": "theorem",
+      "line": 299,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerImage_isOpen"
+    },
+    {
+      "kind": "def",
+      "line": 307,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerOpenSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 312,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.powerOpenSubgroup_toSubgroup"
+    },
+    {
+      "kind": "theorem",
+      "line": 318,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.openSubgroup_eq_powerImage"
+    },
+    {
+      "kind": "theorem",
+      "line": 353,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.subgroup_eq_powerImage_of_isOpen"
+    },
+    {
+      "kind": "theorem",
+      "line": 359,
+      "module": "ProfiniteGroups.ProcyclicPower",
+      "name": "ProfiniteGrp.openSubgroup_eq_of_index_eq"
+    },
+    {
+      "kind": "def",
+      "line": 27,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ContinuousAddEquiv.toMultiplicative"
+    },
+    {
+      "kind": "def",
+      "line": 40,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "Ideal.quotientContinuousAddEquivOfEq"
+    },
+    {
+      "kind": "theorem",
+      "line": 47,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "Ideal.quotientContinuousAddEquivOfEq_mk"
+    },
+    {
+      "kind": "def",
+      "line": 59,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicMapOfGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 67,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicMapOfGenerator_diagonal"
+    },
+    {
+      "kind": "theorem",
+      "line": 75,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicMapOfGenerator_surjective"
+    },
+    {
+      "kind": "def",
+      "line": 82,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicAdditiveMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 91,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal_toAddSubgroup"
+    },
+    {
+      "kind": "def",
+      "line": 102,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicKernelIdealAddEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 120,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicKernelIdealAddEquiv_mk"
+    },
+    {
+      "kind": "def",
+      "line": 139,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicKernelIdealContinuousMulEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 169,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicKernelIdealContinuousMulEquiv_mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 182,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicKernelIdealContinuousMulEquiv_symm_apply"
+    },
+    {
+      "kind": "def",
+      "line": 196,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicContinuousMulEquivModel"
+    },
+    {
+      "kind": "theorem",
+      "line": 209,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicContinuousMulEquivModel_apply_mk"
+    },
+    {
+      "kind": "def",
+      "line": 234,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.primewisePadicExponentsOfGenerator"
+    },
+    {
+      "kind": "def",
+      "line": 239,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.procyclicContinuousMulEquivModel"
+    },
+    {
+      "kind": "theorem",
+      "line": 249,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.procyclicContinuousMulEquivModel_zpow_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 263,
+      "module": "ProfiniteGroups.ProcyclicQuotient",
+      "name": "ProfiniteGrp.procyclicContinuousMulEquivModel_zsmul_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 27,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups_4"
+    },
+    {
+      "kind": "def",
+      "line": 29,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicProcyclicModel"
+    },
+    {
+      "kind": "def",
+      "line": 34,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 45,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_apply"
+    },
+    {
+      "kind": "theorem",
+      "line": 57,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_apply_coordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 68,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_diagonal_coordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 81,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_diagonal_top_coordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 96,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_diagonal_natCast_coordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 113,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 122,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicKernelIdeal_realizationMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 140,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicKernelExponents_realizationMap"
+    },
+    {
+      "kind": "def",
+      "line": 147,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 152,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationGenerator_coordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 164,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_diagonal_zero"
+    },
+    {
+      "kind": "theorem",
+      "line": 174,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationMap_diagonal"
+    },
+    {
+      "kind": "theorem",
+      "line": 186,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicRealizationGenerator_isTopologicalGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 194,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicProcyclicModel_isProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 200,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicMapOfRealizationGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 219,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicProcyclicModel_exponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 231,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.exists_procyclic_of_exponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 238,
+      "module": "ProfiniteGroups.ProcyclicRealization",
+      "name": "ProfiniteGrp.primewisePadicProcyclicModel_nonempty_equiv_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 31,
+      "module": "ProfiniteGroups.ProcyclicTorsionFree",
+      "name": "ProfiniteGrp.instFactPrimeValNat_profiniteGroups_4"
+    },
+    {
+      "kind": "theorem",
+      "line": 68,
+      "module": "ProfiniteGroups.ProcyclicTorsionFree",
+      "name": "ProfiniteGrp.padicQuotientFactor_isAddTorsionFree_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 86,
+      "module": "ProfiniteGroups.ProcyclicTorsionFree",
+      "name": "ProfiniteGrp.primewisePadicQuotientModel_isAddTorsionFree_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 114,
+      "module": "ProfiniteGroups.ProcyclicTorsionFree",
+      "name": "ProfiniteGrp.primewisePadicSurjective_isMulTorsionFree_iff"
+    },
+    {
+      "kind": "theorem",
+      "line": 148,
+      "module": "ProfiniteGroups.ProcyclicTorsionFree",
+      "name": "ProfiniteGrp.isMulTorsionFree_iff_exponentsOfGenerator"
+    }
+  ],
+  "proof_certification": false,
+  "public_client_declarations": [
+    {
+      "kind": "theorem",
+      "line": 26,
+      "module": "Tests.DirectImports",
+      "name": "DirectImportsTests.zeroOnePowerImages"
+    },
+    {
+      "kind": "theorem",
+      "line": 32,
+      "module": "Tests.DirectImports",
+      "name": "DirectImportsTests.positivePowerQuotient"
+    },
+    {
+      "kind": "theorem",
+      "line": 44,
+      "module": "Tests.DirectImports",
+      "name": "DirectImportsTests.cyclicTwelvePositivePower"
+    },
+    {
+      "kind": "def",
+      "line": 52,
+      "module": "Tests.DirectImports",
+      "name": "DirectImportsTests.mixedProfile"
+    },
+    {
+      "kind": "theorem",
+      "line": 56,
+      "module": "Tests.DirectImports",
+      "name": "DirectImportsTests.actualMixedKernel"
+    },
+    {
+      "kind": "theorem",
+      "line": 63,
+      "module": "Tests.DirectImports",
+      "name": "DirectImportsTests.zeroTopExtracted"
+    },
+    {
+      "kind": "theorem",
+      "line": 23,
+      "module": "Tests.PrimewisePadicIdealTransport",
+      "name": "instFactPrimeValNat_tests"
+    },
+    {
+      "kind": "theorem",
+      "line": 24,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.commutingSquare"
+    },
+    {
+      "kind": "theorem",
+      "line": 31,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.arbitraryMapKernelMembership"
+    },
+    {
+      "kind": "theorem",
+      "line": 42,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.arbitraryMapIdeal"
+    },
+    {
+      "kind": "theorem",
+      "line": 51,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.arbitraryMapExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 60,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.zeroToPositive"
+    },
+    {
+      "kind": "theorem",
+      "line": 69,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.positiveToZero"
+    },
+    {
+      "kind": "theorem",
+      "line": 78,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.identityInfinite"
+    },
+    {
+      "kind": "theorem",
+      "line": 88,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.trivialZero"
+    },
+    {
+      "kind": "theorem",
+      "line": 96,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.arbitraryElementComparison"
+    },
+    {
+      "kind": "theorem",
+      "line": 101,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.nongeneratorConstant"
+    },
+    {
+      "kind": "theorem",
+      "line": 110,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.nongeneratorZero"
+    },
+    {
+      "kind": "theorem",
+      "line": 117,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.nongeneratorNotSurjective"
+    },
+    {
+      "kind": "def",
+      "line": 126,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.twoPrime"
+    },
+    {
+      "kind": "def",
+      "line": 128,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.threePrime"
+    },
+    {
+      "kind": "def",
+      "line": 130,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.fivePrime"
+    },
+    {
+      "kind": "def",
+      "line": 133,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedExponents"
+    },
+    {
+      "kind": "def",
+      "line": 137,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 158,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedMap_mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 165,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedMap_kernelIdeal"
+    },
+    {
+      "kind": "theorem",
+      "line": 182,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedKernelIdeal"
+    },
+    {
+      "kind": "theorem",
+      "line": 190,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedExponent"
+    },
+    {
+      "kind": "theorem",
+      "line": 198,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedZero"
+    },
+    {
+      "kind": "theorem",
+      "line": 205,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedFinite"
+    },
+    {
+      "kind": "theorem",
+      "line": 212,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedInfinite"
+    },
+    {
+      "kind": "theorem",
+      "line": 219,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedNotTrivial"
+    },
+    {
+      "kind": "theorem",
+      "line": 227,
+      "module": "Tests.PrimewisePadicKernelTransport",
+      "name": "PrimewisePadicKernelTransportTests.mixedNotInjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 57,
+      "module": "Tests.PrimewisePadicQuotients",
+      "name": "instFactPrimeValNat_tests"
+    },
+    {
+      "kind": "def",
+      "line": 90,
+      "module": "Tests.PrimewisePadicQuotients",
+      "name": "mixedExponents"
+    },
+    {
+      "kind": "theorem",
+      "line": 26,
+      "module": "Tests.ProcyclicBaseMap",
+      "name": "ProcyclicBaseMapTests.transCoordinates"
+    },
+    {
+      "kind": "theorem",
+      "line": 86,
+      "module": "Tests.ProcyclicBaseMap",
+      "name": "ProcyclicBaseMapTests.finite12Surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 98,
+      "module": "Tests.ProcyclicBaseMap",
+      "name": "ProcyclicBaseMapTests.equivNaturality"
+    },
+    {
+      "kind": "theorem",
+      "line": 115,
+      "module": "Tests.ProcyclicBaseMap",
+      "name": "ProcyclicBaseMapTests.finite12ConstantNotSurjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 135,
+      "module": "Tests.ProcyclicBaseMap",
+      "name": "ProcyclicBaseMapTests.finite12OneNotGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 24,
+      "module": "Tests.ProcyclicGeneratorIndependence",
+      "name": "instFactPrimeValNat_tests_1"
+    },
+    {
+      "kind": "theorem",
+      "line": 25,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.arbitraryTarget"
+    },
+    {
+      "kind": "theorem",
+      "line": 32,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.evaluationDeterminesMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 37,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.factorCommutes"
+    },
+    {
+      "kind": "theorem",
+      "line": 47,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.surjectionTest"
+    },
+    {
+      "kind": "theorem",
+      "line": 54,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.quotientOrder"
+    },
+    {
+      "kind": "theorem",
+      "line": 59,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.positiveIndependentUniverses"
+    },
+    {
+      "kind": "def",
+      "line": 67,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.fourProfile"
+    },
+    {
+      "kind": "def",
+      "line": 69,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.twoProfile"
+    },
+    {
+      "kind": "theorem",
+      "line": 72,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.finiteProfileQuotient"
+    },
+    {
+      "kind": "theorem",
+      "line": 83,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.finiteProfileReverseImpossible"
+    },
+    {
+      "kind": "theorem",
+      "line": 93,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.targetIdentityAlways"
+    },
+    {
+      "kind": "theorem",
+      "line": 98,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.identityNeverSurjectsOntoCyclicTwo"
+    },
+    {
+      "kind": "def",
+      "line": 110,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.klein"
+    },
+    {
+      "kind": "theorem",
+      "line": 114,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.kleinNotProcyclic"
+    },
+    {
+      "kind": "theorem",
+      "line": 171,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.mapIntoFiniteNoncyclicTarget"
+    },
+    {
+      "kind": "def",
+      "line": 180,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.squareHom"
+    },
+    {
+      "kind": "theorem",
+      "line": 190,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.squareNotSurjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 207,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.squareAdmissible"
+    },
+    {
+      "kind": "theorem",
+      "line": 221,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.squareImageNotOnto"
+    },
+    {
+      "kind": "theorem",
+      "line": 234,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.zeroSourceToZeroTarget"
+    },
+    {
+      "kind": "theorem",
+      "line": 247,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.topSourceToArbitrary"
+    },
+    {
+      "kind": "def",
+      "line": 258,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.mixedProfile"
+    },
+    {
+      "kind": "def",
+      "line": 261,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.smallerMixedProfile"
+    },
+    {
+      "kind": "theorem",
+      "line": 265,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.mixedProfileQuotient"
+    },
+    {
+      "kind": "theorem",
+      "line": 276,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.identityAndComposition"
+    },
+    {
+      "kind": "theorem",
+      "line": 291,
+      "module": "Tests.ProcyclicHom",
+      "name": "ProcyclicHomTests.identityEvaluation"
+    },
+    {
+      "kind": "theorem",
+      "line": 25,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.arbitraryGenerators"
+    },
+    {
+      "kind": "theorem",
+      "line": 34,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.independentProofs"
+    },
+    {
+      "kind": "theorem",
+      "line": 38,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.fixedBase"
+    },
+    {
+      "kind": "def",
+      "line": 44,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.model"
+    },
+    {
+      "kind": "theorem",
+      "line": 49,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.forward"
+    },
+    {
+      "kind": "theorem",
+      "line": 54,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.backward"
+    },
+    {
+      "kind": "theorem",
+      "line": 59,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.positiveUniverseEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 65,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.independentKernel"
+    },
+    {
+      "kind": "theorem",
+      "line": 74,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.subsingletonZero"
+    },
+    {
+      "kind": "theorem",
+      "line": 85,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.baseMapPrimewiseGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 108,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.primewiseTop"
+    },
+    {
+      "kind": "theorem",
+      "line": 116,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.cyclicTwelveCompatibility"
+    },
+    {
+      "kind": "theorem",
+      "line": 123,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.cyclicTwoNontrivial"
+    },
+    {
+      "kind": "theorem",
+      "line": 128,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.cyclicTwoExponentsNonzero"
+    },
+    {
+      "kind": "theorem",
+      "line": 147,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.cyclicTwoNotEquivalentToSingleton"
+    },
+    {
+      "kind": "theorem",
+      "line": 162,
+      "module": "Tests.ProcyclicInvariant",
+      "name": "ProcyclicInvariantTests.primewiseNotEquivalentToSingleton"
+    },
+    {
+      "kind": "theorem",
+      "line": 26,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.power_hom_application"
+    },
+    {
+      "kind": "theorem",
+      "line": 29,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.proof_parameter_independence"
+    },
+    {
+      "kind": "theorem",
+      "line": 34,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.zero_and_one"
+    },
+    {
+      "kind": "theorem",
+      "line": 39,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.open_and_divides"
+    },
+    {
+      "kind": "theorem",
+      "line": 45,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.subgroup_generator"
+    },
+    {
+      "kind": "theorem",
+      "line": 54,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.quotient_generator"
+    },
+    {
+      "kind": "theorem",
+      "line": 63,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.all_open"
+    },
+    {
+      "kind": "theorem",
+      "line": 67,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.subgroup_bridge"
+    },
+    {
+      "kind": "theorem",
+      "line": 71,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.equal_index_unique"
+    },
+    {
+      "kind": "theorem",
+      "line": 75,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.open_membership"
+    },
+    {
+      "kind": "theorem",
+      "line": 123,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.two_fourth_index"
+    },
+    {
+      "kind": "theorem",
+      "line": 138,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.three_square_index"
+    },
+    {
+      "kind": "theorem",
+      "line": 146,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.four_square_index"
+    },
+    {
+      "kind": "theorem",
+      "line": 169,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.four_square_nontrivial"
+    },
+    {
+      "kind": "theorem",
+      "line": 176,
+      "module": "Tests.ProcyclicPower",
+      "name": "ProcyclicPowerTest.trivial_power_top"
+    },
+    {
+      "kind": "def",
+      "line": 153,
+      "module": "Tests.ProcyclicQuotient",
+      "name": "mixedPrimewiseMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 174,
+      "module": "Tests.ProcyclicQuotient",
+      "name": "mixedPrimewiseMap_mk"
+    },
+    {
+      "kind": "theorem",
+      "line": 184,
+      "module": "Tests.ProcyclicQuotient",
+      "name": "mixedPrimewiseMap_surjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 191,
+      "module": "Tests.ProcyclicQuotient",
+      "name": "mixedPrimewiseMap_kernelIdeal"
+    },
+    {
+      "kind": "theorem",
+      "line": 23,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.instFactPrimeValNat_tests"
+    },
+    {
+      "kind": "theorem",
+      "line": 24,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.instFactPrimeOfNatNat_tests"
+    },
+    {
+      "kind": "theorem",
+      "line": 26,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryMap"
+    },
+    {
+      "kind": "theorem",
+      "line": 30,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryActualKernel"
+    },
+    {
+      "kind": "theorem",
+      "line": 35,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryExtractedKernel"
+    },
+    {
+      "kind": "theorem",
+      "line": 39,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryRepresentative"
+    },
+    {
+      "kind": "theorem",
+      "line": 47,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryGenerator"
+    },
+    {
+      "kind": "theorem",
+      "line": 52,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryInvariant"
+    },
+    {
+      "kind": "theorem",
+      "line": 57,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryPositiveUniverseExists"
+    },
+    {
+      "kind": "theorem",
+      "line": 61,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.arbitraryIndependentUniverseEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 66,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.allZeroKernel"
+    },
+    {
+      "kind": "theorem",
+      "line": 72,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.allZeroInvariant"
+    },
+    {
+      "kind": "theorem",
+      "line": 77,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.allZeroTrivial"
+    },
+    {
+      "kind": "theorem",
+      "line": 92,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.allTopInvariant"
+    },
+    {
+      "kind": "theorem",
+      "line": 97,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.allTopGeneratorCoordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 104,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.allTopGeneratorNotIdentity"
+    },
+    {
+      "kind": "theorem",
+      "line": 114,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.positiveFiniteGeneratorCoordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 123,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.positiveFiniteInvariant"
+    },
+    {
+      "kind": "theorem",
+      "line": 128,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.positiveFiniteGeneratorNotIdentity"
+    },
+    {
+      "kind": "def",
+      "line": 138,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.mixed"
+    },
+    {
+      "kind": "theorem",
+      "line": 142,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.mixedValues"
+    },
+    {
+      "kind": "theorem",
+      "line": 148,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.mixedZeroCoordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 155,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.mixedFiniteCoordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 162,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.mixedTopCoordinate"
+    },
+    {
+      "kind": "theorem",
+      "line": 168,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.mixedInvariant"
+    },
+    {
+      "kind": "theorem",
+      "line": 172,
+      "module": "Tests.ProcyclicRealization",
+      "name": "ProcyclicRealizationTests.unequalProfilesNoEquiv"
+    },
+    {
+      "kind": "theorem",
+      "line": 25,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.arbitraryTargetCriterion"
+    },
+    {
+      "kind": "theorem",
+      "line": 33,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.positivePowerIndexDivides"
+    },
+    {
+      "kind": "theorem",
+      "line": 40,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.cyclicTwoFourthIndexDivides"
+    },
+    {
+      "kind": "def",
+      "line": 47,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.mixedProfile"
+    },
+    {
+      "kind": "theorem",
+      "line": 51,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.mixedProfileExtracted"
+    },
+    {
+      "kind": "theorem",
+      "line": 57,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.mixedProfileCoordinates"
+    },
+    {
+      "kind": "theorem",
+      "line": 71,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.zeroAndTopProfiles"
+    },
+    {
+      "kind": "theorem",
+      "line": 82,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.completionIntegerSimp"
+    },
+    {
+      "kind": "theorem",
+      "line": 90,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.completionEquivIntegerSimp"
+    },
+    {
+      "kind": "theorem",
+      "line": 98,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.universeIntegerSimp"
+    },
+    {
+      "kind": "theorem",
+      "line": 104,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.zeroOnePowerSimp"
+    },
+    {
+      "kind": "theorem",
+      "line": 109,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.powerCoordinatesSimp"
+    },
+    {
+      "kind": "theorem",
+      "line": 122,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.arbitraryTopologyStageInjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 129,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.arbitraryTopologyColimitInjective"
+    },
+    {
+      "kind": "theorem",
+      "line": 135,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.stagePayloadUnchanged"
+    },
+    {
+      "kind": "theorem",
+      "line": 146,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.discreteHomRoundTrip"
+    },
+    {
+      "kind": "theorem",
+      "line": 154,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.arbitraryTopologyIdealTransport"
+    },
+    {
+      "kind": "theorem",
+      "line": 162,
+      "module": "Tests.PublicRoot",
+      "name": "PublicRootTests.idealTransportPayloadUnchanged"
+    }
+  ],
+  "release_acceptance": false,
+  "undocumented_count": 132
+}
