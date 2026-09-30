@@ -3,17 +3,10 @@
 # Authors: Formal Frontier Agents
 """Bounded mixed-kind native doc-gen4 reference for profinite groups.
 
-Adapted by Hive Task hive-request-49578d0143b3fe26e93ee6e54fa1752f1d60bc26,
-UID e4f64178-9024-4fe9-8eba-f63c724e7497, from accepted finite-group Tate
-cohomology 61577f7cf2e02715f621a724aa692921ab6bbad9, authored by worker-b
-Task hive-request-381dc6f93292eb39ea2d5b25f09baacdc8b20d9e,
-UID cd8c84f8-2dbf-4399-9c70-1de364ffa99f. Earlier expression comes from
-polynomial-root-stability 95ac896f81a3190b2634a4246a3e924d2a267a61
-and Anchor's ideal-completion f0c8c34386109116e4912fb425a8ad15d9dc42a4.
-Pinned records are documentation input, not proof or release certification.
-Wording and lifecycle caveats adapted by worker-b Hive Task
-hive-request-1706c2a7c232d243b2552dc0fc1e1b44eac183cd,
-UID 20fbc411-a19e-45aa-bf2d-326a3d1ea887; original authorship is unchanged.
+Formal Frontier Agents adapted the mixed-kind catalogue and adapter through
+finite-group Tate cohomology, polynomial-root-stability and Anchor's
+ideal-completion recipe. Pinned native records are documentation input,
+not proof or release certification.
 """
 
 if not __debug__:
@@ -680,7 +673,7 @@ def main():
     require(actual_lean == {path for path in SOURCE_INPUT_SHA256 if path.endswith(".lean")},
             "missing/extra shipped Lean module")
     require({path.name for path in root.iterdir()} <= {
-        ".git", ".lake", ".gitignore", "LICENSE", "README.md", "formalization.yaml",
+        ".git", ".lake", ".forgejo", ".gitignore", "LICENSE", "README.md", "formalization.yaml",
         "lean-toolchain", "lakefile.toml", "lake-manifest.json", "ProfiniteGroups.lean",
         "ProfiniteGroupsTests.lean", "ProfiniteGroups", "Tests", "docs", "scripts"},
         "unexpected shipped root file")
@@ -703,7 +696,7 @@ def main():
     api, manifest = render(records, raw_records, sources, args.source_revision)
     docs = root / "docs"
     require(docs.is_dir() and not docs.is_symlink(), "missing/linked documentation directory")
-    expected_docs = {"README.md", "API.md", "api-manifest.json"}
+    expected_docs = {"README.md", "Mathematics.md", "API.md", "api-manifest.json"}
     require({path.name for path in docs.iterdir()} == expected_docs,
             "unexpected/missing documentation file")
     for name, raw in (("API.md", api), ("api-manifest.json", manifest)):

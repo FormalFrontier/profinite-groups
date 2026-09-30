@@ -13,7 +13,7 @@ project:
   license: Apache-2.0
 
 sources:
-  - title: Cohomology of Number Fields (corrected second edition, electronic version 2.3)
+  - title: Cohomology of Number Fields (corrected second edition, electronic version 2.3, May 2020)
     authors:
       - Jürgen Neukirch
       - Alexander Schmidt
@@ -39,56 +39,42 @@ classification:
 
 status:
   scope: >-
-    The analyzed September 25, 2026 accepted development has one production
-    root and 24 production leaves; open power-subgroup classification does not
-    classify all closed subgroups. At the September 26 documentation-author
-    snapshot, a 39-module filtered native API reference had been prepared but
-    was not accepted. At that checkpoint, first-release acceptance, full
-    raw/private/stored-body axiom audit, separate proof recheck and complete
-    rights review had not been established. This is historical preparation
-    status, not a current release registry; later exact-commit independent
-    review, owner acceptance and publication are recorded externally.
+    One production root imports 24 Lean leaves; a separate test root imports
+    13 checked-use client leaves. The 39-module filtered native API includes
+    declarations and instances, not private declarations or proof bodies.
+    Procyclic power images classify open subgroups, not all closed subgroups
+    of an arbitrary procyclic group. The closed-subgroup classification is
+    for the specific primewise p-adic product.
 
 automation:
   methods:
     - method: agent
       framework: Codex CLI and Hive Tasks
       tool_setup: >-
-        AI agents developed Lean code with a pinned Lean/mathlib Lake environment;
-        reviewers used separate agent executions and distinct Forgejo identities.
+        AI agents developed code and documentation with a pinned Lean/mathlib
+        Lake environment; independent agent executions reviewed mathematics.
       prompting_notes: >-
-        Repository issue and pull-request records identify individual executions,
-        revisions, corrections, Lean checks and historical mathematical reviews.
+        Mathematical assumptions, source boundaries and concrete declarations
+        are explained in README.md, docs/Mathematics.md and docs/API.md.
   notes: >-
-    Beacon contributed initial original project code; pooled worker-a and
-    worker-b executions contributed further original code and tests. This
-    metadata/docs precursor was authored by worker-b, and Beacon assembled
-    the readiness branches and added bounded API/lint repairs and regression
-    clients. The 39-module documentation adaptation was authored by worker-b
-    Task hive-request-49578d0143b3fe26e93ee6e54fa1752f1d60bc26,
-    UID e4f64178-9024-4fe9-8eba-f63c724e7497, adapting accepted
-    finite-group-tate-cohomology revision 61577f7cf2e02715f621a724aa692921ab6bbad9
-    and its worker-b Task hive-request-381dc6f93292eb39ea2d5b25f09baacdc8b20d9e,
-    UID cd8c84f8-2dbf-4399-9c70-1de364ffa99f; earlier expression is credited
-    in docs/README.md. The bounded documentation and lifecycle correction was
-    authored by worker-b Task hive-request-1706c2a7c232d243b2552dc0fc1e1b44eac183cd,
-    UID 20fbc411-a19e-45aa-bf2d-326a3d1ea887. Neither contribution is a
-    release or review approval.
+    Beacon contributed the initial implementation, coordinated integration
+    and contributed API and regression-client repairs. Formal Frontier Agents
+    contributed further mathematics, tests, reference documentation and
+    independent reviews. The native reference adapter and catalogue follow
+    the finite-group Tate cohomology, polynomial-root-stability and Anchor
+    ideal-completion adaptation lineage; Folio contributed headline input.
 
 review:
   status: other
   reviewers: []
   notes: >-
-    This September 26, 2026 documentation-preparation report is historical,
-    not a live release registry. Accepted mathematical changes had dated
-    independent ordinary-development PR reviews at their exact prior revisions.
-    At this checkpoint, a fresh exact-head whole-artifact semantic, API,
-    attribution/rights and proof-integrity acceptance review had not been
-    performed; schema validity alone does not supply it. Subsequent review,
-    owner acceptance and publication require their own exact-commit records.
+    Exact-commit review, proof-integrity checks and release decisions are
+    recorded in repository issue, pull-request and publication records.
+    This metadata is not a review verdict or source-coverage decision.
 
 acknowledgements: >-
-  Formal Frontier Agents, including Beacon and the worker-a and worker-b
-  contributors, built on mathlib and mathematical ideas from the cited book.
+  Formal Frontier Agents, including Beacon, mathematical and client-test
+  contributors, reference-adapter contributors, and Folio's documentation
+  input, built on mathlib and mathematical ideas from the cited book.
   Project author credit does not replace upstream contributor or third-party
   attribution and does not assert a copyright holder.

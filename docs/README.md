@@ -1,10 +1,11 @@
 # Native API reference and reproducibility
 
 The [filtered native API reference](API.md) and [machine-readable
-manifest](api-manifest.json) describe all 39 shipped Lean modules from the
-analyzed source-only predecessor `2417a6348d6abede2cf08f46fbb852a9f3d12d42`
-(tree `0a8a4087cac28d9728c397504051cb53e4c20154`): 24 production leaves,
-one production reexport root, 13 client leaves and one client reexport root.
+manifest](api-manifest.json) describe all 39 shipped Lean modules: 24 production
+leaves, one production reexport root, 13 client leaves and one client reexport
+root. The 42 byte-pinned source inputs (39 Lean files and three Lean/Lake pins)
+match the manifest's analyzed source. Its source revision/tree fields identify
+the original extraction inputs, not a required checkout for using this library.
 The records contain 502 production and 146 checked-use client entries; 16 of
 the production entries are named instances, with 16 separate native instance
 table rows. The mixed native surface includes three structures, one class,
@@ -29,8 +30,8 @@ This is a **filtered native declarations/instances reference**, not an
 enumeration of source-private declarations or stored proof bodies. A successful
 generation or adapter test is not an axiom audit, proof recheck, source-coverage
 decision, rights clearance, whole-release acceptance or publication.
-Production semantic guides in the [main README](../README.md), especially
-FreeProduct, ProP and ProcyclicPower, remain authoritative for their stated
+The [mathematical guide](Mathematics.md), especially its FreeProduct, ProP
+and ProcyclicPower explanations, remains authoritative for its stated
 hypotheses and limitations: maps into nonprocyclic targets are allowed where
 stated, positive power-image indices **divide** the power, and no classification
 of arbitrary closed subgroups is asserted.
@@ -39,14 +40,12 @@ of arbitrary closed subgroups is asserted.
 
 The exact SHA-256 bytes of all 39 Lean files and three Lean/Lake pins are fixed
 by [`scripts/generate_api.py`](../scripts/generate_api.py) and repeated in the
-[manifest](api-manifest.json). The commit and tree above label the **analyzed
-source-only inputs**, directly following unaccepted `882d53f855aeeb60f02a72d5f7694438f7b3a237`;
-they are not claims that the later documentation branch is that commit or that
-the historical Git object exists in a source-only archive. Four Lean files
-have scoped source/proof-style or docstring edits relative to that parent;
-the other 35 Lean files and all three pins retain their bytes. The external
-exact-head acceptance record must bind the later documentation commit and tree
-separately. The pinned library uses Lean
+[manifest](api-manifest.json). The historical extraction revision
+`2417a6348d6abede2cf08f46fbb852a9f3d12d42` and tree
+`0a8a4087cac28d9728c397504051cb53e4c20154` bind the native-record
+source-link identity. Their presence in the manifest does not require that
+Git object for source-only replays: the pinned **file bytes**, native raw records
+and link identity govern the adapter. The pinned library uses Lean
 `v4.34.0-rc2` and mathlib `e37d88a26f3791ed5a93daa1f949af1021b8d103`.
 Genuine upstream `leanprover/doc-gen4` revision
 `97d4ecdfc8e09e7f511724c25e303d448de6a3db`, tree
@@ -54,7 +53,7 @@ Genuine upstream `leanprover/doc-gen4` revision
 tool**, not a Lake dependency of this project. Do not update its pinned
 manifest/toolchain while building this revision.
 
-Before any library build, install the pinned Lean toolchain and **successfully
+For an ordinary build, install the pinned Lean toolchain and **successfully
 fetch the mathlib cache in this checkout**; a failed fetch is a blocker, never
 permission for an unannounced full mathlib source rebuild:
 
@@ -64,12 +63,13 @@ lake exe cache get
 LEAN_NUM_THREADS=2 lake --wfail build ProfiniteGroups ProfiniteGroupsTests
 ```
 
-Clone doc-gen4 into a separate checkout and verify its exact commit/tree. Build
+**Optional native extraction recipe (not part of the ordinary build):** clone
+doc-gen4 into a separate checkout and verify its exact commit/tree. Build
 `lake build doc-gen4` there with its own pinned environment; if `cc` is absent,
 prepend `$(dirname "$(elan which lean)")` to `PATH`. From the project root,
-choose an **unused external** output directory for each independent native
-run (never generate into the shipped repository). The following is the
-replay recipe for one run, using only the manifest's shipped module list:
+choose an **unused external** output directory for a native run (never
+generate into the shipped repository). The following reproduces the original
+native link identity using only the manifest's shipped module list:
 
 ```sh
 TOOL=/path/to/separate/doc-gen4/.lake/build/bin/doc-gen4
@@ -97,21 +97,21 @@ python3 -B scripts/generate_api.py --native-data "$OUT/raw" \
 
 `example.invalid` is an inert native record identity, **not** a linked source
 or provenance claim. Retain complete SQLite, raw records, commands, streams,
-exit codes and hashes externally for independent intake; doc-gen4's website
-output does not belong in this library. Re-run with a second fresh directory
-and compare all raw records and SQLite, not merely receipt digests. The two
-earlier independent runs on the **previous** accepted mathematical input
-`3b6c142d7e127b057f5cd54902d24f10fd3fe5cf` produced identical SQLite SHA-256
+exit codes and hashes externally if doing an independent native intake;
+doc-gen4's website output does not belong in this library. A fresh native
+run or repeated website extraction is not a default consumer/release step.
+Two historical independent runs on an earlier mathematical input produced
+identical SQLite SHA-256
 `5ceae54761b812e749db5b25bf8c208320cd080e673c20fb6da0d2a830c1a926`
-and byte-identical contents for **all 39** historical raw records. The current
-manifest instead binds **39 newly generated** source-only predecessor records;
-their inert source-link identity changes every raw record hash. Comparing the
-35 unchanged-source modules with the historical records after normalizing
-*only* that link preserves every header, name, kind, source anchor, docstring
-and instance row. The four edited modules also preserve all displayed headers,
-names, kinds and instance rows, with one corrected source docstring and 68
-updated line anchors. This is one current-source native run, **not** a second
-repeatability claim. Literal retained historical stage timestamps give sequential
+and byte-identical contents for **all 39** historical raw records. The shipped
+manifest binds a separate set of 39 raw records from one extraction of its
+byte-pinned input; changed inert source-link identity changed every raw hash.
+Comparison of the 35 unchanged-source modules after normalizing *only* that
+link preserved every header, name, kind, source anchor, docstring and instance
+row; the other four modules preserved their displayed headers, names, kinds and
+instance rows, with one corrected docstring and 68 updated line anchors.
+The shipped input has **one** native extraction, not a second repeatability
+claim. Literal retained historical stage timestamps give sequential
 native-stage wall sums of 128.577 and 126.523 seconds on those two earlier runs;
 these are not performance promises. The initial cache-first
 `lake --wfail build ProfiniteGroups ProfiniteGroupsTests` completed 2933 jobs,
@@ -146,51 +146,34 @@ The [data-only corruption tests](../scripts/test_generate_api.py) are not
 Lean tests; passing them cannot attest that a producer ran doc-gen4. Raw
 records and full SQLite remain separate provenance for that question.
 
-For source-only replays, retain the 42 checked source inputs, adapter,
-`docs/README.md`, generated API/manifest, and the 39 external raw records.
+For source-only replays, retain the 42 checked source inputs, both Python scripts,
+`docs/README.md`, `docs/Mathematics.md`, generated API/manifest, and the
+**39 external raw records**.
 The adapter does **not** need Git or the historical source commit object.
-The original isolated parentless same-tree replay and no-Git archive test
-applied to the historical documentation candidate; the current-source
-adapter controls and native joins require their own exact-candidate evidence. The
-current development-branch status in this guide is dated **2026-09-26**;
-later release status belongs in an external exact-commit lifecycle record.
+Without those external raw files, the native joins and data-only corruption
+tests cannot be replayed; static reconstruction or fabricated fixtures are
+not substitutes for original extraction. The native manifest is documentation
+evidence, not a whole-release audit.
 
-## Origin, credit and rights
+## Origin and boundaries
 
-This wording and lifecycle correction was prepared by worker-b Hive Task
-`hive-request-1706c2a7c232d243b2552dc0fc1e1b44eac183cd`, UID
-`20fbc411-a19e-45aa-bf2d-326a3d1ea887`, Hive launch request
-`4a7f373610195a111038d48b7afeed25`; it does not claim authorship of
-the underlying catalogue or acceptance of the candidate. The source-only
-successor and its native-reference refresh were prepared by worker-b Hive Task
-`hive-request-305d448654f8080cbf83a1723f1406bfbef7f38a`, UID
-`e0c21780-f6f5-475d-987f-c7594b1e807e`; this also is not acceptance.
-The original
-catalogue and adapter were prepared by worker-b Hive Task
-`hive-request-49578d0143b3fe26e93ee6e54fa1752f1d60bc26`, UID
-`e4f64178-9024-4fe9-8eba-f63c724e7497`, from accepted finite-group Tate
-cohomology revision `61577f7cf2e02715f621a724aa692921ab6bbad9`.
-That donor's mixed-kind generator/tests were authored by worker-b Task
-`hive-request-381dc6f93292eb39ea2d5b25f09baacdc8b20d9e`, UID
-`cd8c84f8-2dbf-4399-9c70-1de364ffa99f`, adapting the accepted
-polynomial-root-stability expression `95ac896f81a3190b2634a4246a3e924d2a267a61`
-and Anchor's ideal-completion recipe `f0c8c34386109116e4912fb425a8ad15d9dc42a4`.
-These project expressions and original Lean source docstrings are credited
-under [Apache License 2.0](../LICENSE), **Authors: Formal Frontier Agents**;
-this is not an assertion of an invented copyright holder. The native
-signatures refer to Lean/mathlib types but copy no upstream documentation or
-website assets. The mathlib and doc-gen4 dependency tools retain their own
-terms and contributor notices in their separate checkouts; the cited NSW
-book supplies mathematical motivation only, and its private source files are
-not bundled. Existing project-origin investigation identified 15 historical
-unsupported owner labels already corrected in the current Lean headers;
-that correction does **not** by itself clear rights in the complete candidate
-or future public squash history. At the September 26 documentation-author
-checkpoint, whole-artifact expression/antecedent, third-party
-notices/redistribution and proposed publication-history review had not been
-established; later decisions need external exact-commit records. The
-separately recorded optional `docBlameThm` check was **NONPASS** for 23
-generated equation-lemma documentation findings, distinct from the 23 native
-`⋯` headers above; owner/fresh-review convention disposition was outstanding
-at that checkpoint. Earlier ordinary mathematics reviews and this Task's
-authorship are not whole-release acceptance.
+The reference and data-only tests adapt the finite-group Tate cohomology
+mixed-kind catalogue via polynomial-root-stability and Anchor's
+ideal-completion recipe. Formal Frontier Agents prepared the reference,
+test controls and subsequent source-only refresh; Beacon coordinated the
+library's readiness and API repairs. Folio contributed the mathematical
+headline descriptions in the [overview](../README.md). Original project
+expression and Lean source docstrings are offered under
+[Apache License 2.0](../LICENSE), **Authors: Formal Frontier Agents**;
+this does not invent a copyright holder. Native signatures refer to
+Lean/mathlib types, but no upstream documentation, website assets or source
+book files are shipped. Mathlib and doc-gen4 retain their own terms and
+contributor notices. Historical origin review corrected unsupported owner
+labels in Lean headers; rights, attribution and publication-history review
+remain separate from adapter validation.
+
+An optional historical `docBlameThm` run was **NONPASS** for 23 generated
+equation-lemma documentation findings. These are **not** the 23 native `⋯`
+headers. Owner convention disposition is recorded in the initial publication
+review history; this guide does not turn that lint into a passing result or
+a fresh mandatory release gate.

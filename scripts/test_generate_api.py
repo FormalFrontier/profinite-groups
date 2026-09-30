@@ -3,13 +3,9 @@
 # Authors: Formal Frontier Agents
 """Data-only corruption and source-only replay tests for the pinned native adapter.
 
-Adapted by Task hive-request-49578d0143b3fe26e93ee6e54fa1752f1d60bc26,
-UID e4f64178-9024-4fe9-8eba-f63c724e7497, from accepted finite-group Tate
-cohomology 61577f7cf2e02715f621a724aa692921ab6bbad9 and its worker-b
-Task hive-request-381dc6f93292eb39ea2d5b25f09baacdc8b20d9e,
-UID cd8c84f8-2dbf-4399-9c70-1de364ffa99f. Earlier polynomial-root-stability
-95ac896f81a3190b2634a4246a3e924d2a267a61 and Anchor ideal-completion
-f0c8c34386109116e4912fb425a8ad15d9dc42a4 supply the recipe lineage.
+Formal Frontier Agents adapted the data-only controls through finite-group
+Tate cohomology, polynomial-root-stability and Anchor's ideal-completion
+recipe. These tests cannot replace the external native records.
 """
 
 import argparse
@@ -69,7 +65,7 @@ class NativeControls(unittest.TestCase):
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(raw)
         for path in ("scripts/generate_api.py", "scripts/test_generate_api.py",
-                     "docs/README.md", "docs/API.md",
+                     "docs/README.md", "docs/Mathematics.md", "docs/API.md",
                      "docs/api-manifest.json"):
             (archive / path).write_bytes((ROOT / path).read_bytes())
         native = base / "external-native"
