@@ -47,12 +47,12 @@ example (G : ProfiniteGrp) (L : ClosedSubgroup G) :
   closedReconstruction_images G L
 ```
 
-The companion client `Tests.CompatibleSubgroups`
-also tests image compatibility, the exact-image theorem for an arbitrary family,
-and the bottom-family boundary case over the trivial profinite group.
+The companion client `ProfiniteGroupsTests.CompatibleSubgroups`
+tests compatibility of closed-subgroup quotient images and the bottom-family
+boundary case over the trivial profinite group.
 
 See the [producer](../ProfiniteGroups/CompatibleSubgroups.lean) and
-[ordinary-import client](../Tests/CompatibleSubgroups.lean) for the declarations
+[ordinary-import client](../ProfiniteGroupsTests/CompatibleSubgroups.lean) for the declarations
 and examples.
 
 ## Proof ingredients and credit

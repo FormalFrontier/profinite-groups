@@ -15,7 +15,9 @@ and `Tests.ProcyclicTorsionFree` have zero new named entries. The reference
 preserves the native displayed headers, including independent universes, the
 original source docstrings and historical source-file line anchors. Links into
 the current checkout may point to shifted lines; consult the byte-pinned
-historical files for source statements. In 23 headers the native
+historical files for source statements. Links under `Tests/` now point to
+deprecated import shims; current client implementations live under
+`ProfiniteGroupsTests/` with the same basenames. In 23 headers the native
 pretty-printer displays Lean `⋯`; the corresponding historical source
 statements preserve the original unelided source text, not unabridged
 elaborated types. All 41 SQLite module-prose rows remain in the historical Lean

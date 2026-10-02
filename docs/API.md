@@ -7,7 +7,8 @@ The historical graph used Lean `v4.34.0-rc2`, mathlib
 the current library pins mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`.
 All entries, counts and line anchors below refer to the historical source.
 Links into this checkout may have shifted; consult the byte-pinned historical
-source when interpreting an anchor.
+source when interpreting an anchor. Links under `Tests/` now point to deprecated
+import shims; current client implementations live under `ProfiniteGroupsTests/`.
 This is a filtered native reference: 502 production and 146 checked-use
 client entries, including structures, a class, constructors, projections,
 instances, definitions and theorems. Full native displayed signatures

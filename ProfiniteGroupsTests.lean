@@ -4,21 +4,21 @@ Authors: Formal Frontier Agents
 -/
 module
 
-public import Tests.PrimewisePadicIdealTransport
-public import Tests.CompatibleSubgroups
-public import Tests.CompatibleSylow
-public import Tests.PrimewisePadicKernelTransport
-public import Tests.PrimewisePadicQuotients
-public import Tests.ProcyclicBaseMap
-public import Tests.ProcyclicGeneratorIndependence
-public import Tests.ProcyclicHom
-public import Tests.ProcyclicInvariant
-public import Tests.ProcyclicPower
-public import Tests.ProcyclicQuotient
-public import Tests.ProcyclicRealization
-public import Tests.ProcyclicTorsionFree
-public import Tests.PublicRoot
-public import Tests.DirectImports
+public import ProfiniteGroupsTests.PrimewisePadicIdealTransport
+public import ProfiniteGroupsTests.CompatibleSubgroups
+public import ProfiniteGroupsTests.CompatibleSylow
+public import ProfiniteGroupsTests.PrimewisePadicKernelTransport
+public import ProfiniteGroupsTests.PrimewisePadicQuotients
+public import ProfiniteGroupsTests.ProcyclicBaseMap
+public import ProfiniteGroupsTests.ProcyclicGeneratorIndependence
+public import ProfiniteGroupsTests.ProcyclicHom
+public import ProfiniteGroupsTests.ProcyclicInvariant
+public import ProfiniteGroupsTests.ProcyclicPower
+public import ProfiniteGroupsTests.ProcyclicQuotient
+public import ProfiniteGroupsTests.ProcyclicRealization
+public import ProfiniteGroupsTests.ProcyclicTorsionFree
+public import ProfiniteGroupsTests.PublicRoot
+public import ProfiniteGroupsTests.DirectImports
 
 /-!
 # Test and client aggregation

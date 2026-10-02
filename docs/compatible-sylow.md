@@ -10,7 +10,7 @@ at `U` is exactly `P`. No countability, metrizability, finite-generation or
 continuity hypothesis beyond the profinite group is imposed.
 
 The [producer](../ProfiniteGroups/CompatibleSylow.lean) and
-[ordinary-import client](../Tests/CompatibleSylow.lean)
+[ordinary-import client](../ProfiniteGroupsTests/CompatibleSylow.lean)
 give the exact declarations and examples.
 
 ## Public API

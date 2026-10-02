@@ -18,4 +18,9 @@ name = "ProfiniteGroups"
 
 [[lean_lib]]
 name = "ProfiniteGroupsTests"
-globs = ["ProfiniteGroupsTests", "Tests.+"]
+globs = ["ProfiniteGroupsTests.*", "Tests.CompatibleSubgroups", "Tests.CompatibleSylow",
+  "Tests.DirectImports", "Tests.PrimewisePadicIdealTransport",
+  "Tests.PrimewisePadicKernelTransport", "Tests.PrimewisePadicQuotients",
+  "Tests.ProcyclicBaseMap", "Tests.ProcyclicGeneratorIndependence", "Tests.ProcyclicHom",
+  "Tests.ProcyclicInvariant", "Tests.ProcyclicPower", "Tests.ProcyclicQuotient",
+  "Tests.ProcyclicRealization", "Tests.ProcyclicTorsionFree", "Tests.PublicRoot"]

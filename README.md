@@ -100,9 +100,13 @@ lake --wfail build ProfiniteGroups ProfiniteGroupsTests
 ```
 
 Do not build from mathlib source if the matching cache fetch fails.
-`ProfiniteGroupsTests` includes regression and public-client imports. Use
-`import ProfiniteGroups` for every production leaf or import an individual
-module. For example, save the following as `Client.lean` and run
+`ProfiniteGroupsTests` includes every regression and public client under
+`ProfiniteGroupsTests.*`. The former `Tests.*` client import paths remain as
+deprecated public-import shims. In a workspace that also requires a package
+whose library owns the entire `Tests` prefix, Lake may resolve those old imports
+to that package instead; use `ProfiniteGroupsTests.*` or the aggregation root
+in composed projects. Use `import ProfiniteGroups` for every production leaf or
+import an individual module. For example, save the following as `Client.lean` and run
 `lake env lean -DwarningAsError=true Client.lean` after the build:
 
 ```lean
