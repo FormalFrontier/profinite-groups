@@ -1,10 +1,11 @@
 # Native API reference and reproducibility
 
 The [filtered native API reference](API.md) and [machine-readable
-manifest](api-manifest.json) describe all 39 shipped Lean modules: 24 production
+manifest](api-manifest.json) describe an earlier 39-module source snapshot, not
+the current library or its compatible-quotient modules: 24 production
 leaves, one production reexport root, 13 client leaves and one client reexport
 root. The 42 byte-pinned source inputs (39 Lean files and three Lean/Lake pins)
-match the manifest's analyzed source. Its source revision/tree fields identify
+match the manifest's analyzed historical source. Its source revision/tree fields identify
 the original extraction inputs, not a required checkout for using this library.
 The records contain 502 production and 146 checked-use client entries; 16 of
 the production entries are named instances, with 16 separate native instance
@@ -12,11 +13,14 @@ table rows. The mixed native surface includes three structures, one class,
 four generated constructors, definitions/projections and theorems. Two roots
 and `Tests.ProcyclicTorsionFree` have zero new named entries. The reference
 preserves the native displayed headers, including independent universes, the
-original source docstrings and source-file line anchors. In 23 headers the
-native pretty-printer displays Lean `⋯`; linked source statements preserve
-the original unelided source text, not unabridged elaborated types. All 41
-SQLite module-prose rows remain in the shipped Lean source, outside this
-filtered declaration/instance index; this is not a full SQLite-table dump.
+original source docstrings and historical source-file line anchors. Links into
+the current checkout may point to shifted lines; consult the byte-pinned
+historical files for source statements. In 23 headers the native
+pretty-printer displays Lean `⋯`; the corresponding historical source
+statements preserve the original unelided source text, not unabridged
+elaborated types. All 41 SQLite module-prose rows remain in the historical Lean
+source, outside this filtered declaration/instance index; this is not a full
+SQLite-table dump.
 Exactly 132 entries
 lack source docstrings and have explicitly **original catalogue explanations**
 instead; these explanations are not Lean docstrings. Three generated `Fact`
@@ -36,6 +40,10 @@ hypotheses and limitations: maps into nonprocyclic targets are allowed where
 stated, positive power-image indices **divide** the power, and no classification
 of arbitrary closed subgroups is asserted.
 
+For the current library and its pinned Mathlib revision, follow the
+[quick start](../README.md#quick-start). The reproduction instructions below
+apply only to the historical API-reference snapshot.
+
 ## Frozen inputs and tools
 
 The exact SHA-256 bytes of all 39 Lean files and three Lean/Lake pins are fixed
@@ -53,9 +61,82 @@ Genuine upstream `leanprover/doc-gen4` revision
 tool**, not a Lake dependency of this project. Do not update its pinned
 manifest/toolchain while building this revision.
 
-For an ordinary build, install the pinned Lean toolchain and **successfully
-fetch the mathlib cache in this checkout**; a failed fetch is a blocker, never
-permission for an unannounced full mathlib source rebuild:
+The historical revision supplies the **Lean source and three pins**, but its
+stock adapter and manifest describe a different extraction. To check this
+catalogue, stage the two adapter scripts and four documentation files from
+the checkout containing this guide alongside those historical inputs. From
+the root of the checkout containing this guide, make a separate worktree at
+the extraction revision (fetch that revision first if it is not locally
+available):
+
+```sh
+HERE=$(pwd -P)
+REV=2417a6348d6abede2cf08f46fbb852a9f3d12d42
+HIST=/path/to/new/historical-api-worktree
+git worktree add --detach "$HIST" "$REV"
+test "$(git -C "$HIST" rev-parse HEAD^{tree})" = 0a8a4087cac28d9728c397504051cb53e4c20154
+cp "$HERE/scripts/generate_api.py" "$HERE/scripts/test_generate_api.py" "$HIST/scripts/"
+cp "$HERE/docs/API.md" "$HERE/docs/api-manifest.json" \
+  "$HERE/docs/README.md" "$HERE/docs/Mathematics.md" "$HIST/docs/"
+cd "$HIST"
+```
+
+Only these six adapter/output/guide files come from the checkout containing
+this guide; the 39 Lean files and `lean-toolchain`, `lakefile.toml` and
+`lake-manifest.json` remain at the historical revision. Copying the current
+`docs/` or `scripts/` directories wholesale would introduce extra guides
+that the adapter refuses. In particular, do not copy the current library's
+compatible-quotient modules or change its pins to reproduce history. An
+isolated source-only copy with the same 42 pinned inputs and six staged files
+also works without the historical Git object; it must have no extra Lean
+modules or adapter/doc files. The staged adapter and corrected API/manifest
+come from the checkout containing this guide, **not** the stock historical
+checkout. Read the mathematical guide's current-only compatible-subgroup and
+Sylow links in the checkout containing this guide; those linked guides do not
+belong in the historical checking workspace. Verify the source/pin bytes and
+the strict file inventories before building:
+
+```sh
+python3 -I -B - <<'PY'
+import ast
+import hashlib
+import json
+from pathlib import Path
+
+manifest = json.loads(Path('docs/api-manifest.json').read_text())
+adapter = {
+    node.targets[0].id: ast.literal_eval(node.value)
+    for node in ast.parse(Path('scripts/generate_api.py').read_text()).body
+    if isinstance(node, ast.Assign) and len(node.targets) == 1
+    and isinstance(node.targets[0], ast.Name)
+    and node.targets[0].id in {'SOURCE', 'SOURCE_TREE', 'TOOL', 'TOOL_TREE',
+                               'MODULES', 'SOURCE_INPUT_SHA256', 'NATIVE_RECORD_SHA256'}
+}
+assert manifest['analyzed_source_revision'] == adapter['SOURCE'] == '2417a6348d6abede2cf08f46fbb852a9f3d12d42'
+assert manifest['analyzed_source_tree'] == adapter['SOURCE_TREE'] == '0a8a4087cac28d9728c397504051cb53e4c20154'
+assert manifest['docgen_revision'] == adapter['TOOL'] == '97d4ecdfc8e09e7f511724c25e303d448de6a3db'
+assert manifest['docgen_tree'] == adapter['TOOL_TREE'] == 'ebf77f3e174c145c9ca2db0df1c18a78ae87c93b'
+assert manifest['modules'] == list(adapter['MODULES']) and len(manifest['modules']) == 39
+assert manifest['inputs'] == adapter['SOURCE_INPUT_SHA256'] and len(manifest['inputs']) == 42
+assert manifest['native_record_sha256'] == adapter['NATIVE_RECORD_SHA256']
+assert set(manifest['normalized_record_sha256']) == set(manifest['modules'])
+assert all(Path(path).is_file() and not Path(path).is_symlink()
+           and hashlib.sha256(Path(path).read_bytes()).hexdigest() == digest
+           for path, digest in manifest['inputs'].items())
+lean = {path.as_posix() for directory in (Path('.'), Path('ProfiniteGroups'), Path('Tests'))
+        for path in directory.glob('*.lean')}
+assert lean == {path for path in manifest['inputs'] if path.endswith('.lean')}
+assert {path.name for path in Path('scripts').iterdir()} == {'generate_api.py', 'test_generate_api.py'}
+assert {path.name for path in Path('docs').iterdir()} == {'API.md', 'api-manifest.json', 'README.md', 'Mathematics.md'}
+assert manifest['api_sha256'] == 'baf24ea331bd06f2220e6bcd3762edf9c70851511e33ccf12849baf3fbc78094'
+assert hashlib.sha256(Path('docs/API.md').read_bytes()).hexdigest() == manifest['api_sha256']
+print('Historical source, adapter and output identities match')
+PY
+```
+
+In that separate historical worktree, install its pinned Lean toolchain and
+**successfully fetch its matching mathlib cache**; a failed fetch is a blocker,
+never permission for an unannounced full mathlib source rebuild:
 
 ```sh
 elan toolchain install "$(cat lean-toolchain)"
@@ -63,13 +144,14 @@ lake exe cache get
 LEAN_NUM_THREADS=2 lake --wfail build ProfiniteGroups ProfiniteGroupsTests
 ```
 
-**Optional native extraction recipe (not part of the ordinary build):** clone
-doc-gen4 into a separate checkout and verify its exact commit/tree. Build
+**Optional independent native extraction (not part of the ordinary build):** clone
+doc-gen4 into another separate checkout and verify its exact commit/tree. Build
 `lake build doc-gen4` there with its own pinned environment; if `cc` is absent,
-prepend `$(dirname "$(elan which lean)")` to `PATH`. From the project root,
-choose an **unused external** output directory for a native run (never
-generate into the shipped repository). The following reproduces the original
-native link identity using only the manifest's shipped module list:
+prepend `$(dirname "$(elan which lean)")` to `PATH`. From the separate historical
+project root (not the current checkout), choose an **unused external** output
+directory for a native run (never generate into the shipped repository). The
+following reproduces the original native link identity using only the manifest's
+historical module list:
 
 ```sh
 TOOL=/path/to/separate/doc-gen4/.lake/build/bin/doc-gen4
@@ -94,6 +176,23 @@ python3 -B scripts/generate_api.py --native-data "$OUT/raw" \
   --source-revision "$REV" \
   --docgen-revision 97d4ecdfc8e09e7f511724c25e303d448de6a3db --check
 ```
+
+For a source-only replay of the shipped output, instead supply the **original
+externally retained** 39 raw native records to the staged adapter; these files
+are not included in either checkout:
+
+```sh
+RAW=/path/to/original/external/raw
+python3 -B scripts/test_generate_api.py --native-data "$RAW"
+python3 -B scripts/generate_api.py --native-data "$RAW" \
+  --source-revision "$REV" \
+  --docgen-revision 97d4ecdfc8e09e7f511724c25e303d448de6a3db --check
+```
+
+Without the original external records, a replay of the shipped extraction
+cannot be claimed. A fresh native run is only an independent comparison, not
+a substitute for those archived records or evidence of a second historical
+run. Do not fabricate missing records.
 
 `example.invalid` is an inert native record identity, **not** a linked source
 or provenance claim. Retain complete SQLite, raw records, commands, streams,

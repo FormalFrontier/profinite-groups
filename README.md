@@ -1,10 +1,11 @@
 # Profinite groups
 
 Reusable Lean theory for profinite groups: categorical and finite-quotient maps,
-continuous sections, free products, primewise p-adic models, procyclic
+closed-subgroup reconstruction, compatible Sylow families, continuous sections,
+free products, primewise p-adic models, procyclic
 classification, and power images. The [mathematical guide](docs/Mathematics.md)
-explains the constructions and limitations; the [native API](docs/API.md) lists
-the shipped declarations, with a [reproduction guide](docs/README.md).
+explains the constructions and limitations; the [historical native API](docs/API.md)
+documents an earlier snapshot, with a [reproduction guide](docs/README.md).
 The library builds on mathlib's profinite categories, completions, p-adic
 integers and general algebra/topology.
 
@@ -18,6 +19,16 @@ integers and general algebra/topology.
   finite-presentation theorem for groups. See [`EpiMono`](ProfiniteGroups/EpiMono.lean),
   [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean),
   [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean).
+- **Finite-quotient subgroups and Sylow families.** Compatible subgroup images
+  in every open-normal quotient reconstruct a unique closed subgroup, with
+  **equality** at each coordinate. For every prime `p`, a compatible Sylow
+  family exists on all such quotients even with an arbitrarily prescribed
+  Sylow subgroup at any one quotient. The latter is a quotient-level family,
+  not a closed Sylow subgroup of `G`. See
+  [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean) and its
+  [guide](docs/compatible-subgroups.md), and
+  [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean) and its
+  [guide](docs/compatible-sylow.md).
 - **Continuous sections.** For closed `K ≤ H` in a profinite group, the
   projection `G/K → G/H` has a continuous right inverse; a supporting result
   supplies sections of surjective local homeomorphisms over compact Hausdorff
@@ -81,7 +92,7 @@ integers and general algebra/topology.
 Install [elan](https://github.com/leanprover/elan) and Git. The pinned
 [`lean-toolchain`](lean-toolchain) selects Lean `v4.34.0-rc2`;
 [`lake-manifest.json`](lake-manifest.json) pins mathlib at
-`e37d88a26f3791ed5a93daa1f949af1021b8d103`. From the project root:
+`83abb3e776bdefcbc447a1e44d0debe4010039e5`. From the project root:
 
 ```sh
 lake exe cache get
@@ -122,6 +133,7 @@ leaf below; no `Tests` module is part of the production root.
 | Mathematics | Importable modules |
 | --- | --- |
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean) |
+| Quotient subgroups and Sylow choices | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
 | Cyclic completion and product | [`Procyclic`](ProfiniteGroups/Procyclic.lean), [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean), [`PrimewisePadicKernel`](ProfiniteGroups/PrimewisePadicKernel.lean) |
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
@@ -131,8 +143,8 @@ leaf below; no `Tests` module is part of the production root.
 
 ## Scope and credit
 
-This source-independent library ships one production root with 24 leaves,
-and a separate test root with 13 client leaves. Mathematical correspondence
+This source-independent library ships one production root with 26 leaves,
+and a separate test root with 15 client leaves. Mathematical correspondence
 and coverage of particular sources are recorded outside this library.
 [Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, corrected second
 edition, electronic version 2.3 (May 2020)](https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/)

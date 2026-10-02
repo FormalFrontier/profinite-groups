@@ -1,6 +1,9 @@
 # Mathematical guide
 
-[Back to the overview](../README.md) · [Native API](API.md) · [Reproduction guide](README.md).
+[Back to the overview](../README.md) · [Historical native API (earlier snapshot)](API.md) · [Historical reproduction guide](README.md).
+
+The linked native catalogue predates the compatible-quotient modules and does
+not describe the current library or its Mathlib pin.
 
 ## Mathematical scope
 
@@ -22,6 +25,14 @@ work for any group equipped with a topology: continuity comes from the discrete
 finite **source** quotient. The inverse construction through an open kernel,
 and hence the two-sided equivalence for a general target type, still require
 the target to be discrete.
+
+For subgroup images in **every** finite open-normal quotient, compatibility
+under finer-to-coarser transitions reconstructs a unique closed subgroup,
+whose image at each quotient is exactly the chosen coordinate. A compatible
+Sylow family exists for any prime even after prescribing its choice in one
+quotient; this does not construct a profinite Sylow subgroup. See the
+[quotient-image reconstruction](compatible-subgroups.md) and
+[compatible Sylow family](compatible-sylow.md) guides.
 
 The continuous-section API shows that a surjective local homeomorphism over a
 profinite space has a section. In particular, `G/T → G/S` has a continuous

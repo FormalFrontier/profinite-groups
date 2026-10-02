@@ -7,6 +7,8 @@ module
 public import ProfiniteGroups.EpiMono
 public import ProfiniteGroups.ContinuousSection
 public import ProfiniteGroups.FiniteQuotientHom
+public import ProfiniteGroups.CompatibleSubgroups
+public import ProfiniteGroups.CompatibleSylow
 public import ProfiniteGroups.FreeProduct
 public import ProfiniteGroups.FinitePresentation
 public import ProfiniteGroups.ProP
@@ -34,7 +36,8 @@ public import ProfiniteGroups.ProcyclicPower
 
 The public entry point for the categorical, finite-quotient, free-product,
 pro-`p`, and procyclic APIs. It includes the primewise p-adic model, closed
-ideals and subgroups, exponent invariants and quotient models, and power images
+ideals and subgroups, reconstruction from compatible finite-quotient images,
+compatible Sylow families, exponent invariants and quotient models, and power images
 of procyclic groups. Import this module to use the entire library; import an
 individual `ProfiniteGroups.*` module for a smaller dependency closure.
 

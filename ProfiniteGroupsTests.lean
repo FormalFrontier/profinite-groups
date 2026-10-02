@@ -5,6 +5,8 @@ Authors: Formal Frontier Agents
 module
 
 public import Tests.PrimewisePadicIdealTransport
+public import Tests.CompatibleSubgroups
+public import Tests.CompatibleSylow
 public import Tests.PrimewisePadicKernelTransport
 public import Tests.PrimewisePadicQuotients
 public import Tests.ProcyclicBaseMap
@@ -21,6 +23,6 @@ public import Tests.DirectImports
 /-!
 # Test and client aggregation
 
-All eleven historical proof-using test modules and both standalone public API
-clients are default-built through this root. The production root never imports tests.
+Proof-using examples and standalone public API clients are default-built through
+this root. The production root never imports tests.
 -/

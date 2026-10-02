@@ -4,7 +4,8 @@ project:
   name: Profinite Groups
   description: >-
     Reusable Lean APIs for profinite-group morphisms, finite-quotient Hom
-    systems, continuous sections, free profinite and pro-p constructions,
+    systems, compatible quotient-subgroup and Sylow families, continuous
+    sections, free profinite and pro-p constructions,
     primewise p-adic models, and procyclic invariants and power images.
   authors:
     - Formal Frontier Agents
@@ -29,7 +30,7 @@ related_formalizations:
   - id: https://github.com/leanprover-community/mathlib4
     relationship: builds-on
     note: >-
-      Pinned mathlib revision e37d88a26f3791ed5a93daa1f949af1021b8d103;
+      Pinned mathlib revision 83abb3e776bdefcbc447a1e44d0debe4010039e5;
       provides profinite categories and completions, p-adic structures and
       general topology/algebra. Its own notices and license remain applicable.
 
@@ -39,9 +40,11 @@ classification:
 
 status:
   scope: >-
-    One production root imports 24 Lean leaves; a separate test root imports
-    13 checked-use client leaves. The 39-module filtered native API includes
-    declarations and instances, not private declarations or proof bodies.
+    One production root imports 26 Lean leaves; a separate test root imports
+    15 checked-use client leaves. The bundled 39-module filtered native API
+    describes an earlier snapshot, not the newly added modules or proof bodies.
+    Compatible quotient images reconstruct closed subgroups, and arbitrary
+    prescribed quotient-level Sylow coordinates extend to compatible families.
     Procyclic power images classify open subgroups, not all closed subgroups
     of an arbitrary procyclic group. The closed-subgroup classification is
     for the specific primewise p-adic product.
