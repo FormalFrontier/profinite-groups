@@ -105,6 +105,13 @@ integers and general algebra/topology.
   available. When `G` is torsion-free, exact index is equivalent to every
   prime dividing `n` having infinite exponent. See
   [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean).
+- **Power-quotient transitions.** If `d ∣ n`, inclusion of power images gives
+  a surjective continuous homomorphism from the `n`th-power quotient to the
+  `d`th-power quotient, preserving classes and satisfying identity and
+  composition laws without an index assumption. If the source has exact index
+  `n > 0`, the target has exact index `d`; equivalences normalized by the same
+  topological generator identify this map with reduction `ZMod n → ZMod d`.
+  See [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean).
 - **Closed subgroups of procyclic groups.** Every closed subgroup of an
   arbitrary procyclic profinite group is procyclic in its inherited group and
   topology, without an openness or finite-index assumption. It has a generator
@@ -171,7 +178,7 @@ leaf below; no `Tests` module is part of the production root.
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
 | Universe and generator transport | [`ProcyclicBaseMap`](ProfiniteGroups/ProcyclicBaseMap.lean), [`PrimewisePadicIdealTransport`](ProfiniteGroups/PrimewisePadicIdealTransport.lean), [`PrimewisePadicKernelTransport`](ProfiniteGroups/PrimewisePadicKernelTransport.lean), [`ProcyclicGeneratorIndependence`](ProfiniteGroups/ProcyclicGeneratorIndependence.lean) |
 | Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean) |
-| Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
+| Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
 
 ## Scope and credit
 
