@@ -4,7 +4,8 @@ project:
   name: Profinite Groups
   description: >-
     Reusable Lean APIs for profinite-group morphisms, finite-quotient Hom
-    systems, compatible quotient-subgroup and Sylow families, continuous
+    systems, compatible quotient-subgroup and Sylow families, closed
+    subgroups with Sylow finite images, finite-quotient conjugacy, continuous
     sections, free profinite and pro-p constructions,
     primewise p-adic models, and procyclic invariants and power images.
   authors:
@@ -40,11 +41,14 @@ classification:
 
 status:
   scope: >-
-    One production root imports 26 Lean leaves; a separate test root imports
-    15 checked-use client leaves. The bundled 39-module filtered native API
+    One production root imports 28 Lean leaves; a separate test root imports
+    17 checked-use client leaves. The bundled 39-module filtered native API
     describes an earlier snapshot, not the newly added modules or proof bodies.
     Compatible quotient images reconstruct closed subgroups, and arbitrary
-    prescribed quotient-level Sylow coordinates extend to compatible families.
+    prescribed quotient-level Sylow coordinates extend to compatible families
+    and closed subgroups with Sylow finite images. Maximality is conditional on
+    every actual finite quotient image of a containing subgroup being a p-group;
+    independently conjugate images of closed subgroups yield an ambient conjugator.
     Procyclic power images classify open subgroups, not all closed subgroups
     of an arbitrary procyclic group. The closed-subgroup classification is
     for the specific primewise p-adic product.

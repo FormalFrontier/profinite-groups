@@ -2,7 +2,7 @@
 
 [Back to the overview](../README.md) · [Historical native API (earlier snapshot)](API.md) · [Historical reproduction guide](README.md).
 
-The linked native catalogue predates the compatible-quotient modules and does
+The linked native catalogue predates the compatible-quotient and conjugacy modules and does
 not describe the current library or its Mathlib pin.
 
 ## Mathematical scope
@@ -30,9 +30,19 @@ For subgroup images in **every** finite open-normal quotient, compatibility
 under finer-to-coarser transitions reconstructs a unique closed subgroup,
 whose image at each quotient is exactly the chosen coordinate. A compatible
 Sylow family exists for any prime even after prescribing its choice in one
-quotient; this does not construct a profinite Sylow subgroup. See the
+quotient. Such a family reconstructs a closed subgroup whose actual image at
+every finite quotient is the prescribed Sylow subgroup. This reconstruction
+is maximal among subgroups containing it whose images in *all* finite
+open-normal quotients are `p`-groups, without requiring the larger subgroup
+to be closed. It does not assert that the abstract underlying subgroup is
+an algebraic `p`-group or give a general pro-`p` criterion. Two arbitrary
+closed subgroups are conjugate exactly when their images are conjugate in
+every finite open-normal quotient, independently at each level; no coherent
+selection of quotient conjugators is needed. See the
 [quotient-image reconstruction](compatible-subgroups.md) and
-[compatible Sylow family](compatible-sylow.md) guides.
+[compatible Sylow family](compatible-sylow.md),
+[closed Sylow images](closed-sylow.md), and
+[finite-quotient conjugacy](finite-quotient-conjugacy.md) guides.
 
 The continuous-section API shows that a surjective local homeomorphism over a
 profinite space has a section. In particular, `G/T → G/S` has a continuous

@@ -2,7 +2,7 @@
 
 The [filtered native API reference](API.md) and [machine-readable
 manifest](api-manifest.json) describe an earlier 39-module source snapshot, not
-the current library or its compatible-quotient modules: 24 production
+the current library or its compatible-quotient and conjugacy modules: 24 production
 leaves, one production reexport root, 13 client leaves and one client reexport
 root. The 42 byte-pinned source inputs (39 Lean files and three Lean/Lake pins)
 match the manifest's analyzed historical source. Its source revision/tree fields identify

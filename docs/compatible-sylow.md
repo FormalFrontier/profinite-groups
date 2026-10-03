@@ -64,7 +64,9 @@ development builds on their work.
 Formal Frontier Agents developed the Lean construction and examples, with
 mathematical and documentation contributions from Beacon.
 
-This library gives a compatible **quotient-level** family, not a closed subgroup
-of `G`. Reconstructing a closed subgroup with these finite images, proving its
-pro-`p` and maximality properties, Sylow conjugacy at the profinite level and
-using any resulting object in continuous cohomology are separate steps.
+The [closed Sylow image construction](closed-sylow.md) reconstructs a closed
+subgroup of `G` from this quotient-level family and proves maximality among
+containing subgroups whose actual finite quotient images are `p`-groups. It
+does not assert that the reconstructed subgroup is an abstract `p`-group or
+establish a pro-`p` equivalence. Sylow conjugacy and cohomological applications
+are separate questions.

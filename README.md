@@ -1,7 +1,8 @@
 # Profinite groups
 
 Reusable Lean theory for profinite groups: categorical and finite-quotient maps,
-closed-subgroup reconstruction, compatible Sylow families, continuous sections,
+closed-subgroup reconstruction, compatible Sylow families and closed subgroups
+with Sylow finite images, finite-quotient conjugacy, continuous sections,
 free products, primewise p-adic models, procyclic
 classification, and power images. The [mathematical guide](docs/Mathematics.md)
 explains the constructions and limitations; the [historical native API](docs/API.md)
@@ -23,12 +24,23 @@ integers and general algebra/topology.
   in every open-normal quotient reconstruct a unique closed subgroup, with
   **equality** at each coordinate. For every prime `p`, a compatible Sylow
   family exists on all such quotients even with an arbitrarily prescribed
-  Sylow subgroup at any one quotient. The latter is a quotient-level family,
-  not a closed Sylow subgroup of `G`. See
+  Sylow subgroup at any one quotient. Each such family reconstructs a closed
+  subgroup with **exactly** those Sylow images. A subgroup containing this
+  reconstruction equals it if all its actual finite quotient images are
+  `p`-groups, even if that subgroup is not closed. This is not an assertion
+  that its underlying abstract subgroup is an algebraic `p`-group. See
   [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean) and its
   [guide](docs/compatible-subgroups.md), and
   [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean) and its
-  [guide](docs/compatible-sylow.md).
+  [guide](docs/compatible-sylow.md), and
+  [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean) and its
+  [guide](docs/closed-sylow.md).
+- **Closed-subgroup conjugacy.** Two closed subgroups of a profinite group
+  are conjugate precisely when their images are conjugate in every finite
+  open-normal quotient. The quotient conjugators need not form a compatible
+  family; no countability or openness assumption is used. See
+  [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean)
+  and its [guide](docs/finite-quotient-conjugacy.md).
 - **Continuous sections.** For closed `K ≤ H` in a profinite group, the
   projection `G/K → G/H` has a continuous right inverse; a supporting result
   supplies sections of surjective local homeomorphisms over compact Hausdorff
@@ -137,7 +149,7 @@ leaf below; no `Tests` module is part of the production root.
 | Mathematics | Importable modules |
 | --- | --- |
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean) |
-| Quotient subgroups and Sylow choices | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean) |
+| Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
 | Cyclic completion and product | [`Procyclic`](ProfiniteGroups/Procyclic.lean), [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean), [`PrimewisePadicKernel`](ProfiniteGroups/PrimewisePadicKernel.lean) |
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
@@ -147,8 +159,8 @@ leaf below; no `Tests` module is part of the production root.
 
 ## Scope and credit
 
-This source-independent library ships one production root with 26 leaves,
-and a separate test root with 15 client leaves. Mathematical correspondence
+This source-independent library ships one production root with 28 leaves,
+and a separate test root with 17 client leaves. Mathematical correspondence
 and coverage of particular sources are recorded outside this library.
 [Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, corrected second
 edition, electronic version 2.3 (May 2020)](https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/)
