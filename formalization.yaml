@@ -42,8 +42,8 @@ classification:
 
 status:
   scope: >-
-    One production root imports 29 Lean leaves; a separate test root imports
-    18 checked-use client leaves. The bundled 39-module filtered native API
+    Production modules and checked-use clients have separate import roots.
+    The bundled 39-module filtered native API
     describes an earlier snapshot, not the newly added modules or proof bodies.
     Compatible quotient images reconstruct closed subgroups, and arbitrary
     prescribed quotient-level Sylow coordinates extend to compatible families

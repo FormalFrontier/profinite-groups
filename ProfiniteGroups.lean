@@ -32,6 +32,7 @@ public import ProfiniteGroups.ProcyclicInvariant
 public import ProfiniteGroups.ProcyclicRealization
 public import ProfiniteGroups.ProcyclicHom
 public import ProfiniteGroups.ProcyclicPower
+public import ProfiniteGroups.ProcyclicPowerIndex
 public import ProfiniteGroups.ProcyclicClosedSubgroup
 
 /-!
