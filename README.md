@@ -96,6 +96,13 @@ integers and general algebra/topology.
   the power image at its actual index. The zero-power image is trivial and
   need not be open; no arbitrary-procyclic closed-subgroup classification is
   asserted. See [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean).
+- **Closed subgroups of procyclic groups.** Every closed subgroup of an
+  arbitrary procyclic profinite group is procyclic in its inherited group and
+  topology, without an openness or finite-index assumption. It has a generator
+  inside the subgroup whose integral powers are dense there. The result also
+  accepts an ordinary subgroup with a closedness proof. It does not classify
+  arbitrary closed subgroups by exponents. See
+  [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean).
 
 [Mathematical details, hypotheses and API limitations](docs/Mathematics.md).
 
@@ -155,12 +162,12 @@ leaf below; no `Tests` module is part of the production root.
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
 | Universe and generator transport | [`ProcyclicBaseMap`](ProfiniteGroups/ProcyclicBaseMap.lean), [`PrimewisePadicIdealTransport`](ProfiniteGroups/PrimewisePadicIdealTransport.lean), [`PrimewisePadicKernelTransport`](ProfiniteGroups/PrimewisePadicKernelTransport.lean), [`ProcyclicGeneratorIndependence`](ProfiniteGroups/ProcyclicGeneratorIndependence.lean) |
 | Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean) |
-| Maps and open power images | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean) |
+| Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
 
 ## Scope and credit
 
-This source-independent library ships one production root with 28 leaves,
-and a separate test root with 17 client leaves. Mathematical correspondence
+This source-independent library ships one production root with 29 leaves,
+and a separate test root with 18 client leaves. Mathematical correspondence
 and coverage of particular sources are recorded outside this library.
 [Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, corrected second
 edition, electronic version 2.3 (May 2020)](https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/)

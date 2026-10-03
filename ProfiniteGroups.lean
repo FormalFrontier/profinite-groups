@@ -32,6 +32,7 @@ public import ProfiniteGroups.ProcyclicInvariant
 public import ProfiniteGroups.ProcyclicRealization
 public import ProfiniteGroups.ProcyclicHom
 public import ProfiniteGroups.ProcyclicPower
+public import ProfiniteGroups.ProcyclicClosedSubgroup
 
 /-!
 # Profinite groups
@@ -40,8 +41,9 @@ The public entry point for the categorical, finite-quotient, free-product,
 pro-`p`, and procyclic APIs. It includes the primewise p-adic model, closed
 ideals and subgroups, reconstruction from compatible finite-quotient images,
 compatible Sylow families and their reconstructed closed subgroups, finite-quotient
-conjugacy of closed subgroups, exponent invariants and quotient models, and power images
-of procyclic groups. Import this module to use the entire library; import an
+conjugacy of closed subgroups, exponent invariants and quotient models, power
+images, and inheritance by closed subgroups of procyclic groups. Import this
+module to use the entire library; import an
 individual `ProfiniteGroups.*` module for a smaller dependency closure.
 
 The procyclic classification and power theorems require an explicit

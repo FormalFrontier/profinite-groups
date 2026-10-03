@@ -44,6 +44,12 @@ theorem cyclicTwoFourthIndexDivides :
       Subgroup (finiteCyclic 2)).index ∣ 4 :=
   (positivePowerIndexDivides _ _ 4 (by decide)).2
 
+/-- The square subgroup of a finite cyclic group has a generator in its inherited topology. -/
+theorem cyclicFourSquareSubgroupGenerator :
+    ∃ g : ofClosedSubgroup (powerImage (finiteCyclic 4) (finiteCyclic_isProcyclic 4) 2),
+      (Subgroup.zpowers g).topologicalClosure = ⊤ :=
+  (finiteCyclic_isProcyclic 4).exists_closedSubgroup_generator _
+
 /-- Zero, positive finite and infinite exponents occur in one model. -/
 def mixedProfile (p : Nat.Primes) : ℕ∞ :=
   if p.1 = 2 then 0 else if p.1 = 3 then 2 else ⊤
@@ -170,6 +176,7 @@ end PublicRootTests
 #print axioms PublicRootTests.arbitraryTargetCriterion
 #print axioms PublicRootTests.positivePowerIndexDivides
 #print axioms PublicRootTests.cyclicTwoFourthIndexDivides
+#print axioms PublicRootTests.cyclicFourSquareSubgroupGenerator
 #print axioms PublicRootTests.mixedProfile
 #print axioms PublicRootTests.mixedProfileExtracted
 #print axioms PublicRootTests.mixedProfileCoordinates

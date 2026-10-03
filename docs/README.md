@@ -40,7 +40,8 @@ The [mathematical guide](Mathematics.md), especially its FreeProduct, ProP
 and ProcyclicPower explanations, remains authoritative for its stated
 hypotheses and limitations: maps into nonprocyclic targets are allowed where
 stated, positive power-image indices **divide** the power, and no classification
-of arbitrary closed subgroups is asserted.
+by exponents of arbitrary closed subgroups is asserted. The current library
+proves that every closed subgroup of a procyclic profinite group is procyclic.
 
 For the current library and its pinned Mathlib revision, follow the
 [quick start](../README.md#quick-start). The reproduction instructions below

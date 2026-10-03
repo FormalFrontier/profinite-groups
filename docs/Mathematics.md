@@ -227,6 +227,17 @@ squares in `C₃` are surjective (index `1`), and squares in `C₄` have index
 primewise exponent formulas are included; additive users can use the existing
 `Additive`/`Multiplicative` bridges.
 
+The [closed-subgroup inheritance API](../ProfiniteGroups/ProcyclicClosedSubgroup.lean)
+shows that every `H : ClosedSubgroup G` of a procyclic `G : ProfiniteGrp.{u}`
+is procyclic in its inherited group and topology. A generator belongs to
+`ofClosedSubgroup H`, and its integral powers are dense within that subgroup.
+An ordinary subgroup with a closedness proof also qualifies. The primewise
+product case uses the decomposition of closed product ideals into principal
+coordinate ideals and density of the integral diagonal; the general case
+pulls back along the continuous primewise surjection. Neither an exponent
+classification nor a finite-index formula for arbitrary closed subgroups
+follows from this statement.
+
 The primewise quotient factors and their product are additively torsion-free
 exactly when every exponent is zero or infinite: zero gives a trivial residue
 factor, while a positive finite exponent contributes nonzero torsion. This

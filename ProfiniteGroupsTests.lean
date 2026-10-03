@@ -16,6 +16,7 @@ public import ProfiniteGroupsTests.ProcyclicGeneratorIndependence
 public import ProfiniteGroupsTests.ProcyclicHom
 public import ProfiniteGroupsTests.ProcyclicInvariant
 public import ProfiniteGroupsTests.ProcyclicPower
+public import ProfiniteGroupsTests.ProcyclicClosedSubgroup
 public import ProfiniteGroupsTests.ProcyclicQuotient
 public import ProfiniteGroupsTests.ProcyclicRealization
 public import ProfiniteGroupsTests.ProcyclicTorsionFree

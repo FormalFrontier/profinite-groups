@@ -7,7 +7,8 @@ project:
     systems, compatible quotient-subgroup and Sylow families, closed
     subgroups with Sylow finite images, finite-quotient conjugacy, continuous
     sections, free profinite and pro-p constructions,
-    primewise p-adic models, and procyclic invariants and power images.
+    primewise p-adic models, and procyclic invariants, power images, and
+    closed-subgroup inheritance.
   authors:
     - Formal Frontier Agents
   responsible_maintainers:
@@ -41,8 +42,8 @@ classification:
 
 status:
   scope: >-
-    One production root imports 28 Lean leaves; a separate test root imports
-    17 checked-use client leaves. The bundled 39-module filtered native API
+    One production root imports 29 Lean leaves; a separate test root imports
+    18 checked-use client leaves. The bundled 39-module filtered native API
     describes an earlier snapshot, not the newly added modules or proof bodies.
     Compatible quotient images reconstruct closed subgroups, and arbitrary
     prescribed quotient-level Sylow coordinates extend to compatible families
@@ -51,7 +52,8 @@ status:
     independently conjugate images of closed subgroups yield an ambient conjugator.
     Procyclic power images classify open subgroups, not all closed subgroups
     of an arbitrary procyclic group. The closed-subgroup classification is
-    for the specific primewise p-adic product.
+    for the specific primewise p-adic product. Nevertheless, every closed
+    subgroup of a procyclic profinite group inherits procyclicity.
 
 automation:
   methods:
