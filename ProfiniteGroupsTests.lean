@@ -8,6 +8,7 @@ public import ProfiniteGroupsTests.PrimewisePadicIdealTransport
 public import ProfiniteGroupsTests.CompatibleSubgroups
 public import ProfiniteGroupsTests.CompatibleSylow
 public import ProfiniteGroupsTests.ClosedSylow
+public import ProfiniteGroupsTests.ClosedQuotient
 public import ProfiniteGroupsTests.FiniteQuotientConjugacy
 public import ProfiniteGroupsTests.PrimewisePadicKernelTransport
 public import ProfiniteGroupsTests.PrimewisePadicQuotients

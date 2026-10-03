@@ -4,7 +4,7 @@ Authors: Formal Frontier Agents
 -/
 module
 
-public import ProfiniteGroups.ProcyclicPowerIndex
+public import ProfiniteGroups.ProcyclicPowerIndices
 public import ProfiniteGroups.ProcyclicRealization
 public import ProfiniteGroupsTests.ProcyclicPower
 
@@ -195,6 +195,97 @@ private theorem twoPrimary_third_index_one :
   rcases (Nat.dvd_prime (by decide : Nat.Prime 3)).mp hdiv with hone | hthree
   · exact hone
   · exact (hnot hthree).elim
+
+private def twoPrime : Nat.Primes := ⟨2, by decide⟩
+
+private theorem two_supported_four :
+    4 ∈ Nat.primeSupportedIndices ({twoPrime} : Set Nat.Primes) := by
+  have htwo : 2 ∈ Nat.primeSupportedIndices ({twoPrime} : Set Nat.Primes) :=
+    (Nat.prime_mem_primeSupportedIndices_iff twoPrime).mpr (Set.mem_singleton twoPrime)
+  simpa [twoPrime] using
+    (Nat.primeSupportedIndices ({twoPrime} : Set Nat.Primes)).mul_mem htwo htwo
+
+private theorem two_supported_not_three :
+    3 ∉ Nat.primeSupportedIndices ({twoPrime} : Set Nat.Primes) := by
+  intro hthree
+  have hprime := (Nat.mem_primeSupportedIndices_iff.mp hthree).2
+    (⟨3, by decide⟩ : Nat.Primes) (by decide)
+  have heq := congrArg (fun p : Nat.Primes => p.1) (Set.mem_singleton_iff.mp hprime)
+  norm_num [twoPrime] at heq
+
+private theorem finite_nonprime_support :
+    8 ∈ Nat.primeSupportedIndices
+      {p : Nat.Primes | p.1 ∈ ({0, 1, 2, 4} : Finset ℕ)} ∧
+    3 ∉ Nat.primeSupportedIndices
+      {p : Nat.Primes | p.1 ∈ ({0, 1, 2, 4} : Finset ℕ)} := by
+  simp only [Nat.mem_primeSupportedIndices_iff_factoredNumbers]
+  have htwo : 2 ∈ Nat.factoredNumbers ({0, 1, 2, 4} : Finset ℕ) := by
+    apply Nat.mem_factoredNumbers'.mpr
+    intro p hp hdiv
+    have heq : p = 2 :=
+      (Nat.prime_dvd_prime_iff_eq hp (by decide : Nat.Prime 2)).mp hdiv
+    simp [heq]
+  constructor
+  · simpa only [show 2 * 2 * 2 = (8 : ℕ) by norm_num] using
+      Nat.mul_mem_factoredNumbers (Nat.mul_mem_factoredNumbers htwo htwo) htwo
+  · intro hthree
+    have hmem := (Nat.mem_factoredNumbers'.mp hthree) 3 (by decide : Nat.Prime 3)
+      (dvd_refl 3)
+    norm_num at hmem
+
+private theorem composite_only_support (n : ℕ) :
+    n ∈ Nat.primeSupportedIndices
+      {p : Nat.Primes | p.1 ∈ ({4} : Finset ℕ)} ↔ n = 1 := by
+  rw [Nat.mem_primeSupportedIndices_iff_factoredNumbers,
+    show ({4} : Finset ℕ) = insert 4 ∅ from rfl,
+    Nat.factoredNumbers_insert (∅ : Finset ℕ) (by decide : ¬ Nat.Prime 4),
+    Nat.factoredNumbers_empty]
+  rfl
+
+theorem all_primes_exclude_zero :
+    0 ∉ Nat.primeSupportedIndices (Set.univ : Set Nat.Primes) := by
+  simp
+
+theorem empty_primes_allow_only_one :
+    1 ∈ Nat.primeSupportedIndices (∅ : Set Nat.Primes) ∧
+      2 ∉ Nat.primeSupportedIndices (∅ : Set Nat.Primes) := by
+  simp
+
+theorem trivial_group_one_supported :
+    (powerImage (ProfiniteGrp.ofFiniteGrp (FiniteGrp.of PUnit))
+      ProfiniteGrp.punit_isProcyclic 1 :
+        Subgroup (ProfiniteGrp.ofFiniteGrp (FiniteGrp.of PUnit))).index ∈
+      Nat.primeSupportedIndices
+        {p | ProfiniteGrp.punit_isProcyclic.exponents p = ⊤} := by
+  rw [one_index]
+  exact (Nat.primeSupportedIndices
+    {p | ProfiniteGrp.punit_isProcyclic.exponents p = ⊤}).one_mem
+
+private theorem twoPrimary_fourth_supported :
+    4 ∈ Nat.primeSupportedIndices
+      {p | twoPrimary_isProcyclic.{u}.exponents p = ⊤} := by
+  exact (powerImage_index_eq_iff_primeSupportedIndices twoPrimary.{u}
+    twoPrimary_isProcyclic.{u} twoPrimary_isMulTorsionFree.{u}
+    4 (by decide)).mp twoPrimary_fourth_index
+
+private theorem twoPrimary_fourth_open_supported :
+    ∃ H : OpenSubgroup twoPrimary.{u},
+      (H : Subgroup twoPrimary.{u}).index = 4 ∧
+        (H : Subgroup twoPrimary.{u}).index ∈
+          Nat.primeSupportedIndices
+            {p | twoPrimary_isProcyclic.{u}.exponents p = ⊤} ∧
+        (H : Subgroup twoPrimary.{u}) =
+          (powerImage twoPrimary.{u} twoPrimary_isProcyclic.{u} 4 :
+            Subgroup twoPrimary.{u}) := by
+  let H : OpenSubgroup twoPrimary.{u} :=
+    powerOpenSubgroup twoPrimary.{u} twoPrimary_isProcyclic.{u} 4 (by decide)
+  have hindex : (H : Subgroup twoPrimary.{u}).index = 4 := by
+    simpa [H] using twoPrimary_fourth_index
+  refine ⟨H, hindex, openSubgroup_index_mem_primeSupportedIndices
+    twoPrimary.{u} twoPrimary_isProcyclic.{u} twoPrimary_isMulTorsionFree.{u}
+    H, ?_⟩
+  simpa only [hindex] using
+    (openSubgroup_eq_powerImage twoPrimary.{u} twoPrimary_isProcyclic.{u} H)
 
 end ProcyclicPowerIndexTests
 
