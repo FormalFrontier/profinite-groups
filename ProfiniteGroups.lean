@@ -38,6 +38,7 @@ public import ProfiniteGroups.ProcyclicPowerIndex
 public import ProfiniteGroups.ProcyclicPowerTransition
 public import ProfiniteGroups.ProcyclicPowerIndices
 public import ProfiniteGroups.ProcyclicPowerLimit
+public import ProfiniteGroups.ProcyclicResidueLimit
 public import ProfiniteGroups.ProcyclicClosedSubgroup
 
 /-!

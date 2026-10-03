@@ -141,6 +141,15 @@ integers and general algebra/topology.
   element to its compatible family of power-quotient classes. Zero is never
   an index. See
   [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean).
+- **Prime-supported residue diagrams.** Residues `ZMod n` form a
+  profinite diagram over positive supported power indices, with reduction
+  along divisibility arrows. A chosen topological generator gives a natural
+  comparison with power quotients when every supported level has exact index,
+  without assuming torsion-freeness. Transporting power-quotient reconstruction
+  to the residue limit over infinite-exponent support requires torsion-freeness.
+  The finite cyclic group of order two has empty infinite support and is not
+  reconstructed from these residues.
+  See [`ProcyclicResidueLimit`](ProfiniteGroups/ProcyclicResidueLimit.lean).
 - **Closed subgroups of procyclic groups.** Every closed subgroup of an
   arbitrary procyclic profinite group is procyclic in its inherited group and
   topology, without an openness or finite-index assumption. It has a generator
