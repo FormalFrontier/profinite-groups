@@ -48,8 +48,8 @@ integers and general algebra/topology.
   totally disconnected spaces. These maps are not asserted to be homomorphic
   splittings, and normality is not needed. See
   [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean).
-- **Closed cosets and group quotients.** A closed subgroup has a profinite
-  coset space with the quotient topology, without a normality assumption.
+- **Closed cosets and group quotients.** A closed subgroup of a profinite group
+  has a profinite coset space with the quotient topology, without a normality assumption.
   A closed normal subgroup also has a profinite group quotient, with a
   surjective continuous projection whose kernel is the subgroup. Forgetting
   the group structure recovers the coset space and its projection. Every
@@ -132,6 +132,15 @@ integers and general algebra/topology.
   `n > 0`, the target has exact index `d`; equivalences normalized by the same
   topological generator identify this map with reduction `ZMod n → ZMod d`.
   See [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean).
+- **Power-quotient inverse systems.** Supported positive powers, ordered by
+  reverse divisibility, index finite quotients with their canonical class
+  projections. The all-positive cone recovers every procyclic group; for a
+  torsion-free procyclic group, a second cone uses only primes with infinite
+  exponent. Both limit proofs reindex the open-normal quotient limit using
+  initial power-index functors. Their continuous group equivalences send each
+  element to its compatible family of power-quotient classes. Zero is never
+  an index. See
+  [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean).
 - **Closed subgroups of procyclic groups.** Every closed subgroup of an
   arbitrary procyclic profinite group is procyclic in its inherited group and
   topology, without an openness or finite-index assumption. It has a generator
@@ -198,7 +207,7 @@ leaf below; no `Tests` module is part of the production root.
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
 | Universe and generator transport | [`ProcyclicBaseMap`](ProfiniteGroups/ProcyclicBaseMap.lean), [`PrimewisePadicIdealTransport`](ProfiniteGroups/PrimewisePadicIdealTransport.lean), [`PrimewisePadicKernelTransport`](ProfiniteGroups/PrimewisePadicKernelTransport.lean), [`ProcyclicGeneratorIndependence`](ProfiniteGroups/ProcyclicGeneratorIndependence.lean) |
 | Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean), [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean) |
-| Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicPowerIndices`](ProfiniteGroups/ProcyclicPowerIndices.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
+| Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicPowerIndices`](ProfiniteGroups/ProcyclicPowerIndices.lean), [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
 
 ## Scope and credit
 

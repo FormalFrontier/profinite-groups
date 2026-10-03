@@ -19,6 +19,7 @@ public import ProfiniteGroupsTests.ProcyclicInvariant
 public import ProfiniteGroupsTests.ProcyclicPower
 public import ProfiniteGroupsTests.ProcyclicPowerIndex
 public import ProfiniteGroupsTests.ProcyclicPowerTransition
+public import ProfiniteGroupsTests.ProcyclicPowerLimit
 public import ProfiniteGroupsTests.ProcyclicClosedSubgroup
 public import ProfiniteGroupsTests.ProcyclicQuotient
 public import ProfiniteGroupsTests.ProcyclicRealization
