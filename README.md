@@ -77,12 +77,18 @@ integers and general algebra/topology.
   family is realized by residue factors `ZMod (p^n)` and p-adic factors: zero
   exponent is trivial, infinity retains the full p-adic factor. With a
   supplied generator, torsion-freeness means all exponents are zero or
-  infinity. The invariant is noncomputable and *not* assigned to arbitrary
-  nonprocyclic groups; generator independence equates kernel ideals and
-  exponents, not the associated maps. See
+  infinity. For a torsion-free procyclic profinite group, its all-primes
+  quotient model, and hence the group itself, is continuously equivalent to
+  the product of p-adic integer factors over the infinite-exponent primes,
+  with zero-exponent coordinates omitted. The support can be empty or infinite
+  and is generator-independent; the group equivalence uses a chosen
+  topological generator. The invariant is noncomputable and *not* assigned to
+  arbitrary nonprocyclic groups; generator independence equates kernel ideals
+  and exponents, not the associated maps. See
   [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean),
   [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean),
-  [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean).
+  [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean) and
+  [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean).
 - **Maps with prescribed generator image.** Given a procyclic source and a
   supplied topological generator `g`, a specified `h` in *any profinite target*
   extends uniquely to a continuous homomorphism sending `g` to `h` exactly
@@ -105,8 +111,9 @@ integers and general algebra/topology.
   available. When `G` is torsion-free, exact index is equivalent to every
   prime dividing `n` having infinite exponent. See
   [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean).
-- **Power-quotient transitions.** If `d ∣ n`, inclusion of power images gives
-  a surjective continuous homomorphism from the `n`th-power quotient to the
+- **Power-quotient transitions.** For a procyclic profinite group `G`, if
+  `d ∣ n`, inclusion of power images gives a surjective continuous
+  homomorphism from the `n`th-power quotient to the
   `d`th-power quotient, preserving classes and satisfying identity and
   composition laws without an index assumption. If the source has exact index
   `n > 0`, the target has exact index `d`; equivalences normalized by the same
@@ -177,7 +184,7 @@ leaf below; no `Tests` module is part of the production root.
 | Cyclic completion and product | [`Procyclic`](ProfiniteGroups/Procyclic.lean), [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean), [`PrimewisePadicKernel`](ProfiniteGroups/PrimewisePadicKernel.lean) |
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
 | Universe and generator transport | [`ProcyclicBaseMap`](ProfiniteGroups/ProcyclicBaseMap.lean), [`PrimewisePadicIdealTransport`](ProfiniteGroups/PrimewisePadicIdealTransport.lean), [`PrimewisePadicKernelTransport`](ProfiniteGroups/PrimewisePadicKernelTransport.lean), [`ProcyclicGeneratorIndependence`](ProfiniteGroups/ProcyclicGeneratorIndependence.lean) |
-| Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean) |
+| Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean), [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean) |
 | Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
 
 ## Scope and credit
