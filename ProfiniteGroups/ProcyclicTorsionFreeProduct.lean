@@ -63,29 +63,8 @@ noncomputable def primewisePadicQuotientModelContinuousAddEquivTopSupport
     rw [hp]
     change Subsingleton (ULift.{u} (ZMod 1))
     infer_instance
-  letI : Unique (∀ p : {p : Nat.Primes // ¬ e p = ⊤},
-      padicQuotientFactor.{u} p.1 (e p.1)) :=
-    { default := fun _ ↦ 0
-      uniq := fun _ ↦ funext fun _ ↦ Subsingleton.elim _ _ }
-  let split : primewisePadicQuotientModel.{u} e ≃ₜ+
-      (∀ p : {p : Nat.Primes // e p = ⊤}, padicQuotientFactor.{u} p.1 (e p.1)) ×
-        (∀ p : {p : Nat.Primes // ¬ e p = ⊤}, padicQuotientFactor.{u} p.1 (e p.1)) :=
-    ContinuousAddEquiv.mk
-      { toEquiv := Equiv.piEquivPiSubtypeProd (fun p ↦ e p = ⊤)
-          (fun p ↦ (padicQuotientFactor.{u} p (e p) : Type u))
-        map_add' := fun _ _ ↦ rfl }
-      (Homeomorph.piEquivPiSubtypeProd (fun p ↦ e p = ⊤)
-        (fun p ↦ (padicQuotientFactor.{u} p (e p) : Type u))).continuous
-      (Homeomorph.piEquivPiSubtypeProd (fun p ↦ e p = ⊤)
-        (fun p ↦ (padicQuotientFactor.{u} p (e p) : Type u))).symm.continuous
-  let drop :
-      ((∀ p : {p : Nat.Primes // e p = ⊤}, padicQuotientFactor.{u} p.1 (e p.1)) ×
-        (∀ p : {p : Nat.Primes // ¬ e p = ⊤}, padicQuotientFactor.{u} p.1 (e p.1))) ≃ₜ+
-      (∀ p : {p : Nat.Primes // e p = ⊤}, padicQuotientFactor.{u} p.1 (e p.1)) :=
-    ContinuousAddEquiv.mk AddEquiv.prodUnique
-      (Homeomorph.prodUnique _ _).continuous
-      (Homeomorph.prodUnique _ _).symm.continuous
-  exact (split.trans drop).trans
+  exact (continuousAddEquivPiSubtype (fun p ↦ e p = ⊤)
+    (fun p ↦ (padicQuotientFactor.{u} p (e p) : Type u))).trans
       (continuousAddEquivPiCongrRight fun p ↦
         padicQuotientFactorContinuousAddEquivTop p.1 (e p.1) p.2)
 

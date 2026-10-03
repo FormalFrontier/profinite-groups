@@ -294,6 +294,76 @@ theorem continuousAddEquivPiCongrRight_apply
     continuousAddEquivPiCongrRight F x i = F i (x i) :=
   rfl
 
+/-- Split a dependent additive product into the coordinates satisfying a
+predicate and those satisfying its negation. -/
+noncomputable def continuousAddEquivPiSubtypeProd
+    {ι : Type*} (P : ι → Prop) (F : ι → Type*)
+    [∀ i, Add (F i)] [∀ i, TopologicalSpace (F i)] :
+    (∀ i, F i) ≃ₜ+ (∀ i : {i // P i}, F i) × (∀ i : {i // ¬ P i}, F i) := by
+  classical
+  exact ContinuousAddEquiv.mk
+    { toEquiv := Equiv.piEquivPiSubtypeProd P F
+      map_add' := fun _ _ ↦ rfl }
+    (Homeomorph.piEquivPiSubtypeProd P F).continuous
+    (Homeomorph.piEquivPiSubtypeProd P F).symm.continuous
+
+/-- Forgetting addition recovers the usual equivalence of dependent products. -/
+theorem continuousAddEquivPiSubtypeProd_toEquiv
+    {ι : Type*} (P : ι → Prop) (F : ι → Type*)
+    [∀ i, Add (F i)] [∀ i, TopologicalSpace (F i)] [DecidablePred P] :
+    (continuousAddEquivPiSubtypeProd P F).toEquiv =
+      Equiv.piEquivPiSubtypeProd P F := by
+  apply Equiv.ext
+  intro x
+  rfl
+
+/-- The first half of a split product retains the coordinates in the predicate. -/
+@[simp]
+theorem continuousAddEquivPiSubtypeProd_apply_fst
+    {ι : Type*} (P : ι → Prop) (F : ι → Type*)
+    [∀ i, Add (F i)] [∀ i, TopologicalSpace (F i)]
+    (x : ∀ i, F i) (i : {i // P i}) :
+    (continuousAddEquivPiSubtypeProd P F x).1 i = x i.1 := by
+  classical
+  rfl
+
+/-- The second half of a split product retains the complementary coordinates. -/
+@[simp]
+theorem continuousAddEquivPiSubtypeProd_apply_snd
+    {ι : Type*} (P : ι → Prop) (F : ι → Type*)
+    [∀ i, Add (F i)] [∀ i, TopologicalSpace (F i)]
+    (x : ∀ i, F i) (i : {i // ¬ P i}) :
+    (continuousAddEquivPiSubtypeProd P F x).2 i = x i.1 := by
+  classical
+  rfl
+
+/-- Remove coordinates that are subsingletons from a dependent additive
+product. The removed coordinates need not form a finite set. -/
+noncomputable def continuousAddEquivPiSubtype
+    {ι : Type*} (P : ι → Prop) (F : ι → Type*)
+    [∀ i, AddMonoid (F i)] [∀ i, TopologicalSpace (F i)]
+    [∀ i : {i // ¬ P i}, Subsingleton (F i.1)] :
+    (∀ i, F i) ≃ₜ+ (∀ i : {i // P i}, F i) := by
+  letI : Unique (∀ i : {i // ¬ P i}, F i.1) :=
+    { default := fun _ ↦ 0
+      uniq := fun _ ↦ funext fun _ ↦ Subsingleton.elim _ _ }
+  let drop : ((∀ i : {i // P i}, F i.1) ×
+      (∀ i : {i // ¬ P i}, F i.1)) ≃ₜ+ (∀ i : {i // P i}, F i.1) :=
+    ContinuousAddEquiv.mk AddEquiv.prodUnique
+      (Homeomorph.prodUnique _ _).continuous
+      (Homeomorph.prodUnique _ _).symm.continuous
+  exact (continuousAddEquivPiSubtypeProd P F).trans drop
+
+/-- The retained coordinates of the subtype-product equivalence are unchanged. -/
+@[simp]
+theorem continuousAddEquivPiSubtype_apply
+    {ι : Type*} (P : ι → Prop) (F : ι → Type*)
+    [∀ i, AddMonoid (F i)] [∀ i, TopologicalSpace (F i)]
+    [∀ i : {i // ¬ P i}, Subsingleton (F i.1)]
+    (x : ∀ i, F i) (i : {i // P i}) :
+    continuousAddEquivPiSubtype P F x i = x i.1 :=
+  rfl
+
 /-- The quotient by an arbitrary primewise exponent ideal is continuously
 additively equivalent, in the forward quotient-to-model direction, to the
 complete product of its finite and infinite factor models. -/

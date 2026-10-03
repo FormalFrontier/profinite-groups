@@ -28,6 +28,7 @@ public import ProfiniteGroupsTests.ProcyclicQuotient
 public import ProfiniteGroupsTests.ProcyclicRealization
 public import ProfiniteGroupsTests.ProcyclicTorsionFree
 public import ProfiniteGroupsTests.ProcyclicTorsionFreeProduct
+public import ProfiniteGroupsTests.ProcyclicSupportProduct
 public import ProfiniteGroupsTests.PublicRoot
 public import ProfiniteGroupsTests.DirectImports
 

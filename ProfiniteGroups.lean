@@ -31,6 +31,7 @@ public import ProfiniteGroups.ProcyclicBaseMap
 public import ProfiniteGroups.PrimewisePadicKernelTransport
 public import ProfiniteGroups.ProcyclicInvariant
 public import ProfiniteGroups.ProcyclicTorsionFreeProduct
+public import ProfiniteGroups.ProcyclicSupportProduct
 public import ProfiniteGroups.ProcyclicRealization
 public import ProfiniteGroups.ProcyclicHom
 public import ProfiniteGroups.ProcyclicPower

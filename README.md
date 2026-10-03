@@ -99,6 +99,14 @@ integers and general algebra/topology.
   [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean),
   [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean) and
   [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean).
+- **General procyclic support product.** For any primewise exponent family,
+  the quotient model splits continuously into residue factors at positive
+  finite exponents and p-adic integer factors at infinite exponents, omitting
+  zero factors. Either support may be infinite. Every procyclic profinite
+  group has this product model without a torsion-freeness hypothesis; its
+  exponents are generator-independent, but the group equivalence uses a
+  chosen generator. See
+  [`ProcyclicSupportProduct`](ProfiniteGroups/ProcyclicSupportProduct.lean).
 - **Maps with prescribed generator image.** Given a procyclic source and a
   supplied topological generator `g`, a specified `h` in *any profinite target*
   extends uniquely to a continuous homomorphism sending `g` to `h` exactly
@@ -150,6 +158,14 @@ integers and general algebra/topology.
   The finite cyclic group of order two has empty infinite support and is not
   reconstructed from these residues.
   See [`ProcyclicResidueLimit`](ProfiniteGroups/ProcyclicResidueLimit.lean).
+- **Prime-supported additive coefficients.** For an additive monoid and any
+  set of primes `S`, divisibility by every positive `S`-supported integer is
+  equivalent to divisibility by each prime in `S`. For an additive commutative
+  group, the `S`-supported torsion ℤ-submodule is the directed supremum of the
+  `n`-torsion kernels over positive `S`-supported `n`. Divisibility restricts
+  when `S` shrinks, whereas supported torsion grows when `S` grows; zero is
+  never an index. See
+  [`PrimeSupportedCoefficients`](ProfiniteGroups/PrimeSupportedCoefficients.lean).
 - **Closed subgroups of procyclic groups.** Every closed subgroup of an
   arbitrary procyclic profinite group is procyclic in its inherited group and
   topology, without an openness or finite-index assumption. It has a generator
@@ -215,7 +231,7 @@ leaf below; no `Tests` module is part of the production root.
 | Cyclic completion and product | [`Procyclic`](ProfiniteGroups/Procyclic.lean), [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean), [`PrimewisePadicKernel`](ProfiniteGroups/PrimewisePadicKernel.lean) |
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
 | Universe and generator transport | [`ProcyclicBaseMap`](ProfiniteGroups/ProcyclicBaseMap.lean), [`PrimewisePadicIdealTransport`](ProfiniteGroups/PrimewisePadicIdealTransport.lean), [`PrimewisePadicKernelTransport`](ProfiniteGroups/PrimewisePadicKernelTransport.lean), [`ProcyclicGeneratorIndependence`](ProfiniteGroups/ProcyclicGeneratorIndependence.lean) |
-| Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean), [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean) |
+| Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean), [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean), [`ProcyclicSupportProduct`](ProfiniteGroups/ProcyclicSupportProduct.lean) |
 | Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicPowerIndices`](ProfiniteGroups/ProcyclicPowerIndices.lean), [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
 | Additive coefficients at prime-supported indices | [`PrimeSupportedCoefficients`](ProfiniteGroups/PrimeSupportedCoefficients.lean) |
 
