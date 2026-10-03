@@ -37,6 +37,7 @@ public import ProfiniteGroups.ProcyclicPower
 public import ProfiniteGroups.ProcyclicPowerIndex
 public import ProfiniteGroups.ProcyclicPowerTransition
 public import ProfiniteGroups.ProcyclicPowerIndices
+public import ProfiniteGroups.PrimeSupportedCoefficients
 public import ProfiniteGroups.ProcyclicPowerLimit
 public import ProfiniteGroups.ProcyclicResidueLimit
 public import ProfiniteGroups.ProcyclicClosedSubgroup
@@ -51,7 +52,8 @@ compatible Sylow families and their reconstructed closed subgroups, finite-quoti
 conjugacy of closed subgroups, closed-coset and normal-group quotients,
 exponent invariants, quotient models, power images, transitions between their
 quotients, inverse systems of finite power quotients, inheritance by closed
-subgroups of procyclic groups, and positive prime-supported power indices.
+subgroups of procyclic groups, positive prime-supported power indices, and
+additive coefficient interfaces for divisibility and torsion at those indices.
 Import this module to use the entire library; import an
 individual `ProfiniteGroups.*` module for a smaller dependency closure.
 
