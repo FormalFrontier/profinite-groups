@@ -54,8 +54,12 @@ status:
     limit correspond to compatible stage-map classes at the target objects;
     the target index need not be cofiltered, small or nonempty. This is a
     comparison of profinite spaces and continuous maps, not groups.
-    The bundled 39-module filtered native API
-    describes an earlier snapshot, not the newly added modules or proof bodies.
+    For two small nonempty cofiltered diagrams in the finite-set skeleton,
+    morphisms between their canonical dual ind-objects correspond to
+    compatible finite-stage map classes, with representative, composition,
+    identity and fixed-index naturality laws. Specified limiting cones
+    identify these morphisms with continuous maps of profinite spaces; no
+    presentation-independent pro-category equivalence is asserted.
     Compatible quotient images reconstruct closed subgroups, and arbitrary
     prescribed quotient-level Sylow coordinates extend to compatible families
     and closed subgroups with Sylow finite images. Maximality is conditional on

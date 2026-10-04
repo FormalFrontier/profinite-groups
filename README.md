@@ -41,6 +41,14 @@ integers and general algebra/topology.
   profinite spaces, not group homomorphisms. See
   [`FiniteDiagramHomLimit`](ProfiniteGroups/FiniteDiagramHomLimit.lean) and its
   [boundary clients](ProfiniteGroupsTests/FiniteDiagramHomLimit.lean).
+- **Finite-diagram maps via dual ind-objects.** For two small nonempty cofiltered
+  diagrams in the finite-set skeleton, morphisms between their canonical dual
+  ind-objects correspond to compatible classes of finite-stage maps, and thus
+  to continuous maps between specified limiting profinite-space cones. The
+  comparison respects representatives, identity, composition and fixed-index
+  naturality; it does not assert a presentation-independent pro-category
+  equivalence. See [`FiniteDiagramIndDual`](ProfiniteGroups/FiniteDiagramIndDual.lean)
+  and its [boundary clients](ProfiniteGroupsTests/FiniteDiagramIndDual.lean).
 - **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
   inverse limit of finite discrete spaces over a small, nonempty cofiltered
   category if and only if it is compact with a clopen basis, equivalently
