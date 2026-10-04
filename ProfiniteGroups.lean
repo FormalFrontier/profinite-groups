@@ -41,6 +41,7 @@ public import ProfiniteGroups.ProcyclicPowerIndices
 public import ProfiniteGroups.PrimeSupportedCoefficients
 public import ProfiniteGroups.ProcyclicPowerLimit
 public import ProfiniteGroups.ProcyclicResidueLimit
+public import ProfiniteGroups.IntegerPadicResidueLimit
 public import ProfiniteGroups.ProcyclicClosedSubgroup
 
 /-!
@@ -55,6 +56,8 @@ exponent invariants, quotient models, power images, transitions between their
 quotients, inverse systems of finite power quotients, inheritance by closed
 subgroups of procyclic groups, positive prime-supported power indices, and
 additive coefficient interfaces for divisibility and torsion at those indices.
+The p-adic and completed-integer factors have coordinate-normalized
+comparisons with their p-power and all-positive residue limits.
 Import this module to use the entire library; import an
 individual `ProfiniteGroups.*` module for a smaller dependency closure.
 

@@ -184,17 +184,21 @@ theorem integerCompletionToPrimewisePadic_surjective :
     primewisePadic primewisePadicGenerator).mp
       primewisePadicGenerator_isTopologicalGenerator
 
-private noncomputable def integerCompletionResidueHom (n : ℕ) [NeZero n] :
+/-- The continuous additive residue map from the completed integers at a
+positive modulus, written multiplicatively. -/
+noncomputable def integerCompletionResidueHom (n : ℕ) [NeZero n] :
     integerCompletion.{u} ⟶
       ProfiniteGrp.ofFiniteGrp
         (FiniteGrp.of (Multiplicative (ULift.{u} (ZMod n)))) :=
   integerCompletionMap _ (Multiplicative.ofAdd (ULift.up (1 : ZMod n)))
 
-private noncomputable def integerCompletionResidue (n : ℕ) [NeZero n]
+/-- Evaluation of the completed integers in the finite additive residue group. -/
+noncomputable def integerCompletionResidue (n : ℕ) [NeZero n]
     (x : integerCompletion.{u}) : Multiplicative (ULift.{u} (ZMod n)) :=
   integerCompletionResidueHom.{u} n x
 
-private theorem continuous_integerCompletionResidue (n : ℕ) [NeZero n] :
+/-- The completed-integer residue map is continuous at every positive modulus. -/
+theorem continuous_integerCompletionResidue (n : ℕ) [NeZero n] :
     Continuous (integerCompletionResidue.{u} n) := by
   let P := ProfiniteGrp.ofFiniteGrp
     (FiniteGrp.of (Multiplicative (ULift.{u} (ZMod n))))
@@ -208,8 +212,8 @@ private theorem continuous_integerCompletionResidue (n : ℕ) [NeZero n] :
   rw [htop]
   exact (integerCompletionResidueHom.{u} n).hom.continuous_toFun
 
-@[simp]
-private theorem integerCompletionResidue_eta (n : ℕ) [NeZero n]
+/-- Integral casts reduce to the usual residue at a positive modulus. -/
+@[simp] theorem integerCompletionResidue_eta (n : ℕ) [NeZero n]
     (z : ULift.{u} (Multiplicative ℤ)) :
     integerCompletionResidue.{u} n (ProfiniteCompletion.etaFn _ z) =
       Multiplicative.ofAdd (ULift.up (z.down.toAdd : ZMod n)) := by
@@ -226,7 +230,8 @@ private theorem integerCompletionResidue_eta (n : ℕ) [NeZero n]
       apply ULift.down_injective
       simp
 
-private theorem continuous_toZModPow (p : Nat.Primes) (k : ℕ) :
+/-- Reduction of p-adic integers modulo a prime power is continuous. -/
+theorem continuous_toZModPow (p : Nat.Primes) (k : ℕ) :
     Continuous (@PadicInt.toZModPow p.1 (inferInstance : Fact p.1.Prime) k) := by
   apply continuous_of_continuousAt_zero (PadicInt.toZModPow k).toAddMonoidHom
   rw [ContinuousAt]
@@ -394,7 +399,8 @@ private theorem integerCompletionProjection_eq_residue
   rw [residueToQuotient_cast]
   congr 1
 
-private theorem integerCompletionResidue_jointly_injective
+/-- The residues at all positive moduli determine an element of the completed integers. -/
+theorem integerCompletionResidue_jointly_injective
     {x y : integerCompletion.{u}}
     (h : ∀ (n : ℕ) [NeZero n],
       integerCompletionResidue.{u} n x = integerCompletionResidue.{u} n y) :
@@ -426,7 +432,8 @@ private theorem integerCompletionResidue_jointly_injective
     congrArg (fun z ↦ residueToQuotient H z) hres
   exact hxcoord.trans (hmap.trans hycoord.symm)
 
-private theorem integerCompletionResidue_cast {d n : ℕ} [NeZero d] [NeZero n]
+/-- Completed-integer residues commute with reduction between positive moduli. -/
+theorem integerCompletionResidue_cast {d n : ℕ} [NeZero d] [NeZero n]
     (hd : d ∣ n) (x : integerCompletion.{u}) :
     ZMod.cast (integerCompletionResidue.{u} n x).toAdd.down =
       (integerCompletionResidue.{u} d x).toAdd.down := by

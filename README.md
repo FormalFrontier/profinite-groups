@@ -158,6 +158,13 @@ integers and general algebra/topology.
   The finite cyclic group of order two has empty infinite support and is not
   reconstructed from these residues.
   See [`ProcyclicResidueLimit`](ProfiniteGroups/ProcyclicResidueLimit.lean).
+- **P-adic and completed-integer residue limits.** Reindexing the existing
+  residue diagram by p-powers gives finite stages `ZMod (p ^ k)`, including
+  `ZMod 1` at `k = 0`. Continuous group equivalences compare a p-adic factor
+  and the completed integers with their p-power and all-positive residue
+  limits, characterized by p-adic reduction and integral-cast coordinates.
+  The positive-integer limit includes modulus one and excludes modulus zero.
+  See [`IntegerPadicResidueLimit`](ProfiniteGroups/IntegerPadicResidueLimit.lean).
 - **Prime-supported additive coefficients.** For an additive monoid and any
   set of primes `S`, divisibility by every positive `S`-supported integer is
   equivalent to divisibility by each prime in `S`. For an additive commutative
