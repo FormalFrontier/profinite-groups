@@ -10,6 +10,8 @@ public import ProfiniteGroupsTests.CompatibleSylow
 public import ProfiniteGroupsTests.ClosedSylow
 public import ProfiniteGroupsTests.ClosedQuotient
 public import ProfiniteGroupsTests.FiniteQuotientConjugacy
+public import ProfiniteGroupsTests.FiniteDiscreteCharacterization
+public import ProfiniteGroupsTests.FiniteGroupCharacterization
 public import ProfiniteGroupsTests.PrimeSupportedCoefficients
 public import ProfiniteGroupsTests.PrimewisePadicKernelTransport
 public import ProfiniteGroupsTests.PrimewisePadicQuotients

@@ -13,6 +13,17 @@ integers and general algebra/topology.
 
 ## Headline results
 
+- **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
+  inverse limit of finite discrete spaces over a small, nonempty cofiltered
+  category if and only if it is compact with a clopen basis, equivalently
+  compact and totally disconnected. A Hausdorff topological group is an
+  inverse limit of finite groups over such a category if and only if it is
+  compact with an identity-neighborhood basis of open normal subgroups,
+  equivalently compact and totally disconnected. The presentations use the
+  actual inverse-limit topology and include empty spaces and trivial groups;
+  arbitrary finite-stage projections need not be surjective. See
+  [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean)
+  and [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean).
 - **Finite maps and morphisms.** In profinite groups, categorical monomorphisms
   are injective and epimorphisms are surjective. For groups in the *same
   universe*, continuous Hom is the limit over finite target quotients of the
@@ -232,6 +243,7 @@ leaf below; no `Tests` module is part of the production root.
 
 | Mathematics | Importable modules |
 | --- | --- |
+| Finite-stage inverse-limit characterizations | [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean), [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean) |
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
 | Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
