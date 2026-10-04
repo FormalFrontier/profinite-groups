@@ -13,6 +13,15 @@ integers and general algebra/topology.
 
 ## Headline results
 
+- **Images and equality in finite-stage limits.** For any nonempty small
+  cofiltered diagram of finite discrete spaces, the image of a projection from
+  any limiting cone equals the image of one finite-stage transition. Functions
+  into an arbitrary type that agree on the limit agree after a finite refinement,
+  including functions defined at different stages; an empty limit forces an
+  empty stage. No projection or transition is assumed surjective, and these
+  finite stages are not asserted to be finite quotients. See
+  [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean) and its
+  [boundary clients](ProfiniteGroupsTests/FiniteStageImages.lean).
 - **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
   inverse limit of finite discrete spaces over a small, nonempty cofiltered
   category if and only if it is compact with a clopen basis, equivalently
@@ -244,6 +253,7 @@ leaf below; no `Tests` module is part of the production root.
 | Mathematics | Importable modules |
 | --- | --- |
 | Finite-stage inverse-limit characterizations | [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean), [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean) |
+| Finite-discrete limit stage images and comparison | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean) |
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
 | Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
