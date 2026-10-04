@@ -3,8 +3,9 @@ version: "v0.4"
 project:
   name: Profinite Groups
   description: >-
-    Reusable Lean APIs for profinite-group morphisms, finite-quotient Hom
-    systems, compatible quotient-subgroup and Sylow families, closed
+    Reusable Lean APIs for finite-stage limits and finite-target map colimits,
+    profinite-group morphisms, finite-quotient Hom systems, compatible
+    quotient-subgroup and Sylow families, closed
     subgroups with Sylow finite images, finite-quotient conjugacy, continuous
     sections, free profinite and pro-p constructions,
     primewise p-adic models, and procyclic invariants, power images, and
@@ -43,6 +44,10 @@ classification:
 status:
   scope: >-
     Production modules and checked-use clients have separate import roots.
+    For any small nonempty cofiltered diagram of finite discrete spaces and
+    any limiting cone, stage maps to a finite target form a filtered colimit
+    equivalent to continuous maps from its limit, naturally in the target.
+    Empty stages, limits and targets are allowed, but not an empty index.
     The bundled 39-module filtered native API
     describes an earlier snapshot, not the newly added modules or proof bodies.
     Compatible quotient images reconstruct closed subgroups, and arbitrary

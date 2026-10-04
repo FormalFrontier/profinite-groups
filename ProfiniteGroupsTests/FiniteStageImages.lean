@@ -74,7 +74,7 @@ example : ∃ j : oneIndex, IsEmpty (emptyDiagram.obj j) := by
 abbrev pointedIndex : Type :=
   Under (FintypeCat.Skeleton.mk 1 : FintypeCat.Skeleton.{0})
 
-private instance : IsCofiltered pointedIndex :=
+instance : IsCofiltered pointedIndex :=
   IsCofiltered.of_isInitial pointedIndex Under.mkIdInitial
 
 /-- Forget the distinguished point of a finite pointed set. -/

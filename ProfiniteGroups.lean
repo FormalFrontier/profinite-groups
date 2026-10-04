@@ -16,6 +16,7 @@ public import ProfiniteGroups.FreeProduct
 public import ProfiniteGroups.FinitePresentation
 public import ProfiniteGroups.FiniteDiscreteCharacterization
 public import ProfiniteGroups.FiniteStageImages
+public import ProfiniteGroups.FiniteTargetHomColimit
 public import ProfiniteGroups.FiniteGroupCharacterization
 public import ProfiniteGroups.ProP
 public import ProfiniteGroups.Procyclic

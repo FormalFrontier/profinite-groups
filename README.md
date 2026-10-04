@@ -22,6 +22,15 @@ integers and general algebra/topology.
   finite stages are not asserted to be finite quotients. See
   [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean) and its
   [boundary clients](ProfiniteGroupsTests/FiniteStageImages.lean).
+- **Finite-target maps from cofiltered limits.** For any small nonempty
+  cofiltered diagram of finite discrete spaces and any limiting cone, the
+  filtered colimit of maps from its stages to a finite target is equivalent
+  to continuous maps from the limit to that target, naturally in the target.
+  Representatives agree exactly after a common refinement, even with
+  parallel arrows or nonsurjective projections. Empty stages, limits and
+  targets are allowed; an empty index is not. See
+  [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean) and its
+  [boundary clients](ProfiniteGroupsTests/FiniteTargetHomColimit.lean).
 - **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
   inverse limit of finite discrete spaces over a small, nonempty cofiltered
   category if and only if it is compact with a clopen basis, equivalently
@@ -245,6 +254,12 @@ second is categorical and same-universe. The checked-in clients contain
 additional examples. For optional targeted `-T0` and historical resource
 observations, see the [reproduction guide](docs/README.md).
 
+For a cofiltered finite diagram `F`, a limiting cone `c` with proof `hc`,
+and a finite target `S`, use `Profinite.stageHomEquiv c hc S` to convert
+stage-map classes to continuous maps. Its `stageHomEquiv_apply_class` lemma
+computes a representative by composing its stage map with the projection;
+`stageHomNatIso c hc` packages postcomposition in the finite target.
+
 ## Module map
 
 [`ProfiniteGroups.lean`](ProfiniteGroups.lean) publicly imports every production
@@ -253,7 +268,7 @@ leaf below; no `Tests` module is part of the production root.
 | Mathematics | Importable modules |
 | --- | --- |
 | Finite-stage inverse-limit characterizations | [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean), [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean) |
-| Finite-discrete limit stage images and comparison | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean) |
+| Finite-discrete limit stage images and finite-target maps | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean), [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean) |
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
 | Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |

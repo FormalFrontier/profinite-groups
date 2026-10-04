@@ -12,6 +12,7 @@ public import ProfiniteGroupsTests.ClosedQuotient
 public import ProfiniteGroupsTests.FiniteQuotientConjugacy
 public import ProfiniteGroupsTests.FiniteDiscreteCharacterization
 public import ProfiniteGroupsTests.FiniteStageImages
+public import ProfiniteGroupsTests.FiniteTargetHomColimit
 public import ProfiniteGroupsTests.FiniteGroupCharacterization
 public import ProfiniteGroupsTests.PrimeSupportedCoefficients
 public import ProfiniteGroupsTests.PrimewisePadicKernelTransport
