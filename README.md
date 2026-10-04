@@ -1,6 +1,7 @@
 # Profinite groups
 
-Reusable Lean theory for profinite groups: categorical and finite-quotient maps,
+Reusable Lean theory for profinite groups and finite-space diagrams:
+categorical and finite-quotient maps,
 closed coset spaces and normal quotients, closed-subgroup reconstruction,
 compatible Sylow families and closed subgroups
 with Sylow finite images, finite-quotient conjugacy, continuous sections,
@@ -31,6 +32,15 @@ integers and general algebra/topology.
   targets are allowed; an empty index is not. See
   [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean) and its
   [boundary clients](ProfiniteGroupsTests/FiniteTargetHomColimit.lean).
+- **Maps into limits of finite-space diagrams.** For a small nonempty
+  cofiltered source diagram of finite spaces and an arbitrary target diagram
+  of finite spaces, maps between specified limiting profinite cones correspond
+  to compatible finite-stage map classes at each target object. The target
+  category need not be cofiltered, small or nonempty, and no common source
+  stage is chosen across its objects. This concerns continuous maps of
+  profinite spaces, not group homomorphisms. See
+  [`FiniteDiagramHomLimit`](ProfiniteGroups/FiniteDiagramHomLimit.lean) and its
+  [boundary clients](ProfiniteGroupsTests/FiniteDiagramHomLimit.lean).
 - **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
   inverse limit of finite discrete spaces over a small, nonempty cofiltered
   category if and only if it is compact with a clopen basis, equivalently
@@ -259,6 +269,11 @@ and a finite target `S`, use `Profinite.stageHomEquiv c hc S` to convert
 stage-map classes to continuous maps. Its `stageHomEquiv_apply_class` lemma
 computes a representative by composing its stage map with the projection;
 `stageHomNatIso c hc` packages postcomposition in the finite target.
+For a finite-space target diagram `G` with limiting cone `d` and proof `hd`,
+`Profinite.stageHomLimitEquiv F c hc G d hd` converts a continuous map between
+the cone points into compatible stage-map classes. Its inverse projection is
+computed by `stageHomLimitEquiv_symm_apply_projection` and, on a representative,
+by `stageHomLimitEquiv_symm_apply_class`.
 
 ## Module map
 
@@ -268,7 +283,7 @@ leaf below; no `Tests` module is part of the production root.
 | Mathematics | Importable modules |
 | --- | --- |
 | Finite-stage inverse-limit characterizations | [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean), [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean) |
-| Finite-discrete limit stage images and finite-target maps | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean), [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean) |
+| Finite-space limit stages and map comparisons | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean), [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean), [`FiniteDiagramHomLimit`](ProfiniteGroups/FiniteDiagramHomLimit.lean) |
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
 | Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
