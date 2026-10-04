@@ -18,6 +18,14 @@ statements allow empty stages and do not require surjective projections.
 The index is small, and stages and the limiting profinite space live in
 `max u w`: this is the universe of Mathlib's explicit `Profinite.limitCone`
 for an index in `Type u` and finite stages in `FintypeCat.{max u w}`.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 (finite inverse-system
+  motivation, not a stated finite-stage image lemma).
+- Mathlib, `Mathlib.Topology.Category.Profinite.Extend` and
+  `Mathlib.CategoryTheory.CofilteredSystem` (finite-stage extensions and cofiltered
+  diagrams).
 -/
 
 @[expose] public section
@@ -80,7 +88,11 @@ theorem range_π_eq_eventualRange (hc : IsLimit c) (i : I) :
     exact (hf.trans hy).trans ht
 
 /-- The image of a projection from a finite-discrete limit stabilizes at one
-transition, including when that image is empty. -/
+transition, including when that image is empty.
+
+This uses Mathlib’s `Profinite.Extend` and cofiltered-diagram API. The inverse systems in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 motivate it but do not
+state this image lemma. -/
 theorem exists_stage_range_eq (hc : IsLimit c) (i : I) :
     ∃ (j : I) (a : j ⟶ i),
       Set.range (c.π.app i : c.pt → F.obj i) = Set.range (F.map a : F.obj j → F.obj i) := by

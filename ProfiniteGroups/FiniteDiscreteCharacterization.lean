@@ -20,6 +20,14 @@ The index and its finite stages live in the universe of the carrier. This
 includes the canonical `DiscreteQuotient` diagram for every carrier at that
 universe; a larger index would require lifting the carrier to a maximum
 universe in Mathlib's explicit limit construction.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Lemma (1.1.1)
+  (profinite spaces and finite discrete inverse limits).
+- Mathlib, `Mathlib.Topology.Category.Profinite.AsLimit` and
+  `Mathlib.CategoryTheory.Filtered.Basic` (finite-quotient presentation and filtered
+  indices).
 -/
 
 @[expose] public section
@@ -114,7 +122,10 @@ theorem ofProfinite_transition_surjective (X : Profinite.{u})
 end FiniteDiscretePresentation
 
 /-- For a Hausdorff space, a finite-discrete presentation is equivalent to
-compactness together with a clopen topological basis. -/
+compactness together with a clopen topological basis.
+
+Corresponds to Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Lemma
+(1.1.1), using Mathlib’s clopen-basis API. -/
 theorem finiteDiscretePresentation_iff_compact_clopenBasis (X : Type u)
     [TopologicalSpace X] [T2Space X] :
     Nonempty (FiniteDiscretePresentation X) ↔
@@ -132,7 +143,10 @@ theorem finiteDiscretePresentation_iff_compact_clopenBasis (X : Type u)
     exact ⟨FiniteDiscretePresentation.ofProfinite (Profinite.of X)⟩
 
 /-- For a Hausdorff space, a finite-discrete presentation is equivalent to
-compactness and total disconnectedness. The empty space is included. -/
+compactness and total disconnectedness. The empty space is included.
+
+This is the finite-discrete characterization in Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §1, Lemma (1.1.1), including the empty space. -/
 theorem finiteDiscretePresentation_iff_compact_totallyDisconnected (X : Type u)
     [TopologicalSpace X] [T2Space X] :
     Nonempty (FiniteDiscretePresentation X) ↔

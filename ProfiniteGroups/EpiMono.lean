@@ -19,6 +19,15 @@ epimorphisms of profinite groups by surjectivity.
 These are equivalences in the indicated categories, not a definition of
 epimorphism by pointwise surjectivity in arbitrary categories. The reverse
 direction for profinite-group epimorphisms uses finite quotients.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Exercise 5(i)–(ii)
+  (monomorphisms and epimorphisms); the epimorphism proof here does not use the printed
+  hint.
+- Mathlib, `Mathlib.CategoryTheory.ConcreteCategory.EpiMono`,
+  `Mathlib.Algebra.Category.Grp.EpiMono` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Basic`.
 -/
 
 @[expose] public section
@@ -32,7 +41,10 @@ namespace ProfiniteGrp
 noncomputable section
 
 /-- A morphism of profinite groups is a monomorphism exactly when its underlying
-function is injective. -/
+function is injective.
+
+This is Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Exercise 5(i),
+using Mathlib’s mono API. -/
 theorem mono_iff_injective {G H : ProfiniteGrp.{u}} (f : G ⟶ H) :
     Mono f ↔ Function.Injective f := by
   constructor
@@ -104,7 +116,10 @@ private theorem surjective_of_epi_of_finite_target
     exact hgh'
 
 /-- A morphism of profinite groups is an epimorphism exactly when its underlying
-function is surjective. -/
+function is surjective.
+
+This is Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Exercise 5(ii);
+the proof differs from the printed hint. -/
 theorem epi_iff_surjective {G H : ProfiniteGrp.{u}} (f : G ⟶ H) :
     Epi f ↔ Function.Surjective f := by
   constructor

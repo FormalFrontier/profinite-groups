@@ -19,6 +19,13 @@ multiplicatively equivalent exactly when their exponent families agree.
 The family is defined from a chosen witness but proved independent of that
 choice. The equivalence assumes both groups are procyclic; an arbitrary
 target need not carry such an invariant.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (primewise exponent classification of procyclic groups).
+- Mathlib, `ProfiniteGrp.Completion` and p-adic ideal quotients used by
+  `PrimewisePadicKernelTransport` and `ProcyclicGeneratorIndependence`.
 -/
 
 @[expose] public section
@@ -119,7 +126,11 @@ theorem exponents_equiv
 
 /-- A procyclic group is modeled by the quotient product for its
 generator-independent exponents. The equivalence is noncomputable because
-selecting a generator and constructing the quotient model use choice. -/
+selecting a generator and constructing the quotient model use choice.
+
+This primewise exponent model formalizes the product description in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7); Mathlib supplies the completion and quotient constructions. -/
 noncomputable def continuousMulEquivModel
     {G : ProfiniteGrp.{u}} (hG : IsProcyclic G) :
     G ≃ₜ* Multiplicative (primewisePadicQuotientModel.{0} hG.exponents) :=

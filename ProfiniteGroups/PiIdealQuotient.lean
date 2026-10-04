@@ -18,6 +18,12 @@ quotients.  With topological-ring structures this ring equivalence is also a
 continuous additive equivalence.  The topological statement uses the open
 quotient maps on both sides and imposes no separation, compactness, closedness,
 finiteness, or nonemptiness assumption.
+
+## References
+
+- Mathlib, `Mathlib.RingTheory.Ideal.Maps`, `Mathlib.RingTheory.Ideal.Quotient.Operations`
+  and `Mathlib.Topology.Algebra.Ring.Ideal` (coordinate quotient rings and quotient
+  topology).
 -/
 
 @[expose] public section
@@ -144,7 +150,10 @@ theorem continuous_piQuotientRingEquiv_symm
 
 /-- The topological form of the canonical product-ideal quotient
 equivalence.  Its underlying additive equivalence is the one induced by
-`piQuotientRingEquiv`. -/
+`piQuotientRingEquiv`.
+
+Uses Mathlib’s ideal quotients, quotient topology and product-ring maps; no printed
+procyclic theorem is asserted for this general comparison. -/
 noncomputable def piQuotientContinuousAddEquiv
     {ι : Type u} {R : ι → Type v} [∀ i, CommRing (R i)]
     [∀ i, TopologicalSpace (R i)] [∀ i, IsTopologicalRing (R i)]

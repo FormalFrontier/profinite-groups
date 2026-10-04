@@ -31,6 +31,12 @@ The map `eta` instead starts from the *abstract* free product and has dense rang
 factors, use `map` with `map_of`, `map_id` and `map_comp`. The factor maps are
 injective by `of_injective`, and their images topologically generate the product
 by `factors_topologically_generate`.
+
+## References
+
+- Mathlib, `Mathlib.GroupTheory.CoprodI` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Completion` (group coproduct and
+  profinite completion underlying the universal construction).
 -/
 
 @[expose] public section
@@ -121,7 +127,10 @@ def diagram : AdmissibleQuotient G ⥤ ProfiniteGrp.{max u v} :=
   finiteGrpDiagram G ⋙ forget₂ _ _
 
 /-- The free profinite product, as the limit of its admissible finite
-quotients. -/
+quotients.
+
+Constructed from Mathlib’s `Monoid.CoprodI` and profinite completion of the admissible
+finite-quotient system. -/
 def product : ProfiniteGrp.{max u v} := limit (diagram G)
 
 /-- The canonical map from the abstract free product to the free profinite
@@ -405,7 +414,10 @@ theorem lift_comp (f : ∀ i, G i →ₜ* P) (g : P ⟶ Q) :
   rw [lift_of, lift_of]
 
 /-- Continuous homomorphisms out of the free profinite product are equivalent
-to families of continuous homomorphisms out of its factors. -/
+to families of continuous homomorphisms out of its factors.
+
+The universal property uses Mathlib’s group coproduct and profinite-completion
+approach; no particular printed source theorem is asserted for this construction. -/
 noncomputable def homEquiv : (product G ⟶ P) ≃ (∀ i, G i →ₜ* P) where
   toFun f i := f.hom.comp (of G i)
   invFun := lift

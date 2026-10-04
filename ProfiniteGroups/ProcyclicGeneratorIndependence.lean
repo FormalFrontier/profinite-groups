@@ -18,6 +18,14 @@ topological generator of a profinite group.
 This generator-independent invariant requires a supplied procyclicity
 statement; maps attached to arbitrary individual elements are not promoted
 to generator-independent invariants.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (quotients of completed integers motivate the invariant; generator-independence
+  is proved here).
+- Mathlib, `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Completion` and kernel/quotient
+  constructions used by `ProcyclicQuotient`.
 -/
 
 @[expose] public section

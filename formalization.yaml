@@ -24,10 +24,14 @@ sources:
       - Alexander Schmidt
       - Kay Wingberg
     type: book
-    location: Chapter I, section 1, exercises 1 and 3–5; section 7
+    location: >-
+      Chapter I, section 1 (including exercises 1 and 3–5);
+      section 6 (finite-quotient pro-p and Sylow arguments);
+      section 7 (before proposition 1.7.7).
     relationship: background
     note: >-
-      Mathematical motivation for some APIs; the library is source-independent.
+      Source of cited characterizations and exercises and motivation for further
+      finite-image and procyclic APIs; the library is source-independent.
       This entry is not a source-correspondence or completion decision.
 
 related_formalizations:

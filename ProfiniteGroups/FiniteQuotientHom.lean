@@ -18,6 +18,14 @@ uses compatible families over the finite quotients of the target.
 The final equivalence uses source and target profinite groups in the same
 universe. Intermediate finite-stage constructions allow separate universes;
 this file does not assert an unrestricted cross-universe hom formula.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Exercise 3
+  (finite-quotient Hom limit–colimit description).
+- Mathlib, `Mathlib.Algebra.Colimit.DirectLimit` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits` (filtered Hom stages and
+  finite-quotient limits).
 -/
 
 @[expose] public section
@@ -332,7 +340,10 @@ theorem HomLimit.ofHom_toHom {G H : ProfiniteGrp.{u}} (x : HomLimit G H) :
   exact h
 
 /-- The finite-quotient description of homomorphisms between profinite
-groups: `Hom(G, H) ≃ lim_V colim_U Hom(G/U, H/V)`. -/
+groups: `Hom(G, H) ≃ lim_V colim_U Hom(G/U, H/V)`.
+
+The Hom limit–colimit description comes from Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §1, Exercise 3, using Mathlib’s finite-quotient limit. -/
 noncomputable def homEquivHomLimit (G H : ProfiniteGrp.{u}) :
     (G ⟶ H) ≃ HomLimit G H where
   toFun := HomLimit.ofHom

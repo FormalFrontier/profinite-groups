@@ -24,6 +24,14 @@ open normal subgroups. For a torsion-free procyclic group, these indices are
 supported on the infinite-exponent primes, so the supported subdiagram is
 also initial. Reindexing Mathlib's open-normal limit cone gives both
 reconstruction results.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (torsion-free reconstruction by supported power quotients; the all-positive
+  version is a generalization).
+- Mathlib, `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits` and
+  `Mathlib.CategoryTheory.Filtered.Final` (finite-quotient limit and initial reindexing).
 -/
 
 @[expose] public section
@@ -349,7 +357,11 @@ its compatible family of quotient classes. -/
       QuotientGroup.mk' (powerImage G hG n.val : Subgroup G) g
   exact h.trans (powerQuotientCone_π_apply G hG S n g)
 
-/-- Continuous reconstruction over every positive exponent. -/
+/-- Continuous reconstruction over every positive exponent.
+
+This all-positive reconstruction generalizes the torsion-free supported-power limit in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7), by reindexing Mathlib’s quotient limit. -/
 noncomputable def continuousMulEquivPowerQuotientLimit (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) :
     G ≃ₜ* ProfiniteGrp.limit (powerQuotientDiagram G hG (Set.univ : Set Nat.Primes)) :=
@@ -365,7 +377,11 @@ noncomputable def continuousMulEquivPowerQuotientLimit (G : ProfiniteGrp.{u})
   continuousMulEquivPowerQuotientLimitOfIsLimit_apply G hG _ _ n g
 
 /-- Continuous reconstruction at the infinite-exponent supported levels
-of a torsion-free procyclic group. -/
+of a torsion-free procyclic group.
+
+This formalizes the torsion-free supported-power reconstruction in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7), via Mathlib’s quotient limit. -/
 noncomputable def continuousMulEquivSupportedPowerQuotientLimit
     (G : ProfiniteGrp.{u}) (hG : IsProcyclic G) (hfree : IsMulTorsionFree G) :
     G ≃ₜ* ProfiniteGrp.limit (powerQuotientDiagram G hG {p | hG.exponents p = ⊤}) :=

@@ -21,6 +21,12 @@ the zero ideal.
 Exponent zero corresponds to a trivial residue quotient, while a *positive*
 finite exponent corresponds to a nontrivial finite quotient. An arbitrary
 infinite product ideal requires closedness to be reconstructed from factors.
+
+## References
+
+- Mathlib, `Mathlib.RingTheory.DiscreteValuationRing.Basic` (p-adic factor ideals);
+  `ClosedIdealPi` provides the closed-product reconstruction. The factor classification is
+  not asserted as a printed result in Neukirch–Schmidt–Wingberg.
 -/
 
 @[expose] public section
@@ -34,7 +40,10 @@ namespace ProfiniteGrp
 local instance (p : Nat.Primes) : Fact p.1.Prime := ⟨p.2⟩
 
 /-- Ideals in an uplifted p-adic factor, ordered by inclusion, correspond to
-extended natural exponents in the reverse order. -/
+extended natural exponents in the reverse order.
+
+Uses Mathlib’s p-adic ideal order and `ULift` transport; this factor classification is not
+attributed to a printed procyclic theorem. -/
 noncomputable def liftedPadicIdealOrderIso (p : Nat.Primes) :
     Ideal (ULift.{u} ℤ_[p.1]) ≃o ℕ∞ᵒᵈ :=
   ULift.ringEquiv.idealComapOrderIso.symm.trans

@@ -15,6 +15,8 @@ public import ProfiniteGroupsTests.FiniteStageImages
 public import ProfiniteGroupsTests.FiniteTargetHomColimit
 public import ProfiniteGroupsTests.FiniteDiagramHomLimit
 public import ProfiniteGroupsTests.FiniteDiagramIndDual
+public import ProfiniteGroupsTests.IndDualRealization
+public import ProfiniteGroupsTests.IndDualEquivalence
 public import ProfiniteGroupsTests.FiniteGroupCharacterization
 public import ProfiniteGroupsTests.PrimeSupportedCoefficients
 public import ProfiniteGroupsTests.PrimewisePadicKernelTransport

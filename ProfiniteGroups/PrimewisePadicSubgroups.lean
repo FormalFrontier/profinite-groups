@@ -16,6 +16,11 @@ classification as an order isomorphism (with the exponent order reversed),
 transports it to closed multiplicative subgroups of
 `ProfiniteGrp.primewisePadic`, and applies it to kernels of continuous
 multiplicative homomorphisms into arbitrary T1 targets.
+
+## References
+
+- Mathlib, `Ideal.map_mono`, `Ideal.map_evalRingHom_pi` and closed subgroups;
+  `PrimewisePadicIdeals` supplies the product-ideal exponent classification.
 -/
 
 @[expose] public section
@@ -328,7 +333,11 @@ theorem primewisePadicClosedSubgroupExponents_ofExponents
     primewisePadicClosedAddSubgroupExponents_ofExponents]
 
 /-- Closed subgroups of `primewisePadic`, ordered by inclusion, correspond
-to additive coordinate exponent families with the pointwise order reversed. -/
+to additive coordinate exponent families with the pointwise order reversed.
+
+Uses Mathlib’s closed-subgroup and p-adic ideal APIs and the local
+`PrimewisePadicIdeals` correspondence; the full factor-ideal classification is not
+stated as a book theorem. -/
 noncomputable def primewisePadicClosedSubgroupOrderIso :
     ClosedSubgroup primewisePadic.{u} ≃o (Nat.Primes → ℕ∞)ᵒᵈ :=
   primewisePadicClosedAddSubgroupClosedSubgroupOrderIso.symm.trans

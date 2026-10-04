@@ -20,6 +20,14 @@ comparisons with the p-power residue limit and the all-positive residue limit,
 respectively. Coordinate equations normalize the former by p-adic reduction
 and the latter by reduction of integral casts. The completed-integer diagram
 uses strictly positive moduli, including one, with no zero-modulus stage.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (completed integers and primewise p-adic residue-limit examples).
+- Mathlib, `Mathlib.NumberTheory.Padics.RingHoms` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Completion` (p-adic rings and completed
+  integers); `ProcyclicResidueLimit` provides the residue-diagram model.
 -/
 
 @[expose] public section
@@ -387,7 +395,10 @@ theorem exists_padicFactorEquivPowerResidueLimit (p : Nat.Primes) :
   exact pPowerResidueLimit_lift_apply p c k x
 
 /-- The canonical, coordinate-normalized topological group equivalence from
-a p-adic factor to its p-power residue limit. -/
+a p-adic factor to its p-power residue limit.
+
+The p-adic residue-limit example appears in Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §7, before Proposition (1.7.7); the coordinates are normalized here. -/
 noncomputable def padicFactorEquivPowerResidueLimit (p : Nat.Primes) :
     padicFactor.{u} p ≃ₜ* ProfiniteGrp.limit (pPowerResidueDiagram.{u} p) :=
   Classical.choose (exists_padicFactorEquivPowerResidueLimit p)
@@ -466,7 +477,11 @@ theorem exists_integerCompletionEquivResidueLimit :
   exact integerResidueLimit_lift_apply c n x
 
 /-- The canonical, coordinate-normalized topological group equivalence from
-the completed integers to the all-positive residue limit. -/
+the completed integers to the all-positive residue limit.
+
+The completed-integer residue-limit example appears in Neukirch–Schmidt–Wingberg,
+*Cohomology of Number Fields*, Ch. I §7, before Proposition (1.7.7); the coordinates are
+normalized here. -/
 noncomputable def integerCompletionEquivResidueLimit :
     integerCompletion.{u} ≃ₜ*
       ProfiniteGrp.limit (residueDiagram.{u} (Set.univ : Set Nat.Primes)) :=

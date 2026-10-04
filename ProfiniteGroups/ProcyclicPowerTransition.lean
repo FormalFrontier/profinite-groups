@@ -17,6 +17,14 @@ classes, compose, and are surjective.
 When the source quotient has index equal to a positive exponent, the target
 also has exact index. The equivalences normalized by one topological generator
 identify the quotient map with reduction of residue classes.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (torsion-free residue reductions; general quotient-transition laws are developed
+  here).
+- Mathlib, quotient-group and `ZMod` maps used by `ProcyclicPowerIndex` (power quotients
+  and normalized residue reductions).
 -/
 
 @[expose] public section

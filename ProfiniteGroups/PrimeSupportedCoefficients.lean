@@ -20,6 +20,14 @@ prime-supported indices; it does not introduce a second torsion predicate.
 The divisibility predicate is specific to this submonoid: `DivisibleBy A ℕ`
 requires division by *every* nonzero natural number and provides an explicit
 division operation, rather than asserting surjectivity only at selected indices.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (supported divisibility and torsion for additive coefficients, without a group
+  action here).
+- Mathlib, `Mathlib.Algebra.Module.Torsion.Basic` and `Mathlib.GroupTheory.Divisible`
+  (module torsion and divisibility).
 -/
 
 @[expose] public section
@@ -30,7 +38,10 @@ namespace AddMonoid
 
 variable (A : Type u) [AddMonoid A]
 
-/-- Every positive integer supported on `S` acts surjectively on `A` by repeated addition. -/
+/-- Every positive integer supported on `S` acts surjectively on `A` by repeated addition.
+This abstracts the supported-divisibility condition in Neukirch–Schmidt–Wingberg,
+*Cohomology of Number Fields*, Ch. I §7, before Proposition (1.7.7), using
+Mathlib’s divisibility API. -/
 def IsPrimeSupportedDivisible (S : Set Nat.Primes) : Prop :=
   ∀ n : ℕ, n ∈ Nat.primeSupportedIndices S →
     Function.Surjective (fun a : A => n • a)

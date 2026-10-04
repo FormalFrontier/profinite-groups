@@ -19,6 +19,14 @@ surjective.
 
 The maps here are morphisms of `Profinite` (profinite *spaces*), not
 homomorphisms or finite presentations of profinite groups.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Exercise 1 (injective
+  and surjective maps presented at finite stages).
+- Mathlib, `Mathlib.Topology.Category.Profinite.AsLimit`,
+  `Mathlib.Topology.Category.LightProfinite.Injective` and
+  `Mathlib.CategoryTheory.Limits.Final` (finite quotients and cofinality).
 -/
 
 @[expose] public section
@@ -122,7 +130,10 @@ noncomputable def injectiveSourceLimit (hf : Injective f) :
   exact (Functor.Initial.isLimitWhiskerEquiv (injectiveIndex f) X.asLimitCone).symm X.asLimit
 
 /-- Every component of the finite-stage transformation for an injective map is
-injective. -/
+injective.
+
+The finite-stage construction follows Neukirch–Schmidt–Wingberg, *Cohomology of Number
+Fields*, Ch. I §1, Exercise 1 (injective case), using Mathlib’s finite quotients. -/
 theorem injectiveFintypeMap_app_injective (B : DiscreteQuotient Y) :
     Injective ((injectiveFintypeMap f).app B) :=
   injectiveStageMap_injective f B
@@ -199,7 +210,10 @@ def surjectiveFintypeMap :
     rfl
 
 /-- Every component of the common finite-stage transformation is surjective
-when the original profinite map is surjective. -/
+when the original profinite map is surjective.
+
+The finite-stage construction follows Neukirch–Schmidt–Wingberg, *Cohomology of Number
+Fields*, Ch. I §1, Exercise 1 (surjective case), using Mathlib’s finite quotients. -/
 theorem surjectiveFintypeMap_app_surjective (hf : Surjective f) (P : SurjectiveIndex f) :
     Surjective ((surjectiveFintypeMap f).app P) := by
   rintro b

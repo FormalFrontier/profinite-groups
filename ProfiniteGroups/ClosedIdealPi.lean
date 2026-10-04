@@ -14,6 +14,11 @@ public import Mathlib.Topology.Constructions
 An ideal of an infinite product need not be the product of its coordinate
 images: the finitely supported elements give a standard counterexample.  This
 file proves that closed ideals do have the expected coordinatewise form.
+
+## References
+
+- Mathlib, `Mathlib.RingTheory.Ideal.Maps` and `Mathlib.Topology.Constructions` (coordinate
+  ideal maps and product topology).
 -/
 
 @[expose] public section
@@ -28,7 +33,10 @@ namespace Ideal
 coordinate images.
 
 No compatibility between the topology and the semiring operations, and no
-separation, compactness, or nonemptiness assumption, is needed. -/
+separation, compactness, or nonemptiness assumption, is needed.
+
+Uses Mathlib’s `Ideal.pi`, coordinate ideal maps and product topology; no printed procyclic
+theorem is asserted for this general product-ideal result. -/
 theorem eq_pi_map_evalRingHom_of_isClosed
     {ι : Type u} {R : ι → Type v} [∀ i, Semiring (R i)]
     [∀ i, TopologicalSpace (R i)] (I : Ideal (∀ i, R i))

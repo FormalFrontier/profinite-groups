@@ -18,6 +18,13 @@ index need not be cofiltered, nonempty, or small.
 The comparison concerns profinite spaces and continuous maps, not profinite groups.
 Its inverse uses the limiting property of the specified target cone; it does not
 choose a limit or a common source stage for every target coordinate.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 (inverse-system and
+  pro-category motivation, not this target-diagram equivalence as a stated result).
+- Mathlib, `Mathlib.CategoryTheory.Limits.Types.Yoneda` and the filtered-colimit API used
+  by `FiniteTargetHomColimit` (stage-map classes and compatible coordinates).
 -/
 
 @[expose] public section
@@ -116,7 +123,11 @@ theorem stageHomLimitMap_bijective
         ((compCoyonedaSectionsEquiv (G ⋙ FintypeCat.toProfinite) c.pt) s) j)
 
 /-- Continuous maps into a limiting finite-space diagram correspond to
-compatible target-stage classes of maps from finite source stages. -/
+compatible target-stage classes of maps from finite source stages.
+
+This extends `FiniteTargetHomColimit` with Mathlib’s limit/Yoneda API;
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 motivates the inverse
+systems but does not state this target-diagram comparison. -/
 noncomputable def stageHomLimitEquiv
     (F : I ⥤ FintypeCat.{max u w})
     (c : Cone (F ⋙ FintypeCat.toProfinite)) (hc : IsLimit c)

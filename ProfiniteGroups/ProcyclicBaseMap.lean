@@ -13,6 +13,14 @@ Changing the universe of the lifted p-adic coordinates gives a continuous
 multiplicative equivalence of primewise products. Precomposing the map
 associated to any element of a profinite group with this equivalence gives a
 map from a single, fixed source, compatible with continuous homomorphisms.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (primewise quotient models as context for generator maps, not this comparison
+  theorem).
+- Mathlib, `ULift` equivalences and profinite completion used by
+  `ProcyclicQuotient` (maps from completed integers and primewise factors).
 -/
 
 @[expose] public section

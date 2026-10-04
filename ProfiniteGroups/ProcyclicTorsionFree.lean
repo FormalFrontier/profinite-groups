@@ -19,6 +19,13 @@ generator.
 
 Positive finite exponents contribute nonzero torsion. The zero exponent has
 a trivial coordinate, so it is consistent with torsion-freeness.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (torsion-free procyclic groups as products of p-adic integers).
+- Mathlib, `Mathlib.Algebra.Group.Pi.Torsion` and `Mathlib.Algebra.Ring.Torsion` (torsion
+  in p-adic products).
 -/
 
 @[expose] public section

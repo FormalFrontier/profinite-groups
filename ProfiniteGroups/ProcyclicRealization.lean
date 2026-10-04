@@ -16,6 +16,13 @@ generator. The resulting exponents are independent of the generator chosen.
 
 For an all-zero family the quotient is trivial, so the *images* of zero and
 one in it coincide; the original integers zero and one remain distinct.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (realizing primewise finite and p-adic factors as procyclic groups).
+- Mathlib, `ProfiniteGrp.Completion` and p-adic factor quotients used by
+  `ProcyclicInvariant`.
 -/
 
 @[expose] public section
@@ -228,7 +235,11 @@ theorem primewisePadicProcyclicModel_exponents
     primewisePadicMapOfRealizationGenerator,
     primewisePadicKernelExponents_realizationMap]
 
-/-- Every primewise exponent family is realized in any requested universe. -/
+/-- Every primewise exponent family is realized in any requested universe.
+
+This realizes the finite-cyclic and p-adic factor description in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7), using Mathlib’s profinite completion. -/
 theorem exists_procyclic_of_exponents (e : Nat.Primes → ℕ∞) :
     ∃ (G : ProfiniteGrp.{u}) (hG : IsProcyclic G), hG.exponents = e :=
   ⟨primewisePadicProcyclicModel e,

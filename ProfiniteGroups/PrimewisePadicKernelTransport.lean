@@ -15,6 +15,11 @@ group agrees with the coordinate-preserving ring equivalence. Consequently,
 precomposition transports kernel ideals by comap and preserves their exponent
 families, even for maps that are not surjective. The fixed-source map of any
 element has the same exponent family as its original universe-dependent map.
+
+## References
+
+- Mathlib, `ULift.down_injective` and ideal/kernel transport; the preceding
+  `PrimewisePadicIdealTransport` and `ProcyclicBaseMap` supply the factor maps.
 -/
 
 @[expose] public section

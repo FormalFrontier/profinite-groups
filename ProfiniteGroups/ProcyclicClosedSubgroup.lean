@@ -19,6 +19,14 @@ is dense, and its image gives a topological generator. An arbitrary procyclic
 group is a continuous quotient of this fixed product, whose inverse image of
 a closed subgroup is closed; restricting the quotient map transports the
 generator to the actual closed subgroup.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (primewise description of procyclic groups; the closed-subgroup inheritance proof
+  here is a consequence, not a printed theorem).
+- Mathlib, `Mathlib.RingTheory.PrincipalIdealDomain` and closed-subgroup constructions;
+  `PrimewisePadicSubgroups` and `ProcyclicBaseMap` supply the quotient model.
 -/
 
 @[expose] public section
@@ -113,7 +121,12 @@ theorem primewisePadicClosedSubgroup_isProcyclic
     primewisePadicGenerator_isTopologicalGenerator.map f hf⟩
 
 /-- Every closed subgroup of a procyclic profinite group is procyclic in its
-inherited topology and group structure. -/
+inherited topology and group structure.
+
+This closed-subgroup inheritance is derived from the primewise quotient description in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7), with Mathlib’s p-adic ideal APIs; it is not quoted there as a separate
+theorem. -/
 theorem IsProcyclic.ofClosedSubgroup {G : ProfiniteGrp.{u}} (hG : IsProcyclic G)
     (H : ClosedSubgroup G) : IsProcyclic (ofClosedSubgroup H) := by
   obtain ⟨g, hg⟩ := hG

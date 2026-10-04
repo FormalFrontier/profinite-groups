@@ -32,6 +32,14 @@ to construct, compute and compare maps out of their product. Unlike the free
 profinite product, injectivity of the factor maps here is asserted by
 `of_injective` only under `[∀ i, IsProP p (G i)]`. Neither construction
 requires a finite indexing family.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §6, preceding Definition
+  (1.6.8) (pro-`p` groups through finite quotients); the maximal quotient and free-product
+  APIs are not attributed to a printed theorem there.
+- Mathlib, `Mathlib.GroupTheory.PGroup` (finite `p`-groups); `FreeProduct` and Mathlib
+  `ProfiniteGrp.Completion` provide the profinite-product approach.
 -/
 
 @[expose] public section
@@ -60,7 +68,11 @@ end IsPGroup
 namespace ProfiniteGrp
 
 /-- A profinite group is pro-`p` when every quotient by an open normal
-subgroup is a finite `p`-group. -/
+subgroup is a finite `p`-group.
+
+The finite-quotient characterization follows the pro-`p` discussion in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §6 before (1.6.8); it does
+not express the book’s index-defined `p`-Sylow property. -/
 class IsProP (p : ℕ) (G : ProfiniteGrp.{u}) [Fact p.Prime] : Prop where
   quotient_isPGroup (U : OpenNormalSubgroup G) :
     IsPGroup p (G ⧸ U.toSubgroup)
@@ -201,7 +213,10 @@ def diagram : Quotient p G ⥤ ProfiniteGrp.{u} :=
   finiteGrpDiagram p G ⋙ forget₂ _ _
 
 /-- The maximal pro-`p` quotient, constructed as the limit of all finite
-`p`-group quotients. -/
+`p`-group quotients. It uses Mathlib’s finite `PGroup` and open-normal-quotient
+diagram APIs. Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*,
+Ch. I §6 supplies the pro-`p` context, not this universal construction as a
+stated theorem. -/
 def product : ProfiniteGrp.{u} := limit (diagram p G)
 
 /-- The canonical map to the maximal pro-`p` quotient, as a function. -/
@@ -503,7 +518,8 @@ variable {ι : Type v} (p : ℕ) [Fact p.Prime]
 variable (G : ι → ProfiniteGrp.{u})
 
 /-- The free pro-`p` product of a family of profinite groups is the maximal
-pro-`p` quotient of their free profinite product. -/
+pro-`p` quotient of their free profinite product. The approach uses Mathlib’s
+`CoprodI` and profinite completion through `FreeProduct`. -/
 abbrev product : ProfiniteGrp.{max u v} :=
   MaximalProPQuotient.product p (FreeProduct.product G)
 

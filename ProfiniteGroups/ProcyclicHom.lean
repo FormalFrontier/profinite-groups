@@ -17,6 +17,14 @@ need not be procyclic, and the prescribed value need not generate the target.
 Surjectivity of the resulting map is an additional generator condition on the
 image. The exponent inequality is not a criterion for mere existence of an
 unspecified homomorphism to an arbitrary target.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (topological-generator context; these homomorphism refinements are not attributed
+  as printed results).
+- Mathlib, `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Completion` (extension from a
+  dense cyclic subgroup); `ProcyclicInvariant` supplies the quotient description.
 -/
 
 @[expose] public section
@@ -210,7 +218,11 @@ theorem factorOfGenerator_surjective_iff {G : ProfiniteGrp.{u}} {H : ProfiniteGr
         primewisePadicBaseMapOfGenerator G g) from hsurj)
 
 /-- A continuous quotient between procyclic profinite groups exists exactly
-when the exponents of the target are bounded by those of the source. -/
+when the exponents of the target are bounded by those of the source.
+
+The quotient classification in Neukirch–Schmidt–Wingberg, *Cohomology of Number
+Fields*, Ch. I §7, before Proposition (1.7.7) motivates this order criterion; the
+homomorphism-level refinement is proved here using Mathlib’s profinite completion. -/
 theorem exists_surjective_continuousHom_iff_exponents_le
     {G : ProfiniteGrp.{u}} {H : ProfiniteGrp.{v}}
     (hG : IsProcyclic G) (hH : IsProcyclic H) :

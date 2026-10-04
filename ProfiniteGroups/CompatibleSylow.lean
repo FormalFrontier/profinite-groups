@@ -16,6 +16,13 @@ public import Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits
 A surjective cofiltered diagram of finite groups admits compatible choices of Sylow
 subgroups, even after one coordinate has been specified. The canonical diagram of
 finite quotients of a profinite group is such a diagram.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §6, proof of (1.6.9)
+  (compatible Sylow subgroups in finite quotients).
+- Mathlib, `Mathlib.GroupTheory.Sylow`, `Mathlib.CategoryTheory.CofilteredSystem` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits`.
 -/
 
 namespace CompatibleSylow

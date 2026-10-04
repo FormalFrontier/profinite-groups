@@ -16,6 +16,15 @@ public import ProfiniteGroups.CompatibleSylow
 A compatible choice of Sylow subgroups in every open-normal quotient reconstructs
 a closed subgroup with exactly those images. Such a subgroup is maximal among
 subgroups containing it whose images in every finite quotient are `p`-groups.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §6, Definition (1.6.8)
+  and Theorem (1.6.9) (finite-quotient Sylow construction); the results here concern Sylow
+  *images*, not the book’s index-defined notion.
+- Mathlib, `Mathlib.GroupTheory.Sylow` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits` (finite Sylow subgroups and
+  open-normal quotient systems).
 -/
 
 namespace ProfiniteGrp
@@ -47,7 +56,12 @@ theorem CompatibleSylowFamily.isPGroup_image {G : ProfiniteGrp.{u}} {p : ℕ}
   exact (s.at U).isPGroup'
 
 /-- There is a closed subgroup whose image in every finite open-normal quotient
-is a Sylow `p`-subgroup. -/
+is a Sylow `p`-subgroup.
+
+The finite-image construction follows Neukirch–Schmidt–Wingberg, *Cohomology of Number
+Fields*, Ch. I §6, proof of (1.6.9)(i), using Mathlib’s finite Sylow API. It does not prove
+the book’s index-defined `p`-Sylow condition (1.6.8) or the bridges needed to identify
+them. -/
 theorem exists_closedSylow (G : ProfiniteGrp.{u}) (p : ℕ) (hp : p.Prime) :
     ∃ P : ClosedSubgroup G, ∀ U : OpenNormalSubgroup G,
       ∃ Q : Sylow p (G ⧸ U.toSubgroup),

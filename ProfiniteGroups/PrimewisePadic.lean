@@ -23,6 +23,14 @@ the integers is an equivalence of topological groups.
 The construction is universe-polymorphic: every p-adic factor is universe
 lifted before forming the product.  In particular, no countability,
 metrizability, nontriviality, or same-universe hypothesis is imposed on clients.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (primewise p-adic model of the completed integers).
+- Mathlib, `Mathlib.NumberTheory.Padics.RingHoms`, `Mathlib.Data.Nat.ChineseRemainder` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Completion` (p-adic factors and
+  completion).
 -/
 
 @[expose] public section
@@ -500,7 +508,10 @@ theorem integerCompletionToPrimewisePadic_injective :
   exact integerCompletionResidue_eq_of_primewise_eq hxy n
 
 /-- The canonical continuous multiplicative equivalence from the profinite
-completion of the integers to the product of the additive p-adic integers. -/
+completion of the integers to the product of the additive p-adic integers.
+
+This formalizes the primewise p-adic product in Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §7, before Proposition (1.7.7). -/
 noncomputable def integerCompletionEquivPrimewisePadic :
     integerCompletion.{u} ≃ₜ* primewisePadic.{u} :=
   ContinuousMulEquiv.mk'

@@ -19,6 +19,12 @@ zero, positive finite, and infinite primewise exponents.
 
 The zero exponent quotient is trivial; a finite positive exponent gives a
 residue factor; the infinite exponent gives the full p-adic factor.
+
+## References
+
+- Mathlib, `Mathlib.Topology.Algebra.Ring.Compact` and ideal quotients (topology of p-adic
+  factor quotients); `PiIdealQuotient` and `PrimewisePadicIdeals` supply the product
+  comparison.
 -/
 
 @[expose] public section
@@ -269,7 +275,10 @@ theorem liftedPadicQuotientContinuousAddEquivFactor_natCast_mk
     liftedPadicQuotientRingEquivZMod_mk]
   rfl
 
-/-- The product of the universe-uniform coordinate factor models. -/
+/-- The product of the universe-uniform coordinate factor models.
+
+Uses Mathlib’s ideal quotients and p-adic factor APIs, together with `PiIdealQuotient`;
+no particular printed product-ideal statement is asserted. -/
 noncomputable def primewisePadicQuotientModel
     (e : Nat.Primes → ℕ∞) : ProfiniteAddGrp.{u} :=
   ProfiniteAddGrp.pi fun p ↦ padicQuotientFactor p (e p)

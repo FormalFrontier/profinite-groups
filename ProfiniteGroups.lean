@@ -19,6 +19,8 @@ public import ProfiniteGroups.FiniteStageImages
 public import ProfiniteGroups.FiniteTargetHomColimit
 public import ProfiniteGroups.FiniteDiagramHomLimit
 public import ProfiniteGroups.FiniteDiagramIndDual
+public import ProfiniteGroups.IndDualRealization
+public import ProfiniteGroups.IndDualEquivalence
 public import ProfiniteGroups.FiniteGroupCharacterization
 public import ProfiniteGroups.ProP
 public import ProfiniteGroups.Procyclic

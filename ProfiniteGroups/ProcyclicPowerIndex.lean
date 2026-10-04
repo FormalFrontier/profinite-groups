@@ -22,6 +22,14 @@ which equivalence is meant: the additive class of one maps to its quotient class
 In the torsion-free case, the permissible integers are supported on the primes
 with infinite exponent. No torsion-freeness assumption is needed for the general
 index criterion or the chosen-generator quotient equivalence.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (torsion-free supported power indices; the arbitrary-procyclic exact-index
+  criterion is a refinement).
+- Mathlib, `Mathlib.Data.Nat.Factorization.Basic` and `Mathlib.Data.ZMod.QuotientRing`
+  (prime multiplicities and cyclic quotient models).
 -/
 
 @[expose] public section
@@ -255,7 +263,11 @@ supplied topological generator to additive one. -/
 
 /-- A positive power image has index exactly `n` if and only if every prime
 multiplicity of `n` fits in the corresponding (possibly infinite) procyclic
-exponent. For positive `n`, `n.factorization p` is `Nat.multiplicity p n`. -/
+exponent. For positive `n`, `n.factorization p` is `Nat.multiplicity p n`.
+
+The supported indices in Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7
+motivate this more general exact-index criterion, using Mathlib’s factorization and `ZMod`
+API. -/
 theorem powerImage_index_eq_iff_exponents (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (n : ℕ) (hn : 0 < n) :
     (powerImage G hG n : Subgroup G).index = n ↔
@@ -307,7 +319,11 @@ theorem powerImage_index_eq_iff_exponents (G : ProfiniteGrp.{u})
     exact Nat.dvd_antisymm (powerImage_index_dvd G hG n hn) hindex_dvd
 
 /-- For a torsion-free procyclic group, a positive power image has exact
-index if and only if every prime dividing `n` has infinite exponent. -/
+index if and only if every prime dividing `n` has infinite exponent.
+
+This is the torsion-free supported-index specialization of the description in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7). -/
 theorem powerImage_index_eq_iff_exponents_top_of_isMulTorsionFree
     (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
     (hfree : IsMulTorsionFree G) (n : ℕ) (hn : 0 < n) :

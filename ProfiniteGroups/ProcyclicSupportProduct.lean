@@ -22,6 +22,14 @@ counterparts. The inverse fills omitted zero-exponent coordinates with zero.
 The exponent family of a procyclic profinite group is independent of its
 generator. The equivalence from the group to its support product uses a
 chosen topological generator and is not canonical without that choice.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (finite-cyclic and p-adic product description); omission of zero exponents is
+  explicit here.
+- Mathlib, `PadicInt.toZModPow`, `ZMod` and dependent-product topology used by
+  `ProcyclicTorsionFreeProduct` and `PrimewisePadicQuotients`.
 -/
 
 @[expose] public section
@@ -264,7 +272,11 @@ namespace IsProcyclic
 
 /-- A procyclic profinite group is continuously equivalent to the support
 product of its generator-independent primewise exponents. The equivalence
-uses a chosen generator; it requires no torsion-freeness assumption. -/
+uses a chosen generator; it requires no torsion-freeness assumption.
+
+The finite-cyclic and p-adic product description comes from Neukirch–Schmidt–Wingberg,
+*Cohomology of Number Fields*, Ch. I §7, before Proposition (1.7.7); this model explicitly
+omits zero exponents. -/
 noncomputable def continuousMulEquivSupportProduct
     {G : ProfiniteGrp.{v}} (hG : IsProcyclic G) :
     G ≃ₜ* Multiplicative (primewisePadicSupportProduct.{0} hG.exponents) :=

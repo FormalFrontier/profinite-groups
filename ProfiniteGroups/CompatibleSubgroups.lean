@@ -17,6 +17,13 @@ set_option warningAsError true
 
 Compatible subgroup images at every open normal quotient reconstruct a unique closed
 subgroup. Compatibility requires equality under each finer-to-coarser quotient map.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 (recovering closed
+  subgroups from finite quotient images).
+- Mathlib, `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits` and
+  `Mathlib.Topology.Compactness.Compact` (finite-quotient limit and compactness).
 -/
 
 namespace ProfiniteGrp.CompatibleSubgroups

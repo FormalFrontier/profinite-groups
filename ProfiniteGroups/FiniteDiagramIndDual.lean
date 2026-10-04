@@ -18,6 +18,14 @@ composition and naturality laws. Only diagrams with small,
 nonempty cofiltered indices are presented this way; the existing continuous-map
 comparison allows a more general target index. No presentation-independent
 pro-category or cross-universe equivalence is asserted.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 (pro-category
+  motivation, not this explicit dual-Ind comparison).
+- Mathlib, `Mathlib.CategoryTheory.Limits.Indization.Category` (Ind presentations, Yoneda
+  and pointwise colimits); `FiniteDiagramHomLimit` supplies the finite-stage map
+  comparison.
 -/
 
 @[expose] public section
@@ -439,7 +447,11 @@ private theorem finiteDiagramIndDualHomMap_map
     Category.id_comp] using hp
 
 /-- Morphisms between the specified dual ind-objects correspond to compatible
-classes of finite-stage maps. -/
+classes of finite-stage maps.
+
+This uses Mathlib’s `Ind` presentations and Yoneda colimits; the pro-category paragraph in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 motivates but does not
+state this specified-diagram equivalence. -/
 noncomputable def finiteDiagramIndDualHomEquiv
     (X : I ⥤ FintypeCat.Skeleton.{u}) (Y : J ⥤ FintypeCat.Skeleton.{u}) :
     (finiteDiagramIndDual X ⟶ finiteDiagramIndDual Y) ≃
@@ -719,5 +731,65 @@ theorem finiteDiagramIndDualContinuousEquiv_apply_class
   exact stageHomLimitEquiv_symm_apply_class
     (X ⋙ FintypeCat.Skeleton.incl) c hc
       (Y ⋙ FintypeCat.Skeleton.incl) d hd _ j i h hj
+
+/-- The continuous comparison sends the identity on a dual finite diagram
+to the identity of its specified limit. -/
+@[simp] theorem finiteDiagramIndDualContinuousEquiv_id
+    (X : I ⥤ FintypeCat.Skeleton.{u})
+    (c : Cone ((X ⋙ FintypeCat.Skeleton.incl) ⋙ FintypeCat.toProfinite))
+    (hc : IsLimit c) :
+    finiteDiagramIndDualContinuousEquiv X X c hc c hc
+      (𝟙 (finiteDiagramIndDual X)) = 𝟙 c.pt := by
+  apply hc.hom_ext
+  intro i
+  rw [finiteDiagramIndDualContinuousEquiv_apply_class X X c hc c hc
+    (𝟙 _) i i (𝟙 _) (finiteDiagramIndDualHomMap_id X i)]
+  simp
+
+/-- The continuous comparison preserves composition across specified
+limits of three finite diagrams. -/
+theorem finiteDiagramIndDualContinuousEquiv_comp
+    (X : I ⥤ FintypeCat.Skeleton.{u}) (Y : J ⥤ FintypeCat.Skeleton.{u})
+    (Z : K ⥤ FintypeCat.Skeleton.{u})
+    (c : Cone ((X ⋙ FintypeCat.Skeleton.incl) ⋙ FintypeCat.toProfinite))
+    (hc : IsLimit c)
+    (d : Cone ((Y ⋙ FintypeCat.Skeleton.incl) ⋙ FintypeCat.toProfinite))
+    (hd : IsLimit d)
+    (e : Cone ((Z ⋙ FintypeCat.Skeleton.incl) ⋙ FintypeCat.toProfinite))
+    (he : IsLimit e)
+    (f : finiteDiagramIndDual X ⟶ finiteDiagramIndDual Y)
+    (g : finiteDiagramIndDual Y ⟶ finiteDiagramIndDual Z) :
+    finiteDiagramIndDualContinuousEquiv X Z c hc e he (f ≫ g) =
+      finiteDiagramIndDualContinuousEquiv X Y c hc d hd f ≫
+        finiteDiagramIndDualContinuousEquiv Y Z d hd e he g := by
+  apply he.hom_ext
+  intro k
+  obtain ⟨⟨j⟩, t, ht⟩ := Limits.Types.jointly_surjective'
+    (F := stageHom (Y ⋙ FintypeCat.Skeleton.incl)
+      ((Z ⋙ FintypeCat.Skeleton.incl).obj k))
+    ((finiteDiagramIndDualHomMap Y Z g).val k)
+  change (Y ⋙ FintypeCat.Skeleton.incl).obj j ⟶
+    (Z ⋙ FintypeCat.Skeleton.incl).obj k at t
+  have ht' : (finiteDiagramIndDualHomMap Y Z g).val k =
+      stageHomClass (Y ⋙ FintypeCat.Skeleton.incl) _ j t := ht.symm
+  obtain ⟨⟨i⟩, h, hh⟩ := Limits.Types.jointly_surjective'
+    (F := stageHom (X ⋙ FintypeCat.Skeleton.incl)
+      ((Y ⋙ FintypeCat.Skeleton.incl).obj j))
+    ((finiteDiagramIndDualHomMap X Y f).val j)
+  change (X ⋙ FintypeCat.Skeleton.incl).obj i ⟶
+    (Y ⋙ FintypeCat.Skeleton.incl).obj j at h
+  have hh' : (finiteDiagramIndDualHomMap X Y f).val j =
+      stageHomClass (X ⋙ FintypeCat.Skeleton.incl) _ i h := hh.symm
+  calc
+    _ = c.π.app i ≫ FintypeCat.toProfinite.map (h ≫ t) :=
+      finiteDiagramIndDualContinuousEquiv_apply_class X Z c hc e he (f ≫ g)
+        k i (h ≫ t)
+        (finiteDiagramIndDualHomMap_comp_class X Y Z f g i j k h t hh' ht')
+    _ = _ := by
+      rw [Functor.map_comp, ← Category.assoc,
+        ← finiteDiagramIndDualContinuousEquiv_apply_class X Y c hc d hd f j i h hh',
+        Category.assoc,
+        ← finiteDiagramIndDualContinuousEquiv_apply_class Y Z d hd e he g k j t ht',
+        Category.assoc]
 
 end Profinite

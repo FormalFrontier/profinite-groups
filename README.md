@@ -49,6 +49,22 @@ integers and general algebra/topology.
   naturality; it does not assert a presentation-independent pro-category
   equivalence. See [`FiniteDiagramIndDual`](ProfiniteGroups/FiniteDiagramIndDual.lean)
   and its [boundary clients](ProfiniteGroupsTests/FiniteDiagramIndDual.lean).
+- **Realization of dual ind-objects.** In a fixed universe, dual ind-objects of
+  finite sets have a functorial profinite realization. Its map on homs is an
+  equivalence, so the functor is fully faithful; comparisons with specified
+  finite-diagram limits are natural and coherent under changes of presentation.
+  Empty finite stages and limiting spaces are allowed. See
+  [`IndDualRealization`](ProfiniteGroups/IndDualRealization.lean) and its
+  [clients](ProfiniteGroupsTests/IndDualRealization.lean).
+- **Skeletal finite quotients and equivalence.** Every profinite space in the
+  same universe is the limit of its included skeletal finite-quotient diagram.
+  The associated dual ind-object realizes to that space, giving an equivalence
+  between dual ind-objects of finite sets and profinite spaces whose forward
+  functor is the realization above. The generic inverse's chosen object is
+  compared with the skeletal presentation by an isomorphism. Empty spaces and
+  finite stages are allowed; no arbitrary diagram projection is assumed
+  surjective. See [`IndDualEquivalence`](ProfiniteGroups/IndDualEquivalence.lean)
+  and its [clients](ProfiniteGroupsTests/IndDualEquivalence.lean).
 - **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
   inverse limit of finite discrete spaces over a small, nonempty cofiltered
   category if and only if it is compact with a clopen basis, equivalently
@@ -283,6 +299,20 @@ the cone points into compatible stage-map classes. Its inverse projection is
 computed by `stageHomLimitEquiv_symm_apply_projection` and, on a representative,
 by `stageHomLimitEquiv_symm_apply_class`.
 
+For an object `Q : (Ind FintypeCat.Skeleton.{u}ᵒᵖ)ᵒᵖ`, use
+`Profinite.indDualRealization.obj Q` for its profinite realization and
+`Profinite.indDualRealizationHomEquiv Q R` to convert its morphisms to
+continuous maps. `Profinite.indDualRealizationComparison X c hc` compares a
+diagram-induced object with a specified limiting cone, while
+`Profinite.indDualRealizationComparisonOfIso X e c hc` accepts an arbitrary
+supplied presentation isomorphism; `Profinite.indDualRealizationPresentationIso`
+composes such comparisons between supplied presentations.
+Use `Profinite.indDualEquivalence` for the fixed-universe equivalence and
+`Profinite.skeletalQuotientIndDual T` for a specified inverse model of a
+profinite space `T`. The isomorphism `Profinite.skeletalQuotientRealizationIso T`
+realizes this model as `T`; `Profinite.indDualEquivalenceInverseIso T` compares
+it with the equivalence's generic inverse.
+
 ## Module map
 
 [`ProfiniteGroups.lean`](ProfiniteGroups.lean) publicly imports every production
@@ -291,7 +321,7 @@ leaf below; no `Tests` module is part of the production root.
 | Mathematics | Importable modules |
 | --- | --- |
 | Finite-stage inverse-limit characterizations | [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean), [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean) |
-| Finite-space limit stages and map comparisons | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean), [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean), [`FiniteDiagramHomLimit`](ProfiniteGroups/FiniteDiagramHomLimit.lean) |
+| Finite-space limit stages and map comparisons | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean), [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean), [`FiniteDiagramHomLimit`](ProfiniteGroups/FiniteDiagramHomLimit.lean), [`FiniteDiagramIndDual`](ProfiniteGroups/FiniteDiagramIndDual.lean), [`IndDualRealization`](ProfiniteGroups/IndDualRealization.lean), [`IndDualEquivalence`](ProfiniteGroups/IndDualEquivalence.lean) |
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
 | Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
@@ -302,20 +332,40 @@ leaf below; no `Tests` module is part of the production root.
 | Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicPowerIndices`](ProfiniteGroups/ProcyclicPowerIndices.lean), [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
 | Additive coefficients at prime-supported indices | [`PrimeSupportedCoefficients`](ProfiniteGroups/PrimeSupportedCoefficients.lean) |
 
+## References
+
+- J. Neukirch, A. Schmidt and K. Wingberg, [*Cohomology of Number Fields*,
+  corrected second edition, electronic v2.3 (May 2020)](https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/),
+  Ch. I §1 (Lemma (1.1.1), Proposition (1.1.3), Exercises 1 and 3–5), §6
+  (finite-quotient pro-`p` and Sylow constructions), and §7 before (1.7.7)
+  (procyclic groups, completed integers, p-adic products and supported powers).
+- [Mathlib](https://github.com/leanprover-community/mathlib4/tree/83abb3e776bdefcbc447a1e44d0debe4010039e5),
+  pinned revision `83abb3e776bdefcbc447a1e44d0debe4010039e5`:
+  `Profinite.AsLimit`, `Profinite.Extend`, `ProfiniteGrp.Limits`,
+  `ProfiniteGrp.Completion`, Indization/presentation, `CoprodI`, `Sylow`,
+  p-adic integers, ideal quotients and categorical/topological APIs.
+
 ## Scope and credit
 
 This source-independent library has separate production and test roots. The
 closed-coset construction does not make a nonnormal quotient a group, and the
 normal-quotient universal property assumes that the subgroup lies in the
-homomorphism's kernel; no equivalence with a pro-category is asserted.
+homomorphism's kernel; the dual-Ind/profinite equivalence concerns spaces,
+not profinite group objects or an arbitrary pro-category.
 Mathematical correspondence and coverage of particular sources are recorded outside this library.
-[Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, corrected second
-edition, electronic version 2.3 (May 2020)](https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/)
-is mathematical background, not shipped source material or a coverage claim.
+The cited characterizations and exercises in Neukirch–Schmidt–Wingberg supply
+mathematical origins for the corresponding results; other constructions use its
+finite-system, Sylow and procyclic discussions as motivation rather than asserting
+every local refinement is a printed theorem. In particular, Sylow finite images
+are not identified here with the book's index-defined `p`-Sylow subgroups.
+The book is not shipped source material and these citations make no coverage claim.
 
 Original Lean mathematics and client tests were developed by Formal Frontier
 Agents, including Beacon's initial implementation, later mathematical and test
 contributors, and Beacon's readiness integration and targeted API repairs.
+The library follows Mathlib's finite quotients, Ind presentations, profinite
+completion, finite Sylow groups and p-adic/ideal APIs as detailed in the module
+references, as well as using the cited mathematical sources.
 The reference adapter and catalogue were adapted through the finite-group
 Tate cohomology, polynomial-root-stability and Anchor ideal-completion work;
 Folio supplied the scoped headline documentation. AI agents contributed code,

@@ -8,6 +8,13 @@ module
 public import ProfiniteGroups.ClosedSylow
 public import Mathlib.Algebra.Group.PUnit
 
+/-!
+# Clients for closed subgroups with Sylow finite-quotient images
+
+Tests bounded maximality and prescribed finite-quotient images, including the
+trivial profinite group. These examples use Mathlib's `PUnit` and `Sylow` APIs.
+-/
+
 public section
 
 set_option warningAsError true

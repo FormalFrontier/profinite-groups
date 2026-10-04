@@ -18,6 +18,14 @@ This file defines topological generators and procyclicity for profinite groups,
 constructs the canonical map from the profinite completion of the integers, and
 gives transport results and finite cyclic examples.  Additive-native generator,
 transport, and example APIs are provided in `ProfiniteAddGrp`.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (topological generators and quotients of the completed integers).
+- Mathlib, `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Completion` and
+  `Mathlib.Topology.Algebra.Group.SubmonoidClosure` (completion and topological
+  generation).
 -/
 
 @[expose] public section
@@ -219,7 +227,11 @@ theorem isTopologicalGenerator_iff_epi_integerCompletionMap
     (epi_iff_surjective (integerCompletionMap G g)).symm
 
 /-- A profinite group is procyclic exactly when one of its canonical maps from
-the profinite completion of the integers is surjective. -/
+the profinite completion of the integers is surjective.
+
+This expresses the completed-integer quotient characterization in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7), via Mathlib’s profinite completion. -/
 theorem isProcyclic_iff_exists_surjective_integerCompletionMap
     (G : ProfiniteGrp.{u}) :
     IsProcyclic G ↔ ∃ g : G, Function.Surjective (integerCompletionMap G g) := by

@@ -18,6 +18,14 @@ quotients.
 The index and finite groups live in the universe of the carrier, as does
 Mathlib's canonical open-normal-quotient diagram. Open subgroups are also
 closed; the neighborhood-basis condition records openness and normality.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Proposition (1.1.3)
+  (compact totally disconnected groups and finite-group inverse limits).
+- Mathlib, `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits` (canonical finite-group
+  quotient diagram); `FiniteDiscreteCharacterization` supplies the underlying-space
+  comparison.
 -/
 
 @[expose] public section
@@ -145,7 +153,10 @@ theorem ofProfiniteGrp_stageHom_surjective (G : ProfiniteGrp.{u})
 end FiniteGroupPresentation
 
 /-- For a Hausdorff topological group, a finite-group presentation is equivalent
-to compactness and an identity-neighborhood basis of open normal subgroups. -/
+to compactness and an identity-neighborhood basis of open normal subgroups.
+
+This is the finite-group characterization in Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §1, Proposition (1.1.3), using Mathlib’s finite-quotient diagram. -/
 theorem finiteGroupPresentation_iff_compact_openNormalBasis (G : Type u)
     [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] :
     Nonempty (FiniteGroupPresentation G) ↔
@@ -185,7 +196,10 @@ theorem finiteGroupPresentation_iff_compact_openNormalBasis (G : Type u)
     exact ⟨FiniteGroupPresentation.ofProfiniteGrp (ProfiniteGrp.of G)⟩
 
 /-- For a Hausdorff topological group, a finite-group presentation is equivalent
-to compactness and total disconnectedness. This includes the trivial group. -/
+to compactness and total disconnectedness. This includes the trivial group.
+
+The source is Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1,
+Proposition (1.1.3). -/
 theorem finiteGroupPresentation_iff_compact_totallyDisconnected (G : Type u)
     [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] :
     Nonempty (FiniteGroupPresentation G) ↔

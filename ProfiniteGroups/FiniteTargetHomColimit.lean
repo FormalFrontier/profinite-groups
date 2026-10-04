@@ -19,6 +19,14 @@ The index belongs to `Type u` and the finite stages and target to
 `FintypeCat.{max u w}`. The nonempty cofiltered assumption matters: an empty
 index has a one-point limit but an empty stage-hom colimit, even for the
 one-point target. Empty finite stages and targets are allowed.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1
+  (inverse-system/pro-category motivation, not a stated Lean-level Hom equivalence).
+- Mathlib, `Mathlib.CategoryTheory.Limits.Types.Filtered` and
+  `Mathlib.CategoryTheory.Whiskering` (filtered colimits and stage-map functoriality);
+  `FiniteStageImages` supplies finite-stage equality.
 -/
 
 @[expose] public section
@@ -140,7 +148,11 @@ theorem stageHomToContinuous_bijective (c : Cone (F ⋙ FintypeCat.toProfinite))
     exact ⟨stageHomClass F S i g, stageHomToContinuous_class c S i g⟩
 
 /-- Continuous maps to a finite discrete space are the colimit of maps
-from finite stages. -/
+from finite stages.
+
+This uses Mathlib’s filtered-colimit construction and `FiniteStageImages`; the pro-category
+discussion in Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 is
+motivation, not a printed Hom equivalence. -/
 noncomputable def stageHomEquiv (c : Cone (F ⋙ FintypeCat.toProfinite))
     (hc : IsLimit c) (S : FintypeCat.{max u w}) :
     colimit (stageHom F S) ≃ (c.pt ⟶ FintypeCat.toProfinite.obj S) :=

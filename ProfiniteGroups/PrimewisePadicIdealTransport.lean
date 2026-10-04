@@ -14,6 +14,11 @@ p-adic integers preserves the exponent of every factor ideal. Coordinate
 images then show that it also preserves the exponent family of every ideal
 in the primewise product, without a closedness hypothesis. Only closed ideals
 are reconstructed from their exponent families.
+
+## References
+
+- Mathlib, `ULift.ringEquiv`, `Ideal.map` and `Ideal.comap` for changing the
+  universe of p-adic factor ideals; `PrimewisePadicIdeals` supplies exponents.
 -/
 
 @[expose] public section

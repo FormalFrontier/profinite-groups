@@ -29,6 +29,15 @@ homeomorphism when `T` is open in `S`.
 The local and global section theorems use their respective openness,
 closedness and compactness hypotheses. They do not assert that arbitrary
 surjections of topological groups split as homomorphisms.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Exercise 4 (the
+  maximal-pair approach to a continuous section). The proof here organizes the fibers
+  differently.
+- Mathlib, `Mathlib.Topology.Algebra.Group.Quotient`,
+  `Mathlib.Topology.Algebra.ClopenNhdofOne` and
+  `Mathlib.Topology.Algebra.ProperAction.Basic` (cosets and topology).
 -/
 
 @[expose] public section
@@ -394,7 +403,10 @@ private theorem exists_cosetSectionFiber_chain_lowerBound
     exact hmem
 
 /-- The projection between the left-coset spaces of two closed subgroups of a
-profinite group has a continuous section. -/
+profinite group has a continuous section.
+
+This is Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1, Exercise 4. The
+proof follows its maximal-pair idea but organizes the fiber relations differently. -/
 theorem quotientMapOfLE_exists_continuous_section_of_isClosed
     {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
     [CompactSpace G] [T2Space G] [TotallyDisconnectedSpace G]

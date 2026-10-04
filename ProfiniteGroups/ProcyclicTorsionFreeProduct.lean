@@ -18,6 +18,13 @@ product as an explicit continuous multiplicative model.
 The exponent support does not depend on the choice of generator. The
 equivalence from a group to its model does use a chosen topological generator;
 it is not a canonical equivalence without that choice.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (torsion-free p-adic product description).
+- Mathlib, `PadicInt` and dependent-product topology used by
+  `ProcyclicTorsionFree` and `ProcyclicInvariant`.
 -/
 
 @[expose] public section
@@ -151,7 +158,10 @@ namespace IsProcyclic
 /-- A torsion-free procyclic profinite group is continuously equivalent to
 the product of p-adic integers indexed by its infinite-exponent primes.
 The support is generator-independent, but the equivalence uses a chosen
-topological generator. -/
+topological generator.
+
+The torsion-free p-adic product is described in Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §7, before Proposition (1.7.7). -/
 noncomputable def continuousMulEquivTopSupport
     {G : ProfiniteGrp.{v}} (hG : IsProcyclic G) (hfree : IsMulTorsionFree G) :
     G ≃ₜ* Multiplicative

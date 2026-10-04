@@ -34,6 +34,14 @@ with openness; `powerOpenSubgroup_toSubgroup` forgets this packaging.
 `openSubgroup_eq_powerImage` recovers an arbitrary open subgroup from its index,
 and `openSubgroup_eq_of_index_eq` gives uniqueness at a fixed index. These results
 do not assert that every positive integer occurs as an index.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (open power subgroups in the torsion-free primewise case; the general procyclic
+  power statements extend this case).
+- Mathlib, `Mathlib.Topology.Algebra.OpenSubgroup` and
+  `Mathlib.Topology.Algebra.Group.ClosedSubgroup` (open and closed power images).
 -/
 
 @[expose] public section
@@ -249,7 +257,10 @@ theorem powerImage_quotient_zpowers_eq_top (G : ProfiniteGrp.{u})
   exact zpowers_quotient_eq_top_of_finOrder (powerImage G hG n).isClosed' hg
     (isOfFinOrder_iff_pow_eq_one.mpr ⟨n, hn, hpow⟩)
 
-/-- The positive-power quotient is finite and cyclic. -/
+/-- The positive-power quotient is finite and cyclic.
+
+The torsion-free power-quotient picture in Neukirch–Schmidt–Wingberg, *Cohomology of Number
+Fields*, Ch. I §7 motivates this arbitrary-procyclic refinement. -/
 theorem powerImage_quotient_isCyclic (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (g : G) (hg : IsTopologicalGenerator G g)
     (n : ℕ) (hn : 0 < n) :
@@ -316,7 +327,10 @@ same underlying subgroup as the closed power image. -/
     (powerOpenSubgroup G hG n hn : Subgroup G) = (powerImage G hG n : Subgroup G) := rfl
 
 /-- Any open subgroup of a procyclic profinite group is precisely the image
-of the power map at its actual index (with no extra normality assumption). -/
+of the power map at its actual index (with no extra normality assumption).
+
+This extends the torsion-free open-power description in Neukirch–Schmidt–Wingberg,
+*Cohomology of Number Fields*, Ch. I §7 to all procyclic groups. -/
 theorem openSubgroup_eq_powerImage (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
     (H : OpenSubgroup G) :
     (H : Subgroup G) = (powerImage G hG (H : Subgroup G).index : Subgroup G) := by

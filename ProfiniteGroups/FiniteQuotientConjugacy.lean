@@ -14,6 +14,15 @@ public import Mathlib.Algebra.Group.End
 Closed subgroups of a profinite group are conjugate precisely when their images are conjugate
 in each finite open-normal quotient. No compatibility between the quotient conjugators is needed.
 Closedness is used to recover subgroup equality from equality of all finite quotient images.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §6, proof of Theorem
+  (1.6.9)(iii) (compatible finite-quotient conjugators and compactness); the criterion here
+  applies to arbitrary closed subgroups, not only Sylow subgroups.
+- Mathlib, `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits` and
+  `Mathlib.Algebra.Group.End` (finite-quotient transition and conjugation);
+  `CompatibleSubgroups` supplies reconstruction.
 -/
 
 @[expose] public section
@@ -118,7 +127,11 @@ theorem exists_conjugator_of_forall_quotients (H K : ClosedSubgroup G)
   exact congrArg ClosedSubgroup.toSubgroup hEq
 
 /-- Closed subgroups of a profinite group are conjugate exactly when their
-images are conjugate independently in each finite open-normal quotient. -/
+images are conjugate independently in each finite open-normal quotient.
+
+The compactness and finite-quotient method follows Neukirch–Schmidt–Wingberg, *Cohomology
+of Number Fields*, Ch. I §6, proof of (1.6.9)(iii); this criterion for arbitrary closed
+subgroups is stronger than the printed Sylow conjugacy statement. -/
 theorem exists_conjugator_iff_forall_quotients (H K : ClosedSubgroup G) :
     (∃ g : G, H.toSubgroup.map (MulAut.conj g).toMonoidHom = K.toSubgroup) ↔
       ∀ U : OpenNormalSubgroup G, ∃ a : G ⧸ U.toSubgroup,

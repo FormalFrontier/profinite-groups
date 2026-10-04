@@ -18,6 +18,14 @@ primes are those whose generator-independent exponents are infinite. Positive
 power-image indices and indices of open subgroups are expressed using this
 submonoid. The zero index is excluded: at infinite index the equality between
 an index and a zero exponent need not imply exactness in the positive sense.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (supported positive power indices for torsion-free procyclic groups).
+- Mathlib, `Mathlib.NumberTheory.SmoothNumbers` and
+  `Mathlib.Algebra.Group.Submonoid.BigOperators` (supported integers as a prime-generated
+  submonoid).
 -/
 
 @[expose] public section
@@ -123,7 +131,11 @@ namespace ProfiniteGrp
 universe u
 
 /-- For positive `n`, the `n`-th power image has index `n` exactly when
-its prime divisors occur with infinite exponent in the torsion-free group. -/
+its prime divisors occur with infinite exponent in the torsion-free group.
+
+This expresses the supported-index description in Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §7, before Proposition (1.7.7), using Mathlib’s prime-generated
+submonoids. -/
 theorem powerImage_index_eq_iff_primeSupportedIndices (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (hfree : IsMulTorsionFree G) (n : ℕ) (hn : 0 < n) :
     (powerImage G hG n : Subgroup G).index = n ↔
@@ -134,7 +146,10 @@ theorem powerImage_index_eq_iff_primeSupportedIndices (G : ProfiniteGrp.{u})
 
 /-- The index of every open subgroup of a torsion-free procyclic profinite
 group is positive and supported on the infinite-exponent primes. The subgroup
-itself is recovered by `openSubgroup_eq_powerImage` at this index. -/
+itself is recovered by `openSubgroup_eq_powerImage` at this index.
+
+The torsion-free supported-index idea comes from Neukirch–Schmidt–Wingberg, *Cohomology of
+Number Fields*, Ch. I §7, before Proposition (1.7.7). -/
 theorem openSubgroup_index_mem_primeSupportedIndices (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (hfree : IsMulTorsionFree G) (H : OpenSubgroup G) :
     (H : Subgroup G).index ∈

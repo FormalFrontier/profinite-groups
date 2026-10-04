@@ -21,6 +21,14 @@ Reduction of residues commutes with the power-quotient transition under the
 equivalences determined by the same generator. This identifies the two
 diagrams naturally and transports the supported power-quotient limit
 equivalence to the residue limit.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (torsion-free reconstruction by supported residue limits); the arbitrary diagram
+  comparison is built here.
+- Mathlib, `Mathlib.Data.ZMod.Basic` and finite-quotient limits used by
+  `ProcyclicPowerLimit` (residues and inverse-limit cones).
 -/
 
 @[expose] public section
@@ -302,7 +310,11 @@ chosen-generator component at that same level. -/
   exact h
 
 /-- The torsion-free supported reconstruction, transported from power
-quotients to the residue diagram by the chosen-generator comparison. -/
+quotients to the residue diagram by the chosen-generator comparison.
+
+The torsion-free supported-residue reconstruction comes from Neukirch–Schmidt–Wingberg,
+*Cohomology of Number Fields*, Ch. I §7, before Proposition (1.7.7); a chosen generator
+normalizes the coordinates. -/
 noncomputable def continuousMulEquivSupportedResidueLimit (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (hfree : IsMulTorsionFree G)
     (g : G) (hg : IsTopologicalGenerator G g) :

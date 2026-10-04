@@ -16,6 +16,13 @@ ideal's primewise exponents then give a product of finite residue and p-adic
 factors. For a profinite group with a specified topological generator, the
 canonical completion map supplies the required surjection. The exponents in
 this construction depend on the supplied map or generator.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+  (1.7.7) (procyclic groups as quotients of the completed integers and primewise products).
+- Mathlib, profinite completion and ideal-quotient APIs used by `PrimewisePadicQuotients`
+  and `PrimewisePadicSubgroups`.
 -/
 
 @[expose] public section
@@ -237,7 +244,12 @@ noncomputable def primewisePadicExponentsOfGenerator
   primewisePadicKernelExponents (primewisePadicMapOfGenerator G g)
 
 /-- A supplied topological generator gives an explicit product model, with
-no assertion that the exponent family is generator-independent. -/
+no assertion that the exponent family is generator-independent.
+
+The primewise quotient model is motivated by the procyclic classification in
+Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §7, before Proposition
+(1.7.7). Mathlib’s profinite completion and p-adic quotient APIs supply the formal
+approach. -/
 noncomputable def procyclicContinuousMulEquivModel
     (G : ProfiniteGrp.{u}) (g : G) (hg : IsTopologicalGenerator G g) :
     G ≃ₜ* Multiplicative (primewisePadicQuotientModel

@@ -17,6 +17,15 @@ homomorphism. The constructions use Mathlib's quotient types and topology.
 
 Closedness is essential for Hausdorffness: a quotient by a nonclosed subgroup
 need not even be a T1 space. No openness or finite-index condition is imposed.
+
+## References
+
+- Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1 (closed subgroups and
+  quotient spaces); this motivates the quotient construction, not its universe-specific
+  API.
+- Mathlib, `Mathlib.Topology.Algebra.Group.Quotient` and
+  `Mathlib.Topology.Algebra.Category.ProfiniteGrp.Basic` (quotient topology and
+  profinite-group structure).
 -/
 
 @[expose] public section
@@ -28,7 +37,10 @@ universe u
 namespace ProfiniteGrp
 
 /-- The profinite space of cosets of any closed subgroup. Its carrier and
-topology are those of Mathlib's group quotient. -/
+topology are those of Mathlib's group quotient.
+
+The construction is motivated by Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*,
+Ch. I §1 (closed subgroups and cosets) and uses Mathlib’s group quotient topology. -/
 def closedCosetSpace (G : ProfiniteGrp.{u}) (H : ClosedSubgroup G) : Profinite.{u} := by
   letI : IsClosed (H.toSubgroup : Set G) := H.isClosed'
   exact Profinite.of (G ⧸ H.toSubgroup)
