@@ -41,6 +41,12 @@ related_formalizations:
       Pinned mathlib revision 83abb3e776bdefcbc447a1e44d0debe4010039e5;
       provides profinite categories and completions, p-adic structures and
       general topology/algebra. Its own notices and license remain applicable.
+  - id: https://github.com/FormalFrontier/group-theory
+    relationship: builds-on
+    note: >-
+      Pinned Group Theory revision 01047a79bed13ee795d40b61b777566f2160e5cc;
+      its open-quotient theorem was first formalized in this library and now
+      supplies the totally disconnected coset-space instance.
 
 classification:
   arxiv: [math.GR, math.NT]

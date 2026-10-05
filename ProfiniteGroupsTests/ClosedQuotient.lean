@@ -7,6 +7,7 @@ module
 public import ProfiniteGroups.ClosedQuotient
 public import ProfiniteGroups.PrimewisePadic
 public import ProfiniteGroups.Procyclic
+import GroupTheory.Topology.OpenQuotient
 import Mathlib.Algebra.CharZero.Infinite
 import Mathlib.Data.ZMod.Basic
 import Mathlib.GroupTheory.Index
@@ -63,6 +64,12 @@ theorem pointStabilizer_not_normal : ¬ pointStabilizer.toSubgroup.Normal := by
 theorem symmetricThree_cosets : Nat.card (symmetricThree.closedCosetSpace pointStabilizer) = 3 := by
   change (MulAction.stabilizer (Equiv.Perm (Fin 3)) (0 : Fin 3)).index = 3
   simpa using (MulAction.index_stabilizer_of_transitive (Equiv.Perm (Fin 3)) (0 : Fin 3))
+
+/-- The open quotient theorem also applies to a nonnormal coset space. -/
+theorem symmetricThree_cosets_totallyDisconnected :
+    TotallyDisconnectedSpace (symmetricThree.closedCosetSpace pointStabilizer) :=
+  Topology.IsOpenQuotientMap.totallyDisconnectedSpace
+    (QuotientGroup.isOpenQuotientMap_mk (N := pointStabilizer.toSubgroup))
 
 /-- Reduction from the cyclic group of order six to that of order three. -/
 def cyclicSixToThree : finiteCyclic 6 ⟶ finiteCyclic 3 :=

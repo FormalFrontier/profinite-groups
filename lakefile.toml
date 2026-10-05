@@ -7,6 +7,11 @@ name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"
 rev = "83abb3e776bdefcbc447a1e44d0debe4010039e5"
 
+[[require]]
+name = "groupTheory"
+git = "https://github.com/FormalFrontier/group-theory.git"
+rev = "01047a79bed13ee795d40b61b777566f2160e5cc"
+
 [leanOptions]
 autoImplicit = false
 relaxedAutoImplicit = false

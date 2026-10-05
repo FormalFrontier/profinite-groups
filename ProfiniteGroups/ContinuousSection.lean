@@ -9,6 +9,7 @@ public import Mathlib.Topology.Algebra.Group.Quotient
 public import Mathlib.Topology.Algebra.ProperAction.Basic
 public import Mathlib.Topology.IsLocalHomeomorph
 public import Mathlib.Topology.Separation.DisjointCover
+public import GroupTheory.Topology.OpenQuotient
 import Mathlib.GroupTheory.Coset.Basic
 import Mathlib.Order.Zorn
 import Mathlib.Topology.Algebra.Group.Pointwise
@@ -21,10 +22,10 @@ are closed subgroups of a profinite group. The proof uses compactness to
 construct lower bounds for chains of section fibers and a maximality
 argument.
 
-It also develops the local ingredients: an open Hausdorff quotient of a
-profinite space is profinite, a surjective local homeomorphism over a
-profinite space has a continuous section, and `G ⧸ T → G ⧸ S` is a local
-homeomorphism when `T` is open in `S`.
+It uses the Group Theory open-quotient theorem to show that closed coset
+spaces are totally disconnected. It also proves that a surjective local
+homeomorphism over a profinite space has a continuous section, and that
+`G ⧸ T → G ⧸ S` is a local homeomorphism when `T` is open in `S`.
 
 The local and global section theorems use their respective openness,
 closedness and compactness hypotheses. They do not assert that arbitrary
@@ -38,6 +39,8 @@ surjections of topological groups split as homomorphisms.
 - Mathlib, `Mathlib.Topology.Algebra.Group.Quotient`,
   `Mathlib.Topology.Algebra.ClopenNhdofOne` and
   `Mathlib.Topology.Algebra.ProperAction.Basic` (cosets and topology).
+- Formal Frontier, *Group Theory*, `GroupTheory.Topology.OpenQuotient`
+  (the open-quotient theorem, originally formalized in this library).
 -/
 
 @[expose] public section
@@ -46,24 +49,6 @@ open Function Set TopologicalSpace
 open scoped Topology
 
 universe u v
-
-namespace Topology.IsOpenQuotientMap
-
-/-- An open Hausdorff quotient of a compact Hausdorff totally disconnected
-space is totally disconnected. -/
-theorem totallyDisconnectedSpace
-    {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
-    [CompactSpace X] [T2Space X] [TotallyDisconnectedSpace X] [T2Space Y]
-    {f : X → Y} (hf : IsOpenQuotientMap f) : TotallyDisconnectedSpace Y := by
-  have hb := hf.isTopologicalBasis (isTopologicalBasis_isClopen (X := X))
-  have hbc : Set.image f '' {U : Set X | IsClopen U} ⊆ {V : Set Y | IsClopen V} := by
-    rintro _ ⟨U, hU, rfl⟩
-    exact ⟨(hU.1.isCompact.image hf.continuous).isClosed, hf.isOpenMap U hU.2⟩
-  let _ : TotallySeparatedSpace Y := totallySeparatedSpace_of_t0_of_basis_clopen <|
-    hb.of_isOpen_of_subset (fun _ h ↦ h.2) hbc
-  infer_instance
-
-end Topology.IsOpenQuotientMap
 
 namespace QuotientGroup
 

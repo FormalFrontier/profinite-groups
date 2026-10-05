@@ -10,7 +10,8 @@ classification, and power images. The [mathematical guide](docs/Mathematics.md)
 explains the constructions and limitations; the [historical native API](docs/API.md)
 documents an earlier snapshot, with a [reproduction guide](docs/README.md).
 The library builds on mathlib's profinite categories, completions, p-adic
-integers and general algebra/topology.
+integers and general algebra/topology, and on Group Theory's open-quotient
+theorem.
 
 ## Headline results
 
@@ -251,7 +252,8 @@ integers and general algebra/topology.
 Install [elan](https://github.com/leanprover/elan) and Git. The pinned
 [`lean-toolchain`](lean-toolchain) selects Lean `v4.34.0-rc2`;
 [`lake-manifest.json`](lake-manifest.json) pins mathlib at
-`83abb3e776bdefcbc447a1e44d0debe4010039e5`. From the project root:
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and Group Theory at
+`01047a79bed13ee795d40b61b777566f2160e5cc`. From the project root:
 
 ```sh
 lake exe cache get
@@ -265,7 +267,11 @@ deprecated public-import shims. In a workspace that also requires a package
 whose library owns the entire `Tests` prefix, Lake may resolve those old imports
 to that package instead; use `ProfiniteGroupsTests.*` or the aggregation root
 in composed projects. Use `import ProfiniteGroups` for every production leaf or
-import an individual module. For example, save the following as `Client.lean` and run
+import an individual module. `ProfiniteGroups.ContinuousSection` publicly
+re-exports `GroupTheory.Topology.OpenQuotient`: the canonical
+`Topology.IsOpenQuotientMap.totallyDisconnectedSpace` is available from either
+import without changing existing `ProfiniteGroups.ContinuousSection` clients.
+For example, save the following as `Client.lean` and run
 `lake env lean -DwarningAsError=true Client.lean` after the build:
 
 ```lean
@@ -344,6 +350,10 @@ leaf below; no `Tests` module is part of the production root.
   `Profinite.AsLimit`, `Profinite.Extend`, `ProfiniteGrp.Limits`,
   `ProfiniteGrp.Completion`, Indization/presentation, `CoprodI`, `Sylow`,
   p-adic integers, ideal quotients and categorical/topological APIs.
+- [Group Theory](https://github.com/FormalFrontier/group-theory/tree/01047a79bed13ee795d40b61b777566f2160e5cc),
+  pinned revision `01047a79bed13ee795d40b61b777566f2160e5cc`:
+  `GroupTheory.Topology.OpenQuotient` houses the generic open-quotient theorem
+  first formalized here and used for profinite coset spaces.
 
 ## Scope and credit
 
