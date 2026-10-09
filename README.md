@@ -15,6 +15,13 @@ theorem.
 
 ## Headline results
 
+Explore [finite diagrams](#finite-diagrams-and-inverse-limit-characterizations),
+[maps and constructions](#maps-closed-subgroups-and-universal-constructions),
+[product models and classification](#primewise-models-product-ideals-and-procyclic-classification),
+and [homomorphisms, powers and coefficients](#homomorphisms-powers-and-coefficients).
+
+### Finite diagrams and inverse-limit characterizations
+
 - **Images and equality in finite-stage limits.** For any nonempty small
   cofiltered diagram of finite discrete spaces, the image of a projection from
   any limiting cone equals the image of one finite-stage transition. Functions
@@ -77,6 +84,9 @@ theorem.
   arbitrary finite-stage projections need not be surjective. See
   [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean)
   and [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean).
+
+### Maps, closed subgroups and universal constructions
+
 - **Finite maps and morphisms.** In profinite groups, categorical monomorphisms
   are injective and epimorphisms are surjective. For groups in the *same
   universe*, continuous Hom is the limit over finite target quotients of the
@@ -131,6 +141,9 @@ theorem.
   factor to be pro-`p`. Targets use the specified `max u v` universe, with no
   finite-family restriction. See [`FreeProduct`](ProfiniteGroups/FreeProduct.lean)
   and [`ProP`](ProfiniteGroups/ProP.lean).
+
+### Primewise models, product ideals and procyclic classification
+
 - **Primewise completed integers.** The profinite completion of the infinite
   cyclic group is continuously equivalent to the multiplicatively written
   product of additive `p`-adic integers, whose integral diagonal is dense.
@@ -173,6 +186,9 @@ theorem.
   exponents are generator-independent, but the group equivalence uses a
   chosen generator. See
   [`ProcyclicSupportProduct`](ProfiniteGroups/ProcyclicSupportProduct.lean).
+
+### Homomorphisms, powers and coefficients
+
 - **Maps with prescribed generator image.** Given a procyclic source and a
   supplied topological generator `g`, a specified `h` in *any profinite target*
   extends uniquely to a continuous homomorphism sending `g` to `h` exactly
@@ -333,11 +349,11 @@ leaf below; no `Tests` module is part of the production root.
 | Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ContinuousCosetRepresentative`](ProfiniteGroups/ContinuousCosetRepresentative.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
 | Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
-| Cyclic completion and product | [`Procyclic`](ProfiniteGroups/Procyclic.lean), [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean), [`PrimewisePadicKernel`](ProfiniteGroups/PrimewisePadicKernel.lean) |
+| Cyclic completion and product | [`Procyclic`](ProfiniteGroups/Procyclic.lean), [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean), [`PrimewisePadicKernel`](ProfiniteGroups/PrimewisePadicKernel.lean), [`IntegerPadicResidueLimit`](ProfiniteGroups/IntegerPadicResidueLimit.lean) |
 | Product ideals and factor models | [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean), [`PrimewisePadicIdeals`](ProfiniteGroups/PrimewisePadicIdeals.lean), [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean), [`PrimewisePadicQuotients`](ProfiniteGroups/PrimewisePadicQuotients.lean), [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean) |
 | Universe and generator transport | [`ProcyclicBaseMap`](ProfiniteGroups/ProcyclicBaseMap.lean), [`PrimewisePadicIdealTransport`](ProfiniteGroups/PrimewisePadicIdealTransport.lean), [`PrimewisePadicKernelTransport`](ProfiniteGroups/PrimewisePadicKernelTransport.lean), [`ProcyclicGeneratorIndependence`](ProfiniteGroups/ProcyclicGeneratorIndependence.lean) |
 | Quotients and classification | [`ProcyclicQuotient`](ProfiniteGroups/ProcyclicQuotient.lean), [`ProcyclicInvariant`](ProfiniteGroups/ProcyclicInvariant.lean), [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean), [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean), [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean), [`ProcyclicSupportProduct`](ProfiniteGroups/ProcyclicSupportProduct.lean) |
-| Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicPowerIndices`](ProfiniteGroups/ProcyclicPowerIndices.lean), [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
+| Maps, power images and closed subgroups | [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean), [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean), [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean), [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean), [`ProcyclicPowerIndices`](ProfiniteGroups/ProcyclicPowerIndices.lean), [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean), [`ProcyclicResidueLimit`](ProfiniteGroups/ProcyclicResidueLimit.lean), [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean) |
 | Additive coefficients at prime-supported indices | [`PrimeSupportedCoefficients`](ProfiniteGroups/PrimeSupportedCoefficients.lean) |
 
 ## References
