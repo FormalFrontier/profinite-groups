@@ -6,6 +6,7 @@ module
 
 public import ProfiniteGroups.EpiMono
 public import ProfiniteGroups.ContinuousSection
+public import ProfiniteGroups.ContinuousCosetRepresentative
 public import ProfiniteGroups.ClosedQuotient
 public import ProfiniteGroups.FiniteQuotientHom
 public import ProfiniteGroups.CompatibleSubgroups

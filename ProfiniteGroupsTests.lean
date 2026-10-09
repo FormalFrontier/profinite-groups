@@ -9,6 +9,7 @@ public import ProfiniteGroupsTests.CompatibleSubgroups
 public import ProfiniteGroupsTests.CompatibleSylow
 public import ProfiniteGroupsTests.ClosedSylow
 public import ProfiniteGroupsTests.ClosedQuotient
+public import ProfiniteGroupsTests.ContinuousCosetRepresentative
 public import ProfiniteGroupsTests.FiniteQuotientConjugacy
 public import ProfiniteGroupsTests.FiniteDiscreteCharacterization
 public import ProfiniteGroupsTests.FiniteStageImages

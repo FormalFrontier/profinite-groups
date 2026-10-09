@@ -109,9 +109,11 @@ theorem.
 - **Continuous sections.** For closed `K ≤ H` in a profinite group, the
   projection `G/K → G/H` has a continuous right inverse; a supporting result
   supplies sections of surjective local homeomorphisms over compact Hausdorff
-  totally disconnected spaces. These maps are not asserted to be homomorphic
-  splittings, and normality is not needed. See
-  [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean).
+  totally disconnected spaces. For any closed `H`, a chosen bundled continuous
+  map `G/H → G` selects a representative of each coset. The choice is neither
+  asserted to be homomorphic nor normalized at the identity; normality is not
+  needed. See [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean) and
+  [`ContinuousCosetRepresentative`](ProfiniteGroups/ContinuousCosetRepresentative.lean).
 - **Closed cosets and group quotients.** A closed subgroup of a profinite group
   has a profinite coset space with the quotient topology, without a normality assumption.
   A closed normal subgroup also has a profinite group quotient, with a
@@ -328,7 +330,7 @@ leaf below; no `Tests` module is part of the production root.
 | --- | --- |
 | Finite-stage inverse-limit characterizations | [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean), [`FiniteGroupCharacterization`](ProfiniteGroups/FiniteGroupCharacterization.lean) |
 | Finite-space limit stages and map comparisons | [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean), [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean), [`FiniteDiagramHomLimit`](ProfiniteGroups/FiniteDiagramHomLimit.lean), [`FiniteDiagramIndDual`](ProfiniteGroups/FiniteDiagramIndDual.lean), [`IndDualRealization`](ProfiniteGroups/IndDualRealization.lean), [`IndDualEquivalence`](ProfiniteGroups/IndDualEquivalence.lean) |
-| Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
+| Category and finite maps | [`EpiMono`](ProfiniteGroups/EpiMono.lean), [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean), [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean), [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean), [`ContinuousCosetRepresentative`](ProfiniteGroups/ContinuousCosetRepresentative.lean), [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean) |
 | Finite-quotient subgroups and Sylow images | [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean), [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean), [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean), [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean) |
 | Universal profinite groups | [`FreeProduct`](ProfiniteGroups/FreeProduct.lean), [`ProP`](ProfiniteGroups/ProP.lean) |
 | Cyclic completion and product | [`Procyclic`](ProfiniteGroups/Procyclic.lean), [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean), [`PrimewisePadicKernel`](ProfiniteGroups/PrimewisePadicKernel.lean) |
