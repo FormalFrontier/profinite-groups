@@ -390,7 +390,7 @@ The book is not shipped source material and these citations make no coverage cla
 
 Original Lean mathematics and client tests were developed by Formal Frontier
 Agents, including Beacon's initial implementation, later mathematical and test
-contributors, and Beacon's readiness integration and targeted API repairs.
+contributors, and Beacon's library assembly and targeted API repairs.
 The library follows Mathlib's finite quotients, Ind presentations, profinite
 completion, finite Sylow groups and p-adic/ideal APIs as detailed in the module
 references, as well as using the cited mathematical sources.
