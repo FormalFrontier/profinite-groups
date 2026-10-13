@@ -271,7 +271,7 @@ Install [elan](https://github.com/leanprover/elan) and Git. The pinned
 [`lean-toolchain`](lean-toolchain) selects Lean `v4.34.0-rc2`;
 [`lake-manifest.json`](lake-manifest.json) pins mathlib at
 `83abb3e776bdefcbc447a1e44d0debe4010039e5` and Group Theory at
-`01047a79bed13ee795d40b61b777566f2160e5cc`. From the project root:
+`77c1f2663514f8d43db606d3eb3409533a6e29a5`. From the project root:
 
 ```sh
 lake exe cache get
@@ -309,8 +309,9 @@ example {G H : ProfiniteGrp.{u}} (f : G ⟶ H) :
 
 The first result needs a procyclicity proof and a *positive* power; the
 second is categorical and same-universe. The checked-in clients contain
-additional examples. For optional targeted `-T0` and historical resource
-observations, see the [reproduction guide](docs/README.md).
+additional examples. For targeted checks, including optional `-T0`, see the
+[client-checking instructions](docs/Mathematics.md#checking-a-client); for build
+resource caveats, see the [reproduction guide](docs/README.md#build-resources).
 
 For a cofiltered finite diagram `F`, a limiting cone `c` with proof `hc`,
 and a finite target `S`, use `Profinite.stageHomEquiv c hc S` to convert
@@ -368,8 +369,8 @@ leaf below; no `Tests` module is part of the production root.
   `Profinite.AsLimit`, `Profinite.Extend`, `ProfiniteGrp.Limits`,
   `ProfiniteGrp.Completion`, Indization/presentation, `CoprodI`, `Sylow`,
   p-adic integers, ideal quotients and categorical/topological APIs.
-- [Group Theory](https://github.com/FormalFrontier/group-theory/tree/01047a79bed13ee795d40b61b777566f2160e5cc),
-  pinned revision `01047a79bed13ee795d40b61b777566f2160e5cc`:
+- [Group Theory](https://github.com/FormalFrontier/group-theory/tree/77c1f2663514f8d43db606d3eb3409533a6e29a5),
+  pinned revision `77c1f2663514f8d43db606d3eb3409533a6e29a5`:
   `GroupTheory.Topology.OpenQuotient` houses the generic open-quotient theorem
   first formalized here and used for profinite coset spaces.
 

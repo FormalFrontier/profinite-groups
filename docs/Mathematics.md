@@ -273,17 +273,23 @@ retained by name. The checked-in root-import tests check plain-simp
 computations and defining values without adding the removed assumptions back.
 
 
-## Historical client measurements
+## Checking a client
 
-In a September 26, 2026 local check of the [overview's representative
-client](../README.md#quick-start), ordinary
-`lake env lean -DwarningAsError=true` took 2.862 seconds and the `-T0` variant
-took 2.861 seconds; both exited successfully with no output. Sampling their
-descendant process trees every 100 ms found maximum observed RSS of 845864
-and 845728 KiB, respectively. These are single local measurements, not
-continuous peaks or portable memory minima: imports were already compiled and
-the matching mathlib cache had been fetched. The separate cgroup readings
-include other processes and cached files, and neither the measurements nor a
-Lake job setting establishes a scheduler or memory cap. See the separately
-retained native and stored-body resource evidence in the reproduction guide;
-these client observations do not erase its reported pressure.
+After following the [quick start](../README.md#quick-start), save a client as
+`Client.lean` and check it from the project root:
+
+```sh
+lake env lean -DwarningAsError=true Client.lean
+```
+
+For a targeted check with the optional `-T0` setting, use:
+
+```sh
+lake env lean -DwarningAsError=true -T0 Client.lean
+```
+
+These single-file commands use the built imports; they do not replace the
+library build. Time and memory requirements depend on the client and its
+environment, and no portable memory minimum or peak is specified here. See the
+[build-resource caveats](README.md#build-resources) for thread settings and
+memory/process monitoring.

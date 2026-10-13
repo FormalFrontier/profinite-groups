@@ -33,9 +33,9 @@ the originating source file. No generated website JS, CSS, fonts,
 dependency docstrings or original source assets are shipped.
 
 This is a **filtered native declarations/instances reference**, not an
-enumeration of source-private declarations or stored proof bodies. A successful
-generation or adapter test is not an axiom audit, proof recheck, source-coverage
-decision, rights clearance, whole-release acceptance or publication.
+enumeration of source-private declarations or stored proof bodies. The catalogue
+and adapter tests do not recheck proofs, audit axiom dependencies, or establish
+redistribution rights; they make no source-coverage claim.
 The [mathematical guide](Mathematics.md), especially its FreeProduct, ProP
 and ProcyclicPower explanations, remains authoritative for its stated
 hypotheses and limitations: maps into nonprocyclic targets are allowed where
@@ -131,7 +131,7 @@ lean = {path.as_posix() for directory in (Path('.'), Path('ProfiniteGroups'), Pa
 assert lean == {path for path in manifest['inputs'] if path.endswith('.lean')}
 assert {path.name for path in Path('scripts').iterdir()} == {'generate_api.py', 'test_generate_api.py'}
 assert {path.name for path in Path('docs').iterdir()} == {'API.md', 'api-manifest.json', 'README.md', 'Mathematics.md'}
-assert manifest['api_sha256'] == 'baf24ea331bd06f2220e6bcd3762edf9c70851511e33ccf12849baf3fbc78094'
+assert manifest['api_sha256'] == '75da4d86e45a53d25967e35f1efd20238237e8c26b078e036db654918e36fc49'
 assert hashlib.sha256(Path('docs/API.md').read_bytes()).hexdigest() == manifest['api_sha256']
 print('Historical source, adapter and output identities match')
 PY
@@ -200,38 +200,18 @@ run. Do not fabricate missing records.
 `example.invalid` is an inert native record identity, **not** a linked source
 or provenance claim. Retain complete SQLite, raw records, commands, streams,
 exit codes and hashes externally if doing an independent native intake;
-doc-gen4's website output does not belong in this library. A fresh native
-run or repeated website extraction is not a default consumer/release step.
-Two historical independent runs on an earlier mathematical input produced
-identical SQLite SHA-256
-`5ceae54761b812e749db5b25bf8c208320cd080e673c20fb6da0d2a830c1a926`
-and byte-identical contents for **all 39** historical raw records. The shipped
-manifest binds a separate set of 39 raw records from one extraction of its
-byte-pinned input; changed inert source-link identity changed every raw hash.
-Comparison of the 35 unchanged-source modules after normalizing *only* that
-link preserved every header, name, kind, source anchor, docstring and instance
-row; the other four modules preserved their displayed headers, names, kinds and
-instance rows, with one corrected docstring and 68 updated line anchors.
-The shipped input has **one** native extraction, not a second repeatability
-claim. Literal retained historical stage timestamps give sequential
-native-stage wall sums of 128.577 and 126.523 seconds on those two earlier runs;
-these are not performance promises. The initial cache-first
-`lake --wfail build ProfiniteGroups ProfiniteGroupsTests` completed 2933 jobs,
-and the separate pinned doc-gen4 build completed 194 jobs. Their respective
-53.407- and 120.973-second shell timings are **author-reported**, printed to
-an unretained PTY, not archived literal measurements or benchmarks. The
-author also reported a 15 GiB worker cgroup `memory.max` and no OOM kills;
-literal `memory.max` and `memory.events` readings were not archived. Its
-historical `memory.peak` had already reached the limit during cache provisioning
-and **cannot** be attributed to either build. These observations do not establish
-a portable peak, minimum memory requirement or scheduler cap.
-`LEAN_NUM_THREADS=2` only sets Lean's thread setting; neither `lake -Kjobs=2`,
-`LAKE_JOBS` nor this variable is a verified process scheduler or total memory
-cap for this pinned Lake. Keep project builds sequential and monitor actual
-memory/process use. A separate earlier stored-body audit in another worker
-cgroup recorded `memory.events max=705, oom=0`; successful current-source
-documentation checks do not erase that pressure or turn its body findings into
-native-reference evidence.
+doc-gen4's website output does not belong in this library. Reproducing the
+historical extraction is optional and is not needed for a normal library build.
+
+## Build resources
+
+Run project and doc-gen4 builds sequentially, and monitor memory use and the
+number of running processes in your own environment. No portable peak memory,
+minimum memory requirement or build time is specified here.
+`LEAN_NUM_THREADS=2` only sets Lean's thread setting; do not treat it,
+`lake -Kjobs=2` or `LAKE_JOBS` as a process-scheduler or total-memory cap for
+this pinned Lake. Choose resource limits appropriate to your system rather
+than inferring them from a thread setting.
 
 ## Replay and boundaries
 
@@ -254,28 +234,20 @@ For source-only replays, retain the 42 checked source inputs, both Python script
 The adapter does **not** need Git or the historical source commit object.
 Without those external raw files, the native joins and data-only corruption
 tests cannot be replayed; static reconstruction or fabricated fixtures are
-not substitutes for original extraction. The native manifest is documentation
-evidence, not a whole-release audit.
+not substitutes for original extraction. The native manifest describes the
+API extraction, not proof verification.
 
 ## Origin and boundaries
 
 The reference and data-only tests adapt the finite-group Tate cohomology
 mixed-kind catalogue via polynomial-root-stability and Anchor's
 ideal-completion recipe. Formal Frontier Agents prepared the reference,
-test controls and subsequent source-only refresh; Beacon coordinated the
-library's readiness and API repairs. Folio contributed the mathematical
+test controls and subsequent source-only refresh; Beacon contributed the
+initial implementation and API repairs. Folio contributed the mathematical
 headline descriptions in the [overview](../README.md). Original project
 expression and Lean source docstrings are offered under
 [Apache License 2.0](../LICENSE), **Authors: Formal Frontier Agents**;
 this does not invent a copyright holder. Native signatures refer to
 Lean/mathlib types, but no upstream documentation, website assets or source
 book files are shipped. Mathlib and doc-gen4 retain their own terms and
-contributor notices. Historical origin review corrected unsupported owner
-labels in Lean headers; rights, attribution and publication-history review
-remain separate from adapter validation.
-
-An optional historical `docBlameThm` run was **NONPASS** for 23 generated
-equation-lemma documentation findings. These are **not** the 23 native `⋯`
-headers. Owner convention disposition is recorded in the initial publication
-review history; this guide does not turn that lint into a passing result or
-a fresh mandatory release gate.
+contributor notices.
