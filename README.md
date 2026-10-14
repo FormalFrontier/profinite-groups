@@ -22,57 +22,17 @@ and [homomorphisms, powers and coefficients](#homomorphisms-powers-and-coefficie
 
 ### Finite diagrams and inverse-limit characterizations
 
-- **Images and equality in finite-stage limits.** For any nonempty small
-  cofiltered diagram of finite discrete spaces, the image of a projection from
-  any limiting cone equals the image of one finite-stage transition. Functions
-  into an arbitrary type that agree on the limit agree after a finite refinement,
-  including functions defined at different stages; an empty limit forces an
-  empty stage. No projection or transition is assumed surjective, and these
-  finite stages are not asserted to be finite quotients. See
-  [`FiniteStageImages`](ProfiniteGroups/FiniteStageImages.lean) and its
-  [boundary clients](ProfiniteGroupsTests/FiniteStageImages.lean).
-- **Finite-target maps from cofiltered limits.** For any small nonempty
-  cofiltered diagram of finite discrete spaces and any limiting cone, the
-  filtered colimit of maps from its stages to a finite target is equivalent
-  to continuous maps from the limit to that target, naturally in the target.
-  Representatives agree exactly after a common refinement, even with
-  parallel arrows or nonsurjective projections. Empty stages, limits and
-  targets are allowed; an empty index is not. See
-  [`FiniteTargetHomColimit`](ProfiniteGroups/FiniteTargetHomColimit.lean) and its
-  [boundary clients](ProfiniteGroupsTests/FiniteTargetHomColimit.lean).
-- **Maps into limits of finite-space diagrams.** For a small nonempty
-  cofiltered source diagram of finite spaces and an arbitrary target diagram
-  of finite spaces, maps between specified limiting profinite cones correspond
-  to compatible finite-stage map classes at each target object. The target
-  category need not be cofiltered, small or nonempty, and no common source
-  stage is chosen across its objects. This concerns continuous maps of
-  profinite spaces, not group homomorphisms. See
-  [`FiniteDiagramHomLimit`](ProfiniteGroups/FiniteDiagramHomLimit.lean) and its
-  [boundary clients](ProfiniteGroupsTests/FiniteDiagramHomLimit.lean).
-- **Finite-diagram maps via dual ind-objects.** For two small nonempty cofiltered
-  diagrams in the finite-set skeleton, morphisms between their canonical dual
-  ind-objects correspond to compatible classes of finite-stage maps, and thus
-  to continuous maps between specified limiting profinite-space cones. The
-  comparison respects representatives, identity, composition and fixed-index
-  naturality; it does not assert a presentation-independent pro-category
-  equivalence. See [`FiniteDiagramIndDual`](ProfiniteGroups/FiniteDiagramIndDual.lean)
-  and its [boundary clients](ProfiniteGroupsTests/FiniteDiagramIndDual.lean).
-- **Realization of dual ind-objects.** In a fixed universe, dual ind-objects of
-  finite sets have a functorial profinite realization. Its map on homs is an
-  equivalence, so the functor is fully faithful; comparisons with specified
-  finite-diagram limits are natural and coherent under changes of presentation.
-  Empty finite stages and limiting spaces are allowed. See
-  [`IndDualRealization`](ProfiniteGroups/IndDualRealization.lean) and its
-  [clients](ProfiniteGroupsTests/IndDualRealization.lean).
 - **Skeletal finite quotients and equivalence.** Every profinite space in the
   same universe is the limit of its included skeletal finite-quotient diagram.
   The associated dual ind-object realizes to that space, giving an equivalence
   between dual ind-objects of finite sets and profinite spaces whose forward
-  functor is the realization above. The generic inverse's chosen object is
-  compared with the skeletal presentation by an isomorphism. Empty spaces and
+  functor is the [profinite realization](ProfiniteGroups/IndDualRealization.lean).
+  The generic inverse's chosen object is compared with the skeletal presentation
+  by an isomorphism. Empty spaces and
   finite stages are allowed; no arbitrary diagram projection is assumed
   surjective. See [`IndDualEquivalence`](ProfiniteGroups/IndDualEquivalence.lean)
   and its [clients](ProfiniteGroupsTests/IndDualEquivalence.lean).
+
 - **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
   inverse limit of finite discrete spaces over a small, nonempty cofiltered
   category if and only if it is compact with a clopen basis, equivalently
@@ -95,27 +55,14 @@ and [homomorphisms, powers and coefficients](#homomorphisms-powers-and-coefficie
   finite-presentation theorem for groups. See [`EpiMono`](ProfiniteGroups/EpiMono.lean),
   [`FiniteQuotientHom`](ProfiniteGroups/FiniteQuotientHom.lean),
   [`FinitePresentation`](ProfiniteGroups/FinitePresentation.lean).
-- **Finite-quotient subgroups and Sylow families.** Compatible subgroup images
-  in every open-normal quotient reconstruct a unique closed subgroup, with
-  **equality** at each coordinate. For every prime `p`, a compatible Sylow
-  family exists on all such quotients even with an arbitrarily prescribed
-  Sylow subgroup at any one quotient. Each such family reconstructs a closed
-  subgroup with **exactly** those Sylow images. A subgroup containing this
-  reconstruction equals it if all its actual finite quotient images are
-  `p`-groups, even if that subgroup is not closed. This is not an assertion
-  that its underlying abstract subgroup is an algebraic `p`-group. See
-  [`CompatibleSubgroups`](ProfiniteGroups/CompatibleSubgroups.lean) and its
-  [guide](docs/compatible-subgroups.md), and
-  [`CompatibleSylow`](ProfiniteGroups/CompatibleSylow.lean) and its
-  [guide](docs/compatible-sylow.md), and
-  [`ClosedSylow`](ProfiniteGroups/ClosedSylow.lean) and its
-  [guide](docs/closed-sylow.md).
+
 - **Closed-subgroup conjugacy.** Two closed subgroups of a profinite group
   are conjugate precisely when their images are conjugate in every finite
   open-normal quotient. The quotient conjugators need not form a compatible
   family; no countability or openness assumption is used. See
   [`FiniteQuotientConjugacy`](ProfiniteGroups/FiniteQuotientConjugacy.lean)
   and its [guide](docs/finite-quotient-conjugacy.md).
+
 - **Continuous sections.** For closed `K ≤ H` in a profinite group, the
   projection `G/K → G/H` has a continuous right inverse; a supporting result
   supplies sections of surjective local homeomorphisms over compact Hausdorff
@@ -124,42 +71,9 @@ and [homomorphisms, powers and coefficients](#homomorphisms-powers-and-coefficie
   asserted to be homomorphic nor normalized at the identity; normality is not
   needed. See [`ContinuousSection`](ProfiniteGroups/ContinuousSection.lean) and
   [`ContinuousCosetRepresentative`](ProfiniteGroups/ContinuousCosetRepresentative.lean).
-- **Closed cosets and group quotients.** A closed subgroup of a profinite group
-  has a profinite coset space with the quotient topology, without a normality assumption.
-  A closed normal subgroup also has a profinite group quotient, with a
-  surjective continuous projection whose kernel is the subgroup. Forgetting
-  the group structure recovers the coset space and its projection. Every
-  continuous homomorphism to a profinite group in the same universe that kills
-  the normal subgroup factors uniquely through the group quotient. Neither
-  construction assumes openness or finite index. See
-  [`ClosedQuotient`](ProfiniteGroups/ClosedQuotient.lean).
-- **Free profinite and pro-`p` constructions.** Arbitrary families admit a free
-  profinite product with injective factor maps and a continuous universal
-  mapping property. For prime `p`, the maximal pro-`p` quotient and free
-  pro-`p` products have the stated universal properties; factors of the latter
-  may be arbitrary profinite groups, but factor *injectivity* requires every
-  factor to be pro-`p`. Targets use the specified `max u v` universe, with no
-  finite-family restriction. See [`FreeProduct`](ProfiniteGroups/FreeProduct.lean)
-  and [`ProP`](ProfiniteGroups/ProP.lean).
 
 ### Primewise models, product ideals and procyclic classification
 
-- **Primewise completed integers.** The profinite completion of the infinite
-  cyclic group is continuously equivalent to the multiplicatively written
-  product of additive `p`-adic integers, whose integral diagonal is dense.
-  Closed subgroups of **this particular product** are classified by primewise
-  `ℕ∞` exponents in *reversed* order: zero gives the full coordinate and
-  infinity the zero subgroup. See [`PrimewisePadic`](ProfiniteGroups/PrimewisePadic.lean)
-  and [`PrimewisePadicSubgroups`](ProfiniteGroups/PrimewisePadicSubgroups.lean).
-- **Closed product ideals and quotients.** A closed ideal of a product of
-  semirings with topologies is the product of its coordinate images, without
-  extra separation or topology/operation compatibility; closedness is
-  essential. Separately, product-ideal quotients of commutative rings are
-  products of coordinate quotients, with a continuous additive equivalence
-  for topological rings. This quotient construction requires neither
-  closedness nor a nonempty/finite index type. See
-  [`ClosedIdealPi`](ProfiniteGroups/ClosedIdealPi.lean) and
-  [`PiIdealQuotient`](ProfiniteGroups/PiIdealQuotient.lean).
 - **Procyclic classification and realization.** Given proofs of procyclicity,
   groups in independent universes are continuously equivalent exactly when
   their generator-independent primewise exponents agree. Every exponent
@@ -178,83 +92,16 @@ and [homomorphisms, powers and coefficients](#homomorphisms-powers-and-coefficie
   [`ProcyclicRealization`](ProfiniteGroups/ProcyclicRealization.lean),
   [`ProcyclicTorsionFree`](ProfiniteGroups/ProcyclicTorsionFree.lean) and
   [`ProcyclicTorsionFreeProduct`](ProfiniteGroups/ProcyclicTorsionFreeProduct.lean).
-- **General procyclic support product.** For any primewise exponent family,
-  the quotient model splits continuously into residue factors at positive
-  finite exponents and p-adic integer factors at infinite exponents, omitting
-  zero factors. Either support may be infinite. Every procyclic profinite
-  group has this product model without a torsion-freeness hypothesis; its
-  exponents are generator-independent, but the group equivalence uses a
-  chosen generator. See
-  [`ProcyclicSupportProduct`](ProfiniteGroups/ProcyclicSupportProduct.lean).
 
 ### Homomorphisms, powers and coefficients
 
-- **Maps with prescribed generator image.** Given a procyclic source and a
-  supplied topological generator `g`, a specified `h` in *any profinite target*
-  extends uniquely to a continuous homomorphism sending `g` to `h` exactly
-  when the kernel exponents of the common-source map for `h` lie below the
-  source exponents. Surjectivity requires `h` to generate the target. The
-  inequality does not characterize the mere existence of an unspecified
-  homomorphism. See [`ProcyclicHom`](ProfiniteGroups/ProcyclicHom.lean).
 - **Power images and open subgroups.** For a procyclic group, positive `n`th
   powers form an open subgroup with cyclic finite quotient and index
   *dividing* `n`, not necessarily equal to `n`. Every open subgroup equals
   the power image at its actual index. The zero-power image is trivial and
   need not be open; no arbitrary-procyclic closed-subgroup classification is
   asserted. See [`ProcyclicPower`](ProfiniteGroups/ProcyclicPower.lean).
-- **Exact positive-power indices.** For procyclic `G` and positive `n`, the
-  index of the `n`th-power subgroup equals `n` exactly when each prime
-  multiplicity in `n` is bounded by the corresponding primewise exponent of
-  `G`. Given a topological generator and this exact-index condition, its class
-  in the quotient determines a continuous multiplicative equivalence from
-  `Multiplicative (ZMod n)`; the forward and inverse generator equations are
-  available. For torsion-free procyclic `G`, the positive exact-index criterion
-  is membership in the submonoid generated by its infinite-exponent primes;
-  every open-subgroup index belongs to this submonoid. These exponents are
-  generator-independent. See
-  [`ProcyclicPowerIndex`](ProfiniteGroups/ProcyclicPowerIndex.lean) and
-  [`ProcyclicPowerIndices`](ProfiniteGroups/ProcyclicPowerIndices.lean).
-- **Power-quotient transitions.** For a procyclic profinite group `G`, if
-  `d ∣ n`, inclusion of power images gives a surjective continuous
-  homomorphism from the `n`th-power quotient to the
-  `d`th-power quotient, preserving classes and satisfying identity and
-  composition laws without an index assumption. If the source has exact index
-  `n > 0`, the target has exact index `d`; equivalences normalized by the same
-  topological generator identify this map with reduction `ZMod n → ZMod d`.
-  See [`ProcyclicPowerTransition`](ProfiniteGroups/ProcyclicPowerTransition.lean).
-- **Power-quotient inverse systems.** Supported positive powers, ordered by
-  reverse divisibility, index finite quotients with their canonical class
-  projections. The all-positive cone recovers every procyclic group; for a
-  torsion-free procyclic group, a second cone uses only primes with infinite
-  exponent. Both limit proofs reindex the open-normal quotient limit using
-  initial power-index functors. Their continuous group equivalences send each
-  element to its compatible family of power-quotient classes. Zero is never
-  an index. See
-  [`ProcyclicPowerLimit`](ProfiniteGroups/ProcyclicPowerLimit.lean).
-- **Prime-supported residue diagrams.** Residues `ZMod n` form a
-  profinite diagram over positive supported power indices, with reduction
-  along divisibility arrows. A chosen topological generator gives a natural
-  comparison with power quotients when every supported level has exact index,
-  without assuming torsion-freeness. Transporting power-quotient reconstruction
-  to the residue limit over infinite-exponent support requires torsion-freeness.
-  The finite cyclic group of order two has empty infinite support and is not
-  reconstructed from these residues.
-  See [`ProcyclicResidueLimit`](ProfiniteGroups/ProcyclicResidueLimit.lean).
-- **P-adic and completed-integer residue limits.** Reindexing the existing
-  residue diagram by p-powers gives finite stages `ZMod (p ^ k)`, including
-  `ZMod 1` at `k = 0`. Continuous group equivalences compare a p-adic factor
-  and the completed integers with their p-power and all-positive residue
-  limits, characterized by p-adic reduction and integral-cast coordinates.
-  The positive-integer limit includes modulus one and excludes modulus zero.
-  See [`IntegerPadicResidueLimit`](ProfiniteGroups/IntegerPadicResidueLimit.lean).
-- **Prime-supported additive coefficients.** For an additive monoid and any
-  set of primes `S`, divisibility by every positive `S`-supported integer is
-  equivalent to divisibility by each prime in `S`. For an additive commutative
-  group, the `S`-supported torsion ℤ-submodule is the directed supremum of the
-  `n`-torsion kernels over positive `S`-supported `n`. Divisibility restricts
-  when `S` shrinks, whereas supported torsion grows when `S` grows; zero is
-  never an index. See
-  [`PrimeSupportedCoefficients`](ProfiniteGroups/PrimeSupportedCoefficients.lean).
+
 - **Closed subgroups of procyclic groups.** Every closed subgroup of an
   arbitrary procyclic profinite group is procyclic in its inherited group and
   topology, without an openness or finite-index assumption. It has a generator
@@ -263,15 +110,32 @@ and [homomorphisms, powers and coefficients](#homomorphisms-powers-and-coefficie
   arbitrary closed subgroups by exponents. See
   [`ProcyclicClosedSubgroup`](ProfiniteGroups/ProcyclicClosedSubgroup.lean).
 
+[All results and their hypotheses](docs/Results.md) ·
 [Mathematical details, hypotheses and API limitations](docs/Mathematics.md).
 
 ## Quick start
 
-Install [elan](https://github.com/leanprover/elan) and Git. The pinned
-[`lean-toolchain`](lean-toolchain) selects Lean `v4.34.0-rc2`;
-[`lake-manifest.json`](lake-manifest.json) pins mathlib at
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and Group Theory at
-`77c1f2663514f8d43db606d3eb3409533a6e29a5`. From the project root:
+Add the library to your `lakefile.toml`:
+
+```toml
+[[require]]
+name = "profinite-groups"
+git = "https://github.com/FormalFrontier/profinite-groups.git"
+rev = "main"
+```
+
+GitHub `main` contains reviewed releases. Lake resolves it when you add or update
+the dependency; `lake-manifest.json` keeps that commit until another update.
+For a reproducible fixed version, replace `main` with the full commit of a
+published release. Other Formal Frontier libraries and the incubator use the
+GitHub URL and full published release commit, not a moving ref or PR head.
+Use the release's Lean toolchain and a common Mathlib revision across dependencies:
+Lake resolves only one version of each package in a build.
+
+Install [elan](https://github.com/leanprover/elan) and Git. For this checkout,
+[`lean-toolchain`](lean-toolchain), [`lakefile.toml`](lakefile.toml) and
+[`lake-manifest.json`](lake-manifest.json) record the Lean version and resolved
+Mathlib and Group Theory dependencies. From the project root:
 
 ```sh
 lake exe cache get
@@ -313,30 +177,8 @@ additional examples. For targeted checks, including optional `-T0`, see the
 [client-checking instructions](docs/Mathematics.md#checking-a-client); for build
 resource caveats, see the [reproduction guide](docs/README.md#build-resources).
 
-For a cofiltered finite diagram `F`, a limiting cone `c` with proof `hc`,
-and a finite target `S`, use `Profinite.stageHomEquiv c hc S` to convert
-stage-map classes to continuous maps. Its `stageHomEquiv_apply_class` lemma
-computes a representative by composing its stage map with the projection;
-`stageHomNatIso c hc` packages postcomposition in the finite target.
-For a finite-space target diagram `G` with limiting cone `d` and proof `hd`,
-`Profinite.stageHomLimitEquiv F c hc G d hd` converts a continuous map between
-the cone points into compatible stage-map classes. Its inverse projection is
-computed by `stageHomLimitEquiv_symm_apply_projection` and, on a representative,
-by `stageHomLimitEquiv_symm_apply_class`.
-
-For an object `Q : (Ind FintypeCat.Skeleton.{u}ᵒᵖ)ᵒᵖ`, use
-`Profinite.indDualRealization.obj Q` for its profinite realization and
-`Profinite.indDualRealizationHomEquiv Q R` to convert its morphisms to
-continuous maps. `Profinite.indDualRealizationComparison X c hc` compares a
-diagram-induced object with a specified limiting cone, while
-`Profinite.indDualRealizationComparisonOfIso X e c hc` accepts an arbitrary
-supplied presentation isomorphism; `Profinite.indDualRealizationPresentationIso`
-composes such comparisons between supplied presentations.
-Use `Profinite.indDualEquivalence` for the fixed-universe equivalence and
-`Profinite.skeletalQuotientIndDual T` for a specified inverse model of a
-profinite space `T`. The isomorphism `Profinite.skeletalQuotientRealizationIso T`
-realizes this model as `T`; `Profinite.indDualEquivalenceInverseIso T` compares
-it with the equivalence's generic inverse.
+For finite-diagram and dual-ind-object API applications, see the
+[usage guide](docs/Usage.md).
 
 ## Module map
 
