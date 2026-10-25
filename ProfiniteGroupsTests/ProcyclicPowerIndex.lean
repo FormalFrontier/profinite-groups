@@ -78,7 +78,7 @@ theorem four_square_exponents :
     ProcyclicPowerTest.four_square_index
 
 theorem four_square_quotient_generator_forward :
-    powerImage_zmodContinuousMulEquiv (finiteCyclic 4)
+    powerImageZModContinuousMulEquiv (finiteCyclic 4)
       (finiteCyclic_isProcyclic 4) (finiteCyclicGenerator 4)
       (finiteCyclicGenerator_isTopologicalGenerator 4) 2 (by decide)
       ProcyclicPowerTest.four_square_index (Multiplicative.ofAdd (1 : ZMod 2)) =
@@ -91,7 +91,7 @@ theorem four_square_quotient_generator_forward :
     ProcyclicPowerTest.four_square_index
 
 theorem four_square_quotient_generator :
-    (powerImage_zmodContinuousMulEquiv (finiteCyclic 4)
+    (powerImageZModContinuousMulEquiv (finiteCyclic 4)
       (finiteCyclic_isProcyclic 4) (finiteCyclicGenerator 4)
       (finiteCyclicGenerator_isTopologicalGenerator 4) 2 (by decide)
       ProcyclicPowerTest.four_square_index).symm
@@ -104,7 +104,7 @@ theorem four_square_quotient_generator :
     ProcyclicPowerTest.four_square_index
 
 theorem four_square_quotient_generator_ne_one :
-    (powerImage_zmodContinuousMulEquiv (finiteCyclic 4)
+    (powerImageZModContinuousMulEquiv (finiteCyclic 4)
       (finiteCyclic_isProcyclic 4) (finiteCyclicGenerator 4)
       (finiteCyclicGenerator_isTopologicalGenerator 4) 2 (by decide)
       ProcyclicPowerTest.four_square_index).symm

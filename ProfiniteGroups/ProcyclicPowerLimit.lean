@@ -5,6 +5,7 @@ Authors: Formal Frontier Agents
 module
 
 public import ProfiniteGroups.ProcyclicPowerIndices
+public import ProfiniteGroups.LimitProjections
 public import Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits
 import Mathlib.CategoryTheory.Filtered.Final
 import Mathlib.CategoryTheory.Limits.Final
@@ -224,13 +225,13 @@ def powerQuotientCone (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
   G.cone.whisker (powerIndexFunctor G hG S)
 
 /-- The quotient-class component of the canonical power-quotient cone. -/
-@[simp] theorem powerQuotientCone_π_apply (G : ProfiniteGrp.{u})
+@[simp↓] theorem powerQuotientCone_π_apply (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (S : Set Nat.Primes) (n : Nat.PowerIndex S) (g : G) :
     (powerQuotientCone G hG S).π.app n g =
       QuotientGroup.mk' (powerImage G hG n.val : Subgroup G) g := rfl
 
 /-- Evaluation of a diagram transition on a quotient class. -/
-@[simp] theorem powerQuotientDiagram_map_mk (G : ProfiniteGrp.{u})
+@[simp↓] theorem powerQuotientDiagram_map_mk (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (S : Set Nat.Primes) {n d : Nat.PowerIndex S}
     (f : n ⟶ d) (g : G) :
     (powerQuotientDiagram G hG S).map f
@@ -249,18 +250,19 @@ theorem powerQuotientDiagram_map_apply (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (S : Set Nat.Primes) {n d : Nat.PowerIndex S}
     (f : n ⟶ d) (q : G ⧸ (powerImage G hG n.val : Subgroup G)) :
     (powerQuotientDiagram G hG S).map f q =
-      powerImage_quotientMap G hG (Nat.PowerIndex.dvd_of_hom f) q := by
+      powerImageQuotientMap G hG (Nat.PowerIndex.dvd_of_hom f) q := by
   obtain ⟨g, rfl⟩ :=
     QuotientGroup.mk'_surjective (powerImage G hG n.val : Subgroup G) q
   rw [powerQuotientDiagram_map_mk, powerImage_quotientMap_apply_mk]
 
 /-- The projection from the explicit profinite-group limit evaluates the
 compatible family at its indicated power level. -/
-@[simp] theorem powerQuotientLimit_π_apply (G : ProfiniteGrp.{u})
+@[simp↓] theorem powerQuotientLimit_π_apply (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (S : Set Nat.Primes) (n : Nat.PowerIndex S)
     (x : ProfiniteGrp.limit (powerQuotientDiagram G hG S)) :
     (ProfiniteGrp.limitCone (powerQuotientDiagram G hG S)).π.app n x =
-      x.val n := rfl
+      x.val n :=
+  rfl
 
 /-- The canonical homomorphism from a procyclic group into its power-quotient limit. -/
 def toPowerQuotientLimit (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
@@ -301,7 +303,7 @@ theorem powerIndexFunctor_initial_of_exists (G : ProfiniteGrp.{u})
 
 /-- Every procyclic profinite group is the limit of its power quotients over
 all positive integers, without a torsion-free hypothesis. -/
-noncomputable def isLimit_powerQuotientCone (G : ProfiniteGrp.{u}) (hG : IsProcyclic G) :
+noncomputable def powerQuotientConeIsLimit (G : ProfiniteGrp.{u}) (hG : IsProcyclic G) :
     IsLimit (powerQuotientCone G hG (Set.univ : Set Nat.Primes)) := by
   letI := powerIndexFunctor_initial_of_exists G hG (Set.univ : Set Nat.Primes)
     (fun U ↦ ⟨positivePowerIndexOfOpenNormal G U,
@@ -309,10 +311,14 @@ noncomputable def isLimit_powerQuotientCone (G : ProfiniteGrp.{u}) (hG : IsProcy
   exact (Functor.Initial.isLimitWhiskerEquiv (powerIndexFunctor G hG _) G.cone).symm
     G.isLimitCone
 
+-- Keep the deprecated spelling for downstream source compatibility.
+@[deprecated (since := "2026-10-24"), reducible, nolint defsWithUnderscore]
+noncomputable alias isLimit_powerQuotientCone := powerQuotientConeIsLimit
+
 /-- Powers supported on the infinite-exponent primes recover a torsion-free
 procyclic group. The support cannot in general replace all positive levels
 in the presence of torsion. -/
-noncomputable def isLimit_supportedPowerQuotientCone (G : ProfiniteGrp.{u})
+noncomputable def supportedPowerQuotientConeIsLimit (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (hfree : IsMulTorsionFree G) :
     IsLimit (powerQuotientCone G hG {p | hG.exponents p = ⊤}) := by
   letI := powerIndexFunctor_initial_of_exists G hG {p | hG.exponents p = ⊤}
@@ -320,6 +326,10 @@ noncomputable def isLimit_supportedPowerQuotientCone (G : ProfiniteGrp.{u})
       powerOpenNormalSubgroup_supported_index G hG hfree U⟩)
   exact (Functor.Initial.isLimitWhiskerEquiv (powerIndexFunctor G hG _) G.cone).symm
     G.isLimitCone
+
+-- Keep the deprecated spelling for downstream source compatibility.
+@[deprecated (since := "2026-10-24"), reducible, nolint defsWithUnderscore]
+noncomputable alias isLimit_supportedPowerQuotientCone := supportedPowerQuotientConeIsLimit
 
 /-- Turn an IsLimit proof into a continuous group equivalence. The only
 assumption here is the explicitly supplied limit certificate. -/
@@ -366,7 +376,7 @@ noncomputable def continuousMulEquivPowerQuotientLimit (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) :
     G ≃ₜ* ProfiniteGrp.limit (powerQuotientDiagram G hG (Set.univ : Set Nat.Primes)) :=
   continuousMulEquivPowerQuotientLimitOfIsLimit G hG _
-    (isLimit_powerQuotientCone G hG)
+    (powerQuotientConeIsLimit G hG)
 
 /-- The all-positive equivalence sends an element to its power-quotient classes. -/
 @[simp] theorem continuousMulEquivPowerQuotientLimit_apply
@@ -386,7 +396,7 @@ noncomputable def continuousMulEquivSupportedPowerQuotientLimit
     (G : ProfiniteGrp.{u}) (hG : IsProcyclic G) (hfree : IsMulTorsionFree G) :
     G ≃ₜ* ProfiniteGrp.limit (powerQuotientDiagram G hG {p | hG.exponents p = ⊤}) :=
   continuousMulEquivPowerQuotientLimitOfIsLimit G hG _
-    (isLimit_supportedPowerQuotientCone G hG hfree)
+    (supportedPowerQuotientConeIsLimit G hG hfree)
 
 /-- The support-restricted equivalence sends an element to its
 power-quotient classes. -/

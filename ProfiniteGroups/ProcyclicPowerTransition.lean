@@ -46,7 +46,7 @@ theorem powerImage_le_of_dvd (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
 
 /-- The continuous quotient homomorphism from `n`-th-power classes to
 `d`-th-power classes when `d ∣ n`. -/
-def powerImage_quotientMap (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
+def powerImageQuotientMap (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
     {d n : ℕ} (hdn : d ∣ n) :
     (G ⧸ (powerImage G hG n : Subgroup G)) →ₜ*
       (G ⧸ (powerImage G hG d : Subgroup G)) := by
@@ -66,11 +66,15 @@ def powerImage_quotientMap (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
   rw [heq]
   exact QuotientGroup.continuous_mk
 
+-- Keep the deprecated spelling for downstream source compatibility.
+@[deprecated (since := "2026-10-24"), reducible, nolint defsWithUnderscore]
+alias powerImage_quotientMap := powerImageQuotientMap
+
 /-- A transition map sends a quotient class to the same class at the
 coarser power level. -/
 theorem powerImage_quotientMap_apply_mk (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) {d n : ℕ} (hdn : d ∣ n) (x : G) :
-    powerImage_quotientMap G hG hdn
+    powerImageQuotientMap G hG hdn
         (QuotientGroup.mk' (powerImage G hG n : Subgroup G) x) =
       QuotientGroup.mk' (powerImage G hG d : Subgroup G) x := by
   change QuotientGroup.map (powerImage G hG n : Subgroup G)
@@ -85,7 +89,7 @@ theorem powerImage_quotientMap_apply_mk (G : ProfiniteGrp.{u})
 /-- The quotient transition preserves canonical quotient coercions. -/
 @[simp] theorem powerImage_quotientMap_mk (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) {d n : ℕ} (hdn : d ∣ n) (x : G) :
-    powerImage_quotientMap G hG hdn
+    powerImageQuotientMap G hG hdn
         (x : G ⧸ (powerImage G hG n : Subgroup G)) =
       (x : G ⧸ (powerImage G hG d : Subgroup G)) := by
   simpa only [QuotientGroup.mk'_apply] using
@@ -94,7 +98,7 @@ theorem powerImage_quotientMap_apply_mk (G : ProfiniteGrp.{u})
 /-- Transition at the same power level is the identity. -/
 @[simp] theorem powerImage_quotientMap_id (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (n : ℕ) :
-    powerImage_quotientMap G hG (dvd_refl n) = ContinuousMonoidHom.id _ := by
+    powerImageQuotientMap G hG (dvd_refl n) = ContinuousMonoidHom.id _ := by
   ext q
   obtain ⟨x, rfl⟩ := QuotientGroup.mk'_surjective (powerImage G hG n : Subgroup G) q
   simp
@@ -102,8 +106,8 @@ theorem powerImage_quotientMap_apply_mk (G : ProfiniteGrp.{u})
 /-- Power-quotient transitions compose along a divisibility chain. -/
 @[simp] theorem powerImage_quotientMap_comp (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) {e d n : ℕ} (hed : e ∣ d) (hdn : d ∣ n) :
-    (powerImage_quotientMap G hG hed).comp (powerImage_quotientMap G hG hdn) =
-      powerImage_quotientMap G hG (dvd_trans hed hdn) := by
+    (powerImageQuotientMap G hG hed).comp (powerImageQuotientMap G hG hdn) =
+      powerImageQuotientMap G hG (dvd_trans hed hdn) := by
   ext q
   obtain ⟨x, rfl⟩ := QuotientGroup.mk'_surjective (powerImage G hG n : Subgroup G) q
   simp
@@ -112,7 +116,7 @@ theorem powerImage_quotientMap_apply_mk (G : ProfiniteGrp.{u})
 are smaller than their exponents. -/
 theorem powerImage_quotientMap_surjective (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) {d n : ℕ} (hdn : d ∣ n) :
-    Function.Surjective (powerImage_quotientMap G hG hdn) := by
+    Function.Surjective (powerImageQuotientMap G hG hdn) := by
   intro q
   obtain ⟨x, rfl⟩ := QuotientGroup.mk'_surjective (powerImage G hG d : Subgroup G) q
   exact ⟨QuotientGroup.mk' (powerImage G hG n : Subgroup G) x,
@@ -138,10 +142,10 @@ under the equivalences fixed by the same topological generator. -/
     {d n : ℕ} (hdn : d ∣ n) (hn : 0 < n)
     (hindex : (powerImage G hG n : Subgroup G).index = n)
     (a : ZMod n) :
-    powerImage_quotientMap G hG hdn
-        (powerImage_zmodContinuousMulEquiv G hG g hg n hn hindex
+    powerImageQuotientMap G hG hdn
+        (powerImageZModContinuousMulEquiv G hG g hg n hn hindex
           (Multiplicative.ofAdd a)) =
-      powerImage_zmodContinuousMulEquiv G hG g hg d
+      powerImageZModContinuousMulEquiv G hG g hg d
         (Nat.pos_of_dvd_of_pos hdn hn)
         (powerImage_index_eq_of_dvd G hG hdn hn hindex)
         (Multiplicative.ofAdd (ZMod.castHom hdn (ZMod d) a)) := by

@@ -94,7 +94,7 @@ def pPowerResidueDiagram (p : Nat.Primes) : ℕᵒᵈ ⥤ ProfiniteGrp.{u} :=
       ULift.{u} (Multiplicative (ZMod (p.1 ^ OrderDual.ofDual k))) := rfl
 
 /-- Every profinite p-power arrow reduces the residue at its larger exponent. -/
-@[simp] theorem pPowerResidueDiagram_map_apply (p : Nat.Primes)
+@[simp↓] theorem pPowerResidueDiagram_map_apply (p : Nat.Primes)
     {k j : ℕᵒᵈ} (f : k ⟶ j) (a : ZMod (p.1 ^ OrderDual.ofDual k)) :
     (pPowerResidueDiagram.{u} p).map f
         (ULift.up (Multiplicative.ofAdd a)) =
@@ -105,7 +105,7 @@ def pPowerResidueDiagram (p : Nat.Primes) : ℕᵒᵈ ⥤ ProfiniteGrp.{u} :=
   residueDiagram_map_apply.{u} {p} ((pPowerIndex p).map f) a
 
 /-- Every finite p-power arrow has the same residue-reduction formula. -/
-@[simp] theorem pPowerResidueFiniteFunctor_map_apply (p : Nat.Primes)
+@[simp↓] theorem pPowerResidueFiniteFunctor_map_apply (p : Nat.Primes)
     {k j : ℕᵒᵈ} (f : k ⟶ j) (a : ZMod (p.1 ^ OrderDual.ofDual k)) :
     (pPowerResidueFiniteFunctor.{u} p).map f
         (ULift.up (Multiplicative.ofAdd a)) =
@@ -404,7 +404,7 @@ noncomputable def padicFactorEquivPowerResidueLimit (p : Nat.Primes) :
   Classical.choose (exists_padicFactorEquivPowerResidueLimit p)
 
 /-- Evaluating the p-adic comparison at any power is `toZModPow`. -/
-@[simp] theorem padicFactorEquivPowerResidueLimit_apply
+@[simp↓] theorem padicFactorEquivPowerResidueLimit_apply
     (p : Nat.Primes) (k : ℕᵒᵈ) (x : padicFactor.{u} p) :
     (padicFactorEquivPowerResidueLimit p x).val k =
       ULift.up (Multiplicative.ofAdd
@@ -426,7 +426,7 @@ theorem padicFactorEquivPowerResidueLimit_unique (p : Nat.Primes)
   exact (he k x).trans (padicFactorEquivPowerResidueLimit_apply p k x).symm
 
 /-- The canonical generator has residue one in every p-power coordinate. -/
-@[simp] theorem padicFactorEquivPowerResidueLimit_generator
+@[simp↓ high] theorem padicFactorEquivPowerResidueLimit_generator
     (p : Nat.Primes) (k : ℕᵒᵈ) :
     (padicFactorEquivPowerResidueLimit.{u} p (padicFactorGenerator p)).val k =
       ULift.up (Multiplicative.ofAdd (1 : ZMod (p.1 ^ OrderDual.ofDual k))) := by

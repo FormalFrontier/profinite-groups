@@ -123,6 +123,7 @@ noncomputable def compatibleSylow (G : ProfiniteGrp.{u}) (p : ℕ) (hp : p.Prime
 /-- A compatible family takes a Sylow subgroup at each finite quotient and
 respects every quotient transition. -/
 structure CompatibleSylowFamily (G : ProfiniteGrp.{u}) (p : ℕ) (hp : p.Prime) where
+  /-- The section assigning compatible Sylow subgroups to the finite quotients. -/
   toSection : (G.compatibleSylow p hp).sections
 
 /-- Every prescribed Sylow subgroup at one finite quotient extends to a

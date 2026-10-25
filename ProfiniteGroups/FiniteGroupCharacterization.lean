@@ -46,10 +46,13 @@ end OpenNormalSubgroup
 
 /-- A presentation of a topological group as a cofiltered limit of finite groups. -/
 structure FiniteGroupPresentation (G : Type u) [Group G] [TopologicalSpace G] where
+  /-- The type of objects indexing the cofiltered presentation. -/
   index : Type u
   [smallCategory : SmallCategory index]
   [cofiltered : IsCofiltered index]
+  /-- The finite groups in the presentation. -/
   diagram : index ⥤ FiniteGrp.{u}
+  /-- The topological group isomorphism identifying the group with the limit. -/
   equiv : G ≃ₜ* (ProfiniteGrp.limitCone
     (diagram ⋙ forget₂ FiniteGrp ProfiniteGrp)).pt
 
@@ -102,15 +105,15 @@ def stageHom (j : P.index) : G →ₜ* P.stageGroup j where
   map_mul' := P.stage_mul j
   continuous_toFun := P.continuous_stage j
 
-@[simp]
+@[simp↓]
 theorem stageHom_apply (j : P.index) (g : G) : P.stageHom j g = P.stage j g := rfl
 
-@[simp]
 theorem stageHom_toMonoidHom_apply (j : P.index) (g : G) :
     (P.stageHom j).toMonoidHom g = P.stage j g := rfl
 
 /-- Group-limit coordinates commute with the transition homomorphisms. -/
-@[simp]
+-- Use naturality before simplifying stage projections and composite functor maps.
+@[simp↓]
 theorem stage_naturality {j k : P.index} (f : j ⟶ k) (g : G) :
     (P.groupDiagram.map f) (P.stage j g) = P.stage k g := by
   exact (P.equiv g).2 f
@@ -195,13 +198,13 @@ theorem finiteGroupPresentation_iff_compact_openNormalBasis (G : Type u)
     let : TotallyDisconnectedSpace G := hdisconnected
     exact ⟨FiniteGroupPresentation.ofProfiniteGrp (ProfiniteGrp.of G)⟩
 
-/-- For a Hausdorff topological group, a finite-group presentation is equivalent
+/-- For a topological group, a finite-group presentation is equivalent
 to compactness and total disconnectedness. This includes the trivial group.
 
 The source is Neukirch–Schmidt–Wingberg, *Cohomology of Number Fields*, Ch. I §1,
 Proposition (1.1.3). -/
-theorem finiteGroupPresentation_iff_compact_totallyDisconnected (G : Type u)
-    [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] :
+theorem FiniteGroupPresentation.nonempty_iff (G : Type u)
+    [Group G] [TopologicalSpace G] [IsTopologicalGroup G] :
     Nonempty (FiniteGroupPresentation G) ↔
       CompactSpace G ∧ TotallyDisconnectedSpace G := by
   constructor
@@ -212,3 +215,11 @@ theorem finiteGroupPresentation_iff_compact_totallyDisconnected (G : Type u)
     let : CompactSpace G := hcompact
     let : TotallyDisconnectedSpace G := hdisconnected
     exact ⟨FiniteGroupPresentation.ofProfiniteGrp (ProfiniteGrp.of G)⟩
+
+/-- The finite-group presentation criterion with an explicit Hausdorff hypothesis. -/
+@[deprecated FiniteGroupPresentation.nonempty_iff (since := "2026-10-24")]
+theorem finiteGroupPresentation_iff_compact_totallyDisconnected (G : Type u)
+    [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] :
+    Nonempty (FiniteGroupPresentation G) ↔
+      CompactSpace G ∧ TotallyDisconnectedSpace G :=
+  FiniteGroupPresentation.nonempty_iff G

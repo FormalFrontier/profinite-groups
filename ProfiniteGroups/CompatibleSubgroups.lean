@@ -38,10 +38,17 @@ def transition (U V : OpenNormalSubgroup G) (h : U ≤ V) :
       intro g hg
       exact h hg)
 
-@[simp]
+@[simp↓]
 theorem transition_mk (U V : OpenNormalSubgroup G) (h : U ≤ V) (g : G) :
     transition G U V h (QuotientGroup.mk' U.toSubgroup g) =
       QuotientGroup.mk' V.toSubgroup g :=
+  rfl
+
+/-- The quotient transition sends an element's class to its class. -/
+@[simp]
+theorem transition_quotient_mk (U V : OpenNormalSubgroup G) (h : U ≤ V) (g : G) :
+    transition G U V h (QuotientGroup.mk g) =
+      (QuotientGroup.mk g : G ⧸ V.toSubgroup) :=
   rfl
 
 /-- Subgroups in all finite open-normal quotients of `G`. -/

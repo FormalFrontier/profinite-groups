@@ -51,7 +51,6 @@ noncomputable def stageHomClass (S : FintypeCat.{max u w}) (i : I) (g : F.obj i 
   colimit.ι (stageHom F S) (Opposite.op i) g
 
 omit [IsCofiltered I] in
-@[simp]
 theorem stageHomClass_refine (S : FintypeCat.{max u w}) {i j : I}
     (a : j ⟶ i) (g : F.obj i ⟶ S) :
     stageHomClass F S i g = stageHomClass F S j (F.map a ≫ g) := by
@@ -164,7 +163,6 @@ theorem stageHomEquiv_apply (c : Cone (F ⋙ FintypeCat.toProfinite))
     (hc : IsLimit c) (S : FintypeCat.{max u w}) (x : colimit (stageHom F S)) :
     stageHomEquiv c hc S x = stageHomToContinuous c S x := rfl
 
-@[simp]
 theorem stageHomEquiv_apply_class (c : Cone (F ⋙ FintypeCat.toProfinite))
     (hc : IsLimit c) (S : FintypeCat.{max u w}) (i : I) (g : F.obj i ⟶ S) :
     stageHomEquiv c hc S (stageHomClass F S i g) =
@@ -249,7 +247,7 @@ noncomputable def stageHomNatIso (c : Cone (F ⋙ FintypeCat.toProfinite))
       ext x
       exact stageHomToContinuous_naturality c t x)
 
-@[simp]
+@[simp↓]
 theorem stageHomNatIso_hom_app_apply_class
     (c : Cone (F ⋙ FintypeCat.toProfinite)) (hc : IsLimit c)
     (S : FintypeCat.{max u w}) (i : I) (g : F.obj i ⟶ S) :

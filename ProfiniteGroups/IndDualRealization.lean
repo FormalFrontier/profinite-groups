@@ -162,7 +162,7 @@ noncomputable def indDualRealizationHomEquiv
       (indDualPresentationCone R) (Profinite.limitConeIsLimit _))
 
 /-- The hom equivalence sends a morphism to its realized map. -/
-@[simp] theorem indDualRealizationHomEquiv_apply
+@[simp↓] theorem indDualRealizationHomEquiv_apply
     {Q R : (Ind FintypeCat.Skeleton.{u}ᵒᵖ)ᵒᵖ} (f : Q ⟶ R) :
     indDualRealizationHomEquiv Q R f = indDualRealization.map f := rfl
 

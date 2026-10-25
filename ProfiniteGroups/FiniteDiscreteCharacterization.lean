@@ -38,10 +38,13 @@ universe u
 
 /-- A presentation of a space as a cofiltered limit of finite discrete spaces. -/
 structure FiniteDiscretePresentation (X : Type u) [TopologicalSpace X] where
+  /-- The type of objects indexing the cofiltered presentation. -/
   index : Type u
   [smallCategory : SmallCategory index]
   [cofiltered : IsCofiltered index]
+  /-- The finite discrete spaces in the presentation. -/
   diagram : index ⥤ FintypeCat.{u}
+  /-- The homeomorphism identifying the space with the limit of the diagram. -/
   equiv : X ≃ₜ (Profinite.limitCone (diagram ⋙ FintypeCat.toProfinite)).pt
 
 attribute [instance] FiniteDiscretePresentation.smallCategory
@@ -69,8 +72,10 @@ def stageMap (j : P.index) : C(X, P.stageSpace j) :=
 def stage (j : P.index) : X → P.stageSpace j :=
   P.stageMap j
 
-@[simp]
-theorem stageMap_apply (j : P.index) (x : X) : P.stageMap j x = P.stage j x := rfl
+-- Evaluate the typed wrapper before simplifying the functor-object target type.
+@[simp↓]
+theorem stageMap_apply (j : P.index) (x : X) :
+    P.stageMap j x = P.stage j x := rfl
 
 @[simp]
 theorem stage_apply (j : P.index) (x : X) : P.stage j x = (P.equiv x).1 j := rfl
@@ -80,7 +85,8 @@ theorem continuous_stage (j : P.index) : Continuous (P.stage j) :=
   (P.stageMap j).continuous
 
 /-- Presentation coordinates commute with the transition maps. -/
-@[simp]
+-- Use naturality before expanding both the diagram map and the stage projection.
+@[simp↓]
 theorem stage_naturality {j k : P.index} (f : j ⟶ k) (x : X) :
     (P.topDiagram.map f) (P.stage j x) = P.stage k x := by
   exact (P.equiv x).2 f

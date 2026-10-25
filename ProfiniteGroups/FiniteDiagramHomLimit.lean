@@ -69,7 +69,6 @@ theorem stageHomLimitMap_apply
 
 /-- The target component of the comparison represents the composite with the
 specified target projection. -/
-@[simp]
 theorem stageHomLimitMap_toContinuous
     (F : I ⥤ FintypeCat.{max u w})
     (c : Cone (F ⋙ FintypeCat.toProfinite)) (hc : IsLimit c)

@@ -41,7 +41,7 @@ example : ∀ U : Set PUnit, U ∈ 𝓝 (1 : PUnit) →
 /-- The presentation criterion yields total disconnectedness for a nontrivial finite group. -/
 example : TotallyDisconnectedSpace (ProfiniteGrp.ofFiniteGrp
     (FiniteGrp.of (Multiplicative (ZMod 2)))) :=
-  ((finiteGroupPresentation_iff_compact_totallyDisconnected
+  ((FiniteGroupPresentation.nonempty_iff
       (ProfiniteGrp.ofFiniteGrp (FiniteGrp.of (Multiplicative (ZMod 2))))).mp
     ⟨FiniteGroupPresentation.ofProfiniteGrp _⟩).2
 

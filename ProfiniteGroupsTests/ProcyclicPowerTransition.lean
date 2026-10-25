@@ -37,13 +37,13 @@ theorem twelve_fourth_index :
 
 /-- Reduction between exact cyclic quotients preserves the chosen generator. -/
 theorem twelve_to_four_generator :
-    powerImage_quotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
+    powerImageQuotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
       (by decide : 4 ∣ 12)
-      ((powerImage_zmodContinuousMulEquiv (finiteCyclic 12)
+      ((powerImageZModContinuousMulEquiv (finiteCyclic 12)
         (finiteCyclic_isProcyclic 12) (finiteCyclicGenerator 12)
         (finiteCyclicGenerator_isTopologicalGenerator 12) 12 (by decide)
         twelve_twelfth_index) (Multiplicative.ofAdd (1 : ZMod 12))) =
-    (powerImage_zmodContinuousMulEquiv (finiteCyclic 12)
+    (powerImageZModContinuousMulEquiv (finiteCyclic 12)
       (finiteCyclic_isProcyclic 12) (finiteCyclicGenerator 12)
       (finiteCyclicGenerator_isTopologicalGenerator 12) 4 (by decide)
       twelve_fourth_index) (Multiplicative.ofAdd (1 : ZMod 4)) := by
@@ -51,13 +51,13 @@ theorem twelve_to_four_generator :
 
 /-- Reduction sends a non-generator residue to its class modulo four. -/
 theorem twelve_to_four_six :
-    powerImage_quotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
+    powerImageQuotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
       (by decide : 4 ∣ 12)
-      ((powerImage_zmodContinuousMulEquiv (finiteCyclic 12)
+      ((powerImageZModContinuousMulEquiv (finiteCyclic 12)
         (finiteCyclic_isProcyclic 12) (finiteCyclicGenerator 12)
         (finiteCyclicGenerator_isTopologicalGenerator 12) 12 (by decide)
         twelve_twelfth_index) (Multiplicative.ofAdd (6 : ZMod 12))) =
-    (powerImage_zmodContinuousMulEquiv (finiteCyclic 12)
+    (powerImageZModContinuousMulEquiv (finiteCyclic 12)
       (finiteCyclic_isProcyclic 12) (finiteCyclicGenerator 12)
       (finiteCyclicGenerator_isTopologicalGenerator 12) 4 (by decide)
       twelve_fourth_index) (Multiplicative.ofAdd (2 : ZMod 4)) := by
@@ -70,9 +70,9 @@ theorem twelve_to_four_six :
 /-- The order-twelve to order-four transition hits its nonidentity
 generator and is onto. -/
 theorem twelve_to_four_surjective_nontrivial :
-    Function.Surjective (powerImage_quotientMap (finiteCyclic 12)
+    Function.Surjective (powerImageQuotientMap (finiteCyclic 12)
       (finiteCyclic_isProcyclic 12) (by decide : 4 ∣ 12)) ∧
-      powerImage_quotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
+      powerImageQuotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
         (by decide : 4 ∣ 12)
         (QuotientGroup.mk' (powerImage (finiteCyclic 12)
           (finiteCyclic_isProcyclic 12) 12 : Subgroup (finiteCyclic 12))
@@ -90,7 +90,7 @@ theorem twelve_to_four_surjective_nontrivial :
 
 /-- The zero-power quotient still maps onto a nontrivial fourth-power quotient. -/
 theorem twelve_zero_to_four_nontrivial :
-    powerImage_quotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
+    powerImageQuotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
       (dvd_zero 4)
       (QuotientGroup.mk' (powerImage (finiteCyclic 12)
         (finiteCyclic_isProcyclic 12) 0 : Subgroup (finiteCyclic 12))
@@ -101,7 +101,7 @@ theorem twelve_zero_to_four_nontrivial :
 
 /-- At level one the quotient transition collapses every generator class. -/
 theorem twelve_to_one_generator :
-    powerImage_quotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
+    powerImageQuotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
       (by decide : 1 ∣ 12)
       (QuotientGroup.mk' (powerImage (finiteCyclic 12)
         (finiteCyclic_isProcyclic 12) 12 : Subgroup (finiteCyclic 12))
@@ -113,7 +113,7 @@ theorem twelve_to_one_generator :
 
 /-- Identity transition at a nontrivial quotient preserves its generator. -/
 theorem twelve_identity_generator :
-    powerImage_quotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
+    powerImageQuotientMap (finiteCyclic 12) (finiteCyclic_isProcyclic 12)
       (dvd_refl 12)
       (QuotientGroup.mk' (powerImage (finiteCyclic 12)
         (finiteCyclic_isProcyclic 12) 12 : Subgroup (finiteCyclic 12))
@@ -126,7 +126,7 @@ theorem twelve_identity_generator :
 /-- A transition exists for the order-two group at level four even though
 the fourth-power quotient does not have index four. -/
 theorem two_fourth_to_second_without_exact_index :
-    Function.Surjective (powerImage_quotientMap (finiteCyclic 2)
+    Function.Surjective (powerImageQuotientMap (finiteCyclic 2)
       (finiteCyclic_isProcyclic 2) (by decide : 2 ∣ 4)) ∧
       (powerImage (finiteCyclic 2) (finiteCyclic_isProcyclic 2) 4 :
         Subgroup (finiteCyclic 2)).index ≠ 4 :=

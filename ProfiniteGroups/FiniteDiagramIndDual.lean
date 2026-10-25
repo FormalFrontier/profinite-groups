@@ -734,7 +734,7 @@ theorem finiteDiagramIndDualContinuousEquiv_apply_class
 
 /-- The continuous comparison sends the identity on a dual finite diagram
 to the identity of its specified limit. -/
-@[simp] theorem finiteDiagramIndDualContinuousEquiv_id
+@[simp↓] theorem finiteDiagramIndDualContinuousEquiv_id
     (X : I ⥤ FintypeCat.Skeleton.{u})
     (c : Cone ((X ⋙ FintypeCat.Skeleton.incl) ⋙ FintypeCat.toProfinite))
     (hc : IsLimit c) :

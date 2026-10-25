@@ -210,7 +210,7 @@ theorem finiteCyclic_exponents_eq_factorization (n : ℕ) [NeZero n]
 generator determines the continuous equivalence from the multiplicative
 `ZMod n` to the finite quotient, sending the additive class of one to its
 quotient class. The inverse gives the corresponding map to `ZMod n`. -/
-noncomputable def powerImage_zmodContinuousMulEquiv (G : ProfiniteGrp.{u})
+noncomputable def powerImageZModContinuousMulEquiv (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (g : G) (hg : IsTopologicalGenerator G g)
     (n : ℕ) (hn : 0 < n)
     (hindex : (powerImage G hG n : Subgroup G).index = n) :
@@ -229,13 +229,17 @@ noncomputable def powerImage_zmodContinuousMulEquiv (G : ProfiniteGrp.{u})
     (zmodMulEquivOfGenerator hgen hcard)
     continuous_of_discreteTopology continuous_of_discreteTopology
 
+-- Keep the deprecated spelling for downstream source compatibility.
+@[deprecated (since := "2026-10-24"), reducible, nolint defsWithUnderscore]
+noncomputable alias powerImage_zmodContinuousMulEquiv := powerImageZModContinuousMulEquiv
+
 /-- The chosen equivalence maps additive one to the quotient class of the
 supplied topological generator. -/
 @[simp] theorem powerImage_zmodContinuousMulEquiv_apply_one
     (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
     (g : G) (hg : IsTopologicalGenerator G g) (n : ℕ) (hn : 0 < n)
     (hindex : (powerImage G hG n : Subgroup G).index = n) :
-    powerImage_zmodContinuousMulEquiv G hG g hg n hn hindex
+    powerImageZModContinuousMulEquiv G hG g hg n hn hindex
       (Multiplicative.ofAdd (1 : ZMod n)) =
         (QuotientGroup.mk' (powerImage G hG n : Subgroup G)) g := by
   have hgen : ∀ x : G ⧸ (powerImage G hG n : Subgroup G),
@@ -251,15 +255,15 @@ supplied topological generator. -/
 
 /-- The inverse of the chosen equivalence sends the quotient class of the
 supplied topological generator to additive one. -/
-@[simp] theorem powerImage_zmodContinuousMulEquiv_symm_apply_generator
+@[simp↓] theorem powerImage_zmodContinuousMulEquiv_symm_apply_generator
     (G : ProfiniteGrp.{u}) (hG : IsProcyclic G)
     (g : G) (hg : IsTopologicalGenerator G g) (n : ℕ) (hn : 0 < n)
     (hindex : (powerImage G hG n : Subgroup G).index = n) :
-    (powerImage_zmodContinuousMulEquiv G hG g hg n hn hindex).symm
+    (powerImageZModContinuousMulEquiv G hG g hg n hn hindex).symm
       ((QuotientGroup.mk' (powerImage G hG n : Subgroup G)) g) =
         Multiplicative.ofAdd (1 : ZMod n) := by
   rw [← powerImage_zmodContinuousMulEquiv_apply_one G hG g hg n hn hindex]
-  exact (powerImage_zmodContinuousMulEquiv G hG g hg n hn hindex).symm_apply_apply _
+  exact (powerImageZModContinuousMulEquiv G hG g hg n hn hindex).symm_apply_apply _
 
 /-- A positive power image has index exactly `n` if and only if every prime
 multiplicity of `n` fits in the corresponding (possibly infinite) procyclic
@@ -281,7 +285,7 @@ theorem powerImage_index_eq_iff_exponents (G : ProfiniteGrp.{u})
   · intro hindex
     let g := hG.choose
     have hg : IsTopologicalGenerator G g := hG.choose_spec
-    let e := powerImage_zmodContinuousMulEquiv G hG g hg n hn hindex
+    let e := powerImageZModContinuousMulEquiv G hG g hg n hn hindex
     let f : G →ₜ* finiteCyclic n :=
       ⟨e.symm.toMonoidHom.comp (QuotientGroup.mk' (powerImage G hG n : Subgroup G)),
         e.symm.continuous_toFun.comp QuotientGroup.continuous_mk⟩

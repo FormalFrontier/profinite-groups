@@ -55,7 +55,7 @@ def closedCosetProj (G : ProfiniteGrp.{u}) (H : ClosedSubgroup G) :
     G.toProfinite ⟶ G.closedCosetSpace H :=
   ConcreteCategory.ofHom ⟨QuotientGroup.mk, QuotientGroup.continuous_mk⟩
 
-@[simp]
+@[simp↓]
 theorem closedCosetProj_apply (G : ProfiniteGrp.{u}) (H : ClosedSubgroup G) (g : G) :
     G.closedCosetProj H g = QuotientGroup.mk g := rfl
 
@@ -88,7 +88,7 @@ def closedNormalQuotientProj (G : ProfiniteGrp.{u}) (N : ClosedSubgroup G)
   exact ConcreteCategory.ofHom
     ⟨QuotientGroup.mk' N.toSubgroup, QuotientGroup.continuous_mk⟩
 
-@[simp]
+@[simp↓]
 theorem closedNormalQuotientProj_apply (G : ProfiniteGrp.{u}) (N : ClosedSubgroup G)
     (hN : N.toSubgroup.Normal) (g : G) :
     G.closedNormalQuotientProj N hN g = QuotientGroup.mk g := rfl
@@ -105,7 +105,7 @@ theorem closedNormalQuotientProj_isQuotientMap (G : ProfiniteGrp.{u}) (N : Close
   QuotientGroup.isQuotientMap_mk N.toSubgroup
 
 /-- The canonical quotient homomorphism has exactly the specified kernel. -/
-@[simp]
+@[simp↓]
 theorem closedNormalQuotientProj_ker (G : ProfiniteGrp.{u}) (N : ClosedSubgroup G)
     (hN : N.toSubgroup.Normal) :
     (G.closedNormalQuotientProj N hN).hom.ker = N.toSubgroup :=
@@ -136,11 +136,19 @@ def closedNormalQuotientDescend (G K : ProfiniteGrp.{u}) (N : ClosedSubgroup G)
   change Continuous f.hom
   exact f.hom.continuous
 
-@[simp]
+@[simp↓]
 theorem closedNormalQuotientDescend_apply_mk (G K : ProfiniteGrp.{u}) (N : ClosedSubgroup G)
     (hN : N.toSubgroup.Normal) (f : G ⟶ K) (hNker : N.toSubgroup ≤ f.hom.ker)
     (g : G) :
     G.closedNormalQuotientDescend K N hN f hNker (G.closedNormalQuotientProj N hN g) = f g :=
+  rfl
+
+/-- The quotient descent sends the class of an element to its image. -/
+@[simp↓]
+theorem closedNormalQuotientDescend_apply_quotient_mk (G K : ProfiniteGrp.{u})
+    (N : ClosedSubgroup G) (hN : N.toSubgroup.Normal) (f : G ⟶ K)
+    (hNker : N.toSubgroup ≤ f.hom.ker) (g : G) :
+    G.closedNormalQuotientDescend K N hN f hNker (QuotientGroup.mk g) = f g :=
   rfl
 
 /-- Morphisms out of a normal quotient agree if they agree after projection. -/

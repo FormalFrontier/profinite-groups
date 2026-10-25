@@ -1,6 +1,7 @@
 name = "profinite-groups"
 version = "0.1.0"
 defaultTargets = ["ProfiniteGroups", "ProfiniteGroupsTests"]
+lintDriver = "batteries/runLinter"
 
 [[require]]
 name = "mathlib"
@@ -29,3 +30,6 @@ globs = ["ProfiniteGroupsTests.*", "Tests.CompatibleSubgroups", "Tests.Compatibl
   "Tests.ProcyclicBaseMap", "Tests.ProcyclicGeneratorIndependence", "Tests.ProcyclicHom",
   "Tests.ProcyclicInvariant", "Tests.ProcyclicPower", "Tests.ProcyclicQuotient",
   "Tests.ProcyclicRealization", "Tests.ProcyclicTorsionFree", "Tests.PublicRoot"]
+
+[lean_lib.leanOptions]
+weak.linter.privateModule = false

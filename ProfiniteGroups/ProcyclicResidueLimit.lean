@@ -98,7 +98,7 @@ positive power index. -/
       ULift.{u} (Multiplicative (ZMod n.val)) := rfl
 
 /-- Finite residue arrows reduce modulo the target power index. -/
-@[simp] theorem residueFiniteFunctor_map_apply (S : Set Nat.Primes)
+@[simp↓] theorem residueFiniteFunctor_map_apply (S : Set Nat.Primes)
     {n d : Nat.PowerIndex S} (f : n ⟶ d) (a : ZMod n.val) :
     (residueFiniteFunctor.{u} S).map f (ULift.up (Multiplicative.ofAdd a)) =
       ULift.up (Multiplicative.ofAdd
@@ -124,7 +124,7 @@ the underlying positive power index. -/
   residueFiniteFunctor_map_apply.{u} S f a
 
 /-- Identity arrows leave every residue unchanged. -/
-@[simp] theorem residueDiagram_map_id_apply (S : Set Nat.Primes)
+theorem residueDiagram_map_id_apply (S : Set Nat.Primes)
     (n : Nat.PowerIndex S) (a : ZMod n.val) :
     (residueDiagram.{u} S).map (𝟙 n) (ULift.up (Multiplicative.ofAdd a)) =
       ULift.up (Multiplicative.ofAdd a) := by
@@ -154,7 +154,7 @@ noncomputable def residuePowerQuotientComponent (G : ProfiniteGrp.{u})
     ContinuousMulEquiv.mk
       ((MulEquiv.ulift :
         ULift.{u} (Multiplicative (ZMod n.val)) ≃* Multiplicative (ZMod n.val)).trans
-        (powerImage_zmodContinuousMulEquiv G hG g hg n.val n.pos hindex).toMulEquiv)
+        (powerImageZModContinuousMulEquiv G hG g hg n.val n.pos hindex).toMulEquiv)
       continuous_of_discreteTopology continuous_of_discreteTopology
   exact ContinuousMulEquiv.toProfiniteGrpIso e
 
@@ -167,7 +167,7 @@ after forgetting the universe lift on a residue. -/
     (a : ZMod n.val) :
     (residuePowerQuotientComponent G hG g hg n hindex).hom
         (ULift.up (Multiplicative.ofAdd a)) =
-      powerImage_zmodContinuousMulEquiv G hG g hg n.val n.pos hindex
+      powerImageZModContinuousMulEquiv G hG g hg n.val n.pos hindex
         (Multiplicative.ofAdd a) := rfl
 
 /-- The inverse component reads a quotient class as a residue in the
@@ -178,12 +178,12 @@ corresponding lifted cyclic group. -/
     (hindex : (powerImage G hG n.val : Subgroup G).index = n.val)
     (q : G ⧸ (powerImage G hG n.val : Subgroup G)) :
     (residuePowerQuotientComponent G hG g hg n hindex).inv q =
-      ULift.up ((powerImage_zmodContinuousMulEquiv G hG g hg n.val n.pos hindex).symm q) :=
+      ULift.up ((powerImageZModContinuousMulEquiv G hG g hg n.val n.pos hindex).symm q) :=
   rfl
 
 /-- At an exact-index level the component sends residue one to the chosen
 generator's quotient class. -/
-@[simp] theorem residuePowerQuotientComponent_hom_one (G : ProfiniteGrp.{u})
+theorem residuePowerQuotientComponent_hom_one (G : ProfiniteGrp.{u})
     (hG : IsProcyclic G) (g : G) (hg : IsTopologicalGenerator G g)
     {S : Set Nat.Primes} (n : Nat.PowerIndex S)
     (hindex : (powerImage G hG n.val : Subgroup G).index = n.val) :
@@ -213,11 +213,11 @@ noncomputable def residuePowerQuotientNatIso (G : ProfiniteGrp.{u})
             (ULift.up (Multiplicative.ofAdd a.toAdd)))
       simp only [residueDiagram_map_apply,
         residuePowerQuotientComponent_hom_apply, powerQuotientDiagram_map_apply]
-      change powerImage_zmodContinuousMulEquiv G hG g hg d.val d.pos (hindex d)
+      change powerImageZModContinuousMulEquiv G hG g hg d.val d.pos (hindex d)
           (Multiplicative.ofAdd
             (ZMod.castHom (Nat.PowerIndex.dvd_of_hom f) (ZMod d.val) a.toAdd)) =
-        powerImage_quotientMap G hG (Nat.PowerIndex.dvd_of_hom f)
-          (powerImage_zmodContinuousMulEquiv G hG g hg n.val n.pos (hindex n)
+        powerImageQuotientMap G hG (Nat.PowerIndex.dvd_of_hom f)
+          (powerImageZModContinuousMulEquiv G hG g hg n.val n.pos (hindex n)
             (Multiplicative.ofAdd a.toAdd))
       exact (powerImage_quotientMap_zmod G hG g hg
         (Nat.PowerIndex.dvd_of_hom f) n.pos (hindex n) a.toAdd).symm)
@@ -232,7 +232,7 @@ on residues at every exact-index level. -/
     (n : Nat.PowerIndex S) (a : ZMod n.val) :
     (residuePowerQuotientNatIso G hG g hg S hindex).hom.app n
         (ULift.up (Multiplicative.ofAdd a)) =
-      powerImage_zmodContinuousMulEquiv G hG g hg n.val n.pos (hindex n)
+      powerImageZModContinuousMulEquiv G hG g hg n.val n.pos (hindex n)
         (Multiplicative.ofAdd a) := by
   exact residuePowerQuotientComponent_hom_apply G hG g hg n (hindex n) a
 
@@ -368,7 +368,7 @@ power-quotient coordinate. -/
       ULift.up (Multiplicative.ofAdd (1 : ZMod n.val)) := by
   rw [continuousMulEquivSupportedResidueLimit_apply]
   change ULift.up
-    ((powerImage_zmodContinuousMulEquiv G hG g hg n.val n.pos
+    ((powerImageZModContinuousMulEquiv G hG g hg n.val n.pos
       (powerImage_index_eq_of_infiniteSupport G hG _ (Set.Subset.rfl) n)).symm
         (QuotientGroup.mk' (powerImage G hG n.val : Subgroup G) g)) = _
   exact congrArg ULift.up

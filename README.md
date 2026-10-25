@@ -36,10 +36,11 @@ and [homomorphisms, powers and coefficients](#homomorphisms-powers-and-coefficie
 - **Finite-stage inverse-limit characterizations.** A Hausdorff space is an
   inverse limit of finite discrete spaces over a small, nonempty cofiltered
   category if and only if it is compact with a clopen basis, equivalently
-  compact and totally disconnected. A Hausdorff topological group is an
-  inverse limit of finite groups over such a category if and only if it is
-  compact with an identity-neighborhood basis of open normal subgroups,
-  equivalently compact and totally disconnected. The presentations use the
+  compact and totally disconnected. A topological group is an inverse limit
+  of finite groups over such a category if and only if it is compact and
+  totally disconnected (`FiniteGroupPresentation.nonempty_iff`). For a Hausdorff
+  topological group, this is also equivalent to compactness with an
+  identity-neighborhood basis of open normal subgroups. The presentations use the
   actual inverse-limit topology and include empty spaces and trivial groups;
   arbitrary finite-stage projections need not be surjective. See
   [`FiniteDiscreteCharacterization`](ProfiniteGroups/FiniteDiscreteCharacterization.lean)
